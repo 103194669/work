@@ -92,7 +92,8 @@ scp -vrp -P888 /home/ root@120.18.50.33:/data/
 -------------2011.07.20------------
 生成随即密码
 date +%s | sha256sum | base64 | head -c 32 ; echo
-openssl rand -base64 32
+openssl rand -base64 32
+
 randpw(){ < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;}
 date | md5sum 
 mkpasswd  需要  yum install expect
@@ -146,7 +147,8 @@ http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=329&fromuid=2
 http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=335&fromuid=2
 Liunx虚拟化VPS服务器配置
 http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=216&fromuid=2
-实现存储虚拟化的三种方式：基于主机的方式
+实现存储虚拟化的三种方式：基于主机的方式
+
 ttp://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=327&fromuid=2
 VMware中创建集群
 http://www.linuxqd.com/bbs/forum.php?mod=viewthread&tid=321&fromuid=2
@@ -164,7 +166,8 @@ nfs  需要用的进程 portmap
 开机自动挂载硬盘  /etc/fstab
 
 -----------------2011.08.05--------------
-ssh 传东西  ssh-copy-id -i .ssh/id_rsa.pub ip然后直接输入密码 搞定
+ssh 传东西  ssh-copy-id -i .ssh/id_rsa.pub ip
+然后直接输入密码 搞定
 
 -----------------2011.08.08------------
 jawstats  日志分析工具 
@@ -188,7 +191,8 @@ e2fsprogs ext4 支持包
 ----------------2011.08.10-----------------
 
 ldconfig -v | grep libxml
-系统版本 cat /etc/issue
+系统版本 cat /etc/issue
+
 
 ----------------2011.08.12--------------------
 > > 我想了解一些有關網路的運作架構之類的
@@ -209,7 +213,8 @@ ldconfig -v | grep libxml
 > 7) OSI Layer 基本概念
 > 8) Encapsulation / Decapsulation 概念
 > 9) BaseBand / BroadBand communication ( TDM / FDM )
-> 10) CSMACD / Token Bus / Token Ring (IEEE 802.3, 802.4, 802.5)
+> 10) CSMACD / Token Bus / Token Ring (IEEE 802.3, 802.4, 802.5)
+
  11) ARP/RARP, IP, TCP 基本概念
 > 12) IP Subneting / IP Routing 基本概念
 > 13) 區分 repeater, HUB, bridge, switch, router, gateway 等設備
@@ -230,7 +235,8 @@ ldconfig -v | grep libxml
 > 4) IP routing (RIP, OSPF, IGP, BGP, etc.)
 > 5) TCP/UDP (Connection Oriented/Connectionless, SeqNum/AckNum, Sliding Window,
 > Three-way-handshake, etc.)
-> 6) Socket & Socket Pair
+> 6) Socket & Socket Pair
+
  7) MTU/MRU/MSS/RWIN﹐TOS
 > 8) ICMP (type, error code)
 > 9) TCP/IP Applications (telnet, http, ftp, etc﹐要清楚他們的連線特性﹐如 ftp 的
@@ -269,7 +275,8 @@ ldconfig -v | grep libxml
 > Unix Family / Linux
 > SNA / Mainframe
 > etc. ...
->
+>
+
  六﹐再來是應用軟體的開發﹕
 > VB / Perl
 > Socket Programing
@@ -281,7 +288,8 @@ ldconfig -v | grep libxml
 
 --------------------2011.08.13-----------
 
-tracert + ping = mtr
+tracert + ping = mtr
+
 
 -------------------2011.08.15-------------
 CloneZilla linux克隆工具
@@ -289,7 +297,8 @@ CloneZilla linux克隆工具
 -------------------2011.08.16--------------
 批量改密码
 
-useradd peixun$iecho "123456"|passwd --stdin peixun$i &> /dev/null
+useradd peixun$i
+echo "123456"|passwd --stdin peixun$i &> /dev/null
 
 -------------------2011.08.17-------------
 sniffer  抓包工具
@@ -304,7 +313,9 @@ if [ ${list:0:1} != "#"  ]
 -------------------2011.08.22--------------
 
 paste 是linux 命令 　　用途 　　从一个或多个文件中连接行。 　　语法 　　paste [ -s ] [ -d List ] File1 ... 　　
-bash -ax  bash vx debug 下也行 测试 shell 一步一步执行
+bash -ax  bash vx 
+debug 下也行
+ 测试 shell 一步一步执行
 
 牛B、装B、傻B的区别 一、牛B的永远是少数，装B的普遍存在，傻B则满山遍野到处是。二、牛B的不在乎开车还是走路，装B的出门必开宝马，傻B的开吉利美人豹。三、牛B需要相处一段时间才会觉得牛B，装B一开始觉得牛B，时间长了才知是装B，傻B的一见面就感觉很傻B
 
@@ -345,7 +356,17 @@ mysql>source d:/wcnc_db.sql
 
 -------------------2011.09.10-----------------
 
-1、smartctl -a  <device>         检查该设备是否已经打开SMART技术。2、smartctl -s on <device>    如果没有打开SMART技术，使用该命令打开SMART技术。3、smartctl -t short <device>    后台检测硬盘，消耗时间短；      smartctl -t long <device>      后台检测硬盘，消耗时间长；      smartctl -C -t short <device> 前台检测硬盘，消耗时间短；      smartctl -C -t long <device>  前台检测硬盘，消耗时间长。其实就是利用硬盘SMART的自检程序。4、smartctl -X <device>  中断后台检测硬盘。5、smartctl -l selftest <device>  显示硬盘检测日志。6、smartctl -l error <device> 显示硬盘错误汇总。
+1、smartctl -a  <device>         检查该设备是否已经打开SMART技术。
+2、smartctl -s on <device>    如果没有打开SMART技术，使用该命令打开SMART技术。
+3、smartctl -t short <device>    后台检测硬盘，消耗时间短；
+      smartctl -t long <device>      后台检测硬盘，消耗时间长；
+      smartctl -C -t short <device> 前台检测硬盘，消耗时间短；
+      smartctl -C -t long <device>  前台检测硬盘，消耗时间长。
+其实就是利用硬盘SMART的自检程序。
+4、smartctl -X <device>  中断后台检测硬盘。
+5、smartctl -l selftest <device>  显示硬盘检测日志。
+6、smartctl -l error <device> 显示硬盘错误汇总。
+
 
 ------------------------2011.09.30-----------------------------
 MSR30-20 限速
@@ -558,7 +579,28 @@ debugfs /dev/sda1  删除数据恢复 lsdel
 
 sql 语句 分析 explain＋sql 语句
 
-#!/bin/bash#Used to auto fdisk and format disk#Write by junlee#2010-04-23PATH=/bin:/sbin:/usr/bin:/usr/sbinexport PATHi=1while [ $i -lt 24 ]do                j=`echo $i|awk '{printf "%c",97+$i}'`                fdisk /dev/sd$j <<Endnp1wEnd                mkfs.ext3    /dev/sd${j}1                let i+=1done自动分区脚本
+#!/bin/bash
+#Used to auto fdisk and format disk
+#Write by junlee
+#2010-04-23
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin
+export PATH
+i=1
+while [ $i -lt 24 ]
+do
+                j=`echo $i|awk '{printf "%c",97+$i}'`
+                fdisk /dev/sd$j <<End
+n
+p
+1
+
+
+w
+End
+                mkfs.ext3    /dev/sd${j}1
+                let i+=1
+done自动分区脚本
 
 眼保健操 眼保健操：(→_→)( ↑ _ ↑ )(←_←)( ↓ _ ↓ )(→_←)( ↑ _  ↓ ) (←_→)( ↓ _ ↑ ) ！！！！！
 
@@ -580,7 +622,8 @@ io 吞吐测试软件   sysbench
 awk '{if(a[$1$2]<$6){a[$1$2]=$6;b[$1$2]=$0}}END{for(i=0;i++<asorti(a,c);)print b[c[i]]}'
 asort 对数组小标 排序  length 统计数组长度
 
-就算我们有6W用户 而有效用户为80%，每天在线的用户 占有效用户的20%，那么每天有8个小时，每个小时在线用户为1200人，如果每个人每天在线时间少于半个小时，那么在线用户为600人。  每个人平均点击30次，那么600*30=18000次/小时，即系统每秒惦记为 5 次/秒假如峰值是平均值的 4倍，那么就是5*4=20次/秒   那么可能发生的并发的总数为 20-30 次
+就算我们有6W用户 而有效用户为80%，每天在线的用户 占有效用户的20%，那么每天有8个小时，每个小时在线用户为1200人，如果每个人每天在线时间少于半个小时，那么在线用户为600人。  每个人平均点击30次，那么600*30=18000次/小时，即系统每秒惦记为 5 次/秒
+假如峰值是平均值的 4倍，那么就是5*4=20次/秒   那么可能发生的并发的总数为 20-30 次
 nfsstat nfs客户端的io情况 
 
 http://software.cs.utep.edu/ISOs/CentOS/
@@ -668,21 +711,66 @@ sort -t分隔符 -k域：
 ---------------------------------2011.12.07-------------------------------------
 if [ ! -f "$users" -o ! -f "$pass" ]   中 -o = or , -a = and  与 || 和&& 等价
 mail –s “主题
-bonding 使用mode=0模式网络I/O 2Gkill只是个发信号的工具而已吧，至于接到能够被捕获的信号后，相关程序怎么处理，那是那些程序的事了
+bonding 使用mode=0模式
+
+网络I/O 2Gkill只是个发信号的工具而已吧，至于接到能够被捕获的信号后，相关程序怎么处理，那是那些程序的事了
 
 ---------------------------------2011.12.09--------------------------------------
-sed 's/\(^.\{2\}\)\{0,1\}\(..\)/\1:\2/g'  00ac45d5082f改成mac的带冒号的 {首先把0ac45d5082f读进模式空间然后匹配0ac4，在0a和c4中间加上:然后就只匹配5d，在5d前面加上:因为有^号，所以\1就匹配空了后面差不多就这样，匹配2个字符，在前面加上:}
+sed 's/\(^.\{2\}\)\{0,1\}\(..\)/\1:\2/g'  00ac45d5082f改成mac的带冒号的 {首先把0ac45d5082f读进模式空间
+然后匹配0ac4，在0a和c4中间加上:
+然后就只匹配5d，在5d前面加上:
+因为有^号，所以\1就匹配空了
+后面差不多就这样，匹配2个字符，在前面加上:
+}
 free |awk '/M/{print "used="$3/$2*100"%","free="$4/$2*100"%"}' 内存百分比
 日志分析工具  http://piwik.org/
-*gp#ud*e*jf#c这个是原文件 想要得到的效果是：*gpejf#udawk '{a[NR]=$0}END{m=1;n=1;for(i=1;i<=NR;i++){if(a[i]=="*"){for(j=i+1;;j++) {b[m++]=a[j];if(a[j+1]=="#"||a[j+1]=="*")break;i=j}}else if(a[i]=="#"){for(j=i+1;;j++) {c[n++]=a[j];if(a[j+1]=="#"||a[j+1]=="*"||a[j+1]=="")break}}}print "*";for(i=1;i<m;i++)print b[i];print "#";for(i=1;i<n;i++)print c[i]}
+*
+g
+p
+#
+u
+d
+*
+e
+*
+j
+f
+#
+c
+这个是原文件 
+想要得到的效果是：
+*
+g
+p
+e
+j
+f
+#
+u
+dawk '{a[NR]=$0}END{m=1;n=1;for(i=1;i<=NR;i++){if(a[i]=="*"){for(j=i+1;;j++) {b[m++]=a[j];if(a[j+1]=="#"||a[j+1]=="*")break;i=j}}else if(a[i]=="#"){for(j=i+1;;j++) {c[n++]=a[j];if(a[j+1]=="#"||a[j+1]=="*"||a[j+1]=="")break}}}print "*";for(i=1;i<m;i++)print b[i];print "#";for(i=1;i<n;i++)print c[i]}
 
 ---------------------------------2011.12.10-----------------------------------------
 KeePass 管理密码的工具
 pssh 集中管理工具
 awk 多字符 分割 |
-sed -e :a -e 's/^.\{1,78\}$/ &/;ta' 假设有 123第一次123->空格123,因为发生替换了 t跳转到a处。第二次：空格123->空格空格123，因为发生替换了 t跳转到a处。重复重复。。123+空格 一直有 78个为止。读入下一行处理
+sed -e :a -e 's/^.\{1,78\}$/ &/;ta' 假设有 123
+
+第一次
+123->空格123,因为发生替换了 t跳转到a处。
+
+第二次：
+空格123->空格空格123，因为发生替换了 t跳转到a处。
+
+重复重复。。
+
+123+空格 一直有 78个为止。
+
+读入下一行处理
 wsed sed 调试工具
-echo "00ac45d5082f" | sed -r 's/(^..){0,1}(..)/\1:\2/g'  不需要 \        echo "00ac45d5082f" | sed -r 's/..\B/&:/g' 我写那个 \B 是加上边界  “不在字边界时为真” 如果匹配到了边界 比如非"字"字符 情况 就不会替换 跟\b 是相反的 就是这个情况 多体会下 再不懂 我也没办法鸟
+echo "00ac45d5082f" | sed -r 's/(^..){0,1}(..)/\1:\2/g'
+  不需要 \        echo "00ac45d5082f" | sed -r 's/..\B/&:/g'
+ 我写那个 \B 是加上边界  “不在字边界时为真” 如果匹配到了边界 比如非"字"字符 情况 就不会替换 跟\b 是相反的 
+就是这个情况 多体会下 再不懂 我也没办法鸟
 lsof -c  加进程名
 
 ---------------------------------2011.12.15-----------------------------------------
@@ -691,7 +779,14 @@ lsof -c  加进程名
 
 ---------------------------------2011.12.16--------------------------------------
 扶凯  蓝讯 转 土豆
-my_FTP () {	echo "cd $RHOST_BASH_DIR	$CMD	bye" | lftp -u ${USER_NAME},${PASSWORD} sftp://${RHOST_IP}}CMD="nlist $REQ_DIR | grep -E $REQ_FILE | wc -l"#echo $CMDmy_FTP $CMD
+my_FTP () {
+	echo "cd $RHOST_BASH_DIR
+	$CMD
+	bye" | lftp -u ${USER_NAME},${PASSWORD} sftp://${RHOST_IP}
+}
+CMD="nlist $REQ_DIR | grep -E $REQ_FILE | wc -l"
+#echo $CMD
+my_FTP $CMD
 
 ---------------------------------2011.12.19--------------------------------------
 echo "00ac45d5082f"|sed 's/\(^.\{2\}\)\?\(..\)/\1:\2/g'  等价于 sed 's/\(^.\{2\}\)\{0,1\}\(..\)/\1:\2/g'
@@ -704,7 +799,9 @@ mono可以在linux上跑.net
 系统打包 tar cvpzf centos.tar.gz --exclude=/centos.tar.gz --exclude=lost+found --exclude=/media --exclude=/proc/  /
 
 ---------------------------------2011.12.21-----------------------------------------
-echo "222 2 2 1 2 2 1 3"|sed 's/\(.*\)2\([^2]*\)/\1a\2/'  222 2 2 1 2 a 1 3不管最后一个2后面还有啥，只要不是2，就改成aecho "222 2 2 1 2 222 1 3"|sed 's/\(.*\)2\([^2]*\)/\1a\2/'  222 2 2 1 2 22a 1 3 包括多个2的最后一个
+echo "222 2 2 1 2 2 1 3"|sed 's/\(.*\)2\([^2]*\)/\1a\2/'  222 2 2 1 2 a 1 3
+不管最后一个2后面还有啥，只要不是2，就改成aecho "222 2 2 1 2 222 1 3"|sed 's/\(.*\)2\([^2]*\)/\1a\2/'  222 2 2 1 2 22a 1 3 
+包括多个2的最后一个
 echo "222 2 2 1 2 222 1 3"|sed 's/2\([^2]*\)$/a\1/'sed -n 'H;${g;s/\n//g;p}' 替换 回车
 cat -A file  可显示换行符 Windows ^M$  unix/linux $ dos2unix可转换
 
@@ -760,7 +857,10 @@ pssh su 实现方法 sed -i -e '/Defaults    env_reset/s/env_reset/!env_reset/; 
 
 ------------------------------------2011.12.23--------------------------------------------
 sh -x 脚本  查看执行过程
-ROSpfsensemonowall 软路由
+ROS
+pfsense
+monowall
+ 软路由
 echo "http://apk.goapk.com/jtf0/6604eab076d14cd0d4a72279bef0c61_0.jpg" |sed 's/^.*\(com\|net\|cn\|net\|org\)\/\(.*\)\/.[^/]\+$/\2/'   取中间jtf0
 
 ------------------------------------2011.12.26-----------------------------------------------
@@ -801,7 +901,8 @@ strftime（%y-%m-%d）
 unix/linux 权威教程 第三版shell  学习教程
 ssh-keyscan -T 的默认值啦是5S
 awk 'NR==FNR{a[$1];next}{if($0 in a)print $0}' 将file里面第一列等于file2第一列的打印出来
-squid 两种更新方法 第一种是http的更新 第二种是refresh_pattern 
+squid 两种更新方法 第一种是http的更新 
+第二种是refresh_pattern 
 -------------------------------2011.12.28-------------------------------------
 学c语言先看《c primer plus》不用深究，知道有哪些东西就行，这书以后可以当工具书。然后看K&R那本c程序设计语言（绝对不是谭浩强的），这本书虽然相当薄，但精华内容非常多，要多研究
 以后c有一定基础可以看APUE，还有《c和指针》《c陷阱与缺陷》《c专家编程》三本中的一本basename 去掉前导的目录部分后打印“名称”。如果指定的话，还会去掉尾随的“后缀”。
@@ -841,8 +942,12 @@ awk 方法：awk '{if($0==""){printf "\n"}else{printf $0"\t"}}'
 sed 方法：sed -e 'N;N;N;N;N;N;N;s/\n/ /g' -e 's/ time/time/g'
 
 squid 和 varnish 优缺点
-squid squid天生是单进程的所以不能利用多核，代码写的不好比较乱，天生不支持模块扩展
-varnish  varnish是工作线程 nginx是工作进程线程万一崩了，主线程也完了
+squid squid天生是单进程的
+所以不能利用多核，代码写的不好
+比较乱，天生不支持模块扩展
+varnish  varnish是工作线程
+ nginx是工作进程
+线程万一崩了，主线程也完了
 
 win类是epoll 的 io iocp
 
@@ -876,7 +981,17 @@ print data
 
 -------------------------------2012.1.5------------------------------------------------
 squidclient -p 8088 mgr:info （启在8088） squid 查询
-squid是method加uri做md5哈希refresh_patternacl校验找缓存对象，都很耗cpu但是具体的瓶颈跟实际情况相关比较大也可能是磁盘io太慢，也可能是网络状况不好很多方法可以提升性能但是需要功底例如小文件使用coss文件系统减少磁盘碎片，减少open和unlink的次数，可以提升性能acl规则配置合理可以减少cpu使用率
+squid是method加uri
+做md5哈希refresh_pattern
+acl校验
+找缓存对象，都很耗cpu
+但是具体的瓶颈跟实际情况相关比较大
+也可能是磁盘io太慢，也可能是网络状况不好
+很多方法可以提升性能
+但是需要功底
+例如小文件使用coss文件系统
+减少磁盘碎片，减少open和unlink的次数，可以提升性能
+acl规则配置合理可以减少cpu使用率
 -------------------------------2012.1.9-------------------------------------------------
 ext3grep linux 反删除软件
 echo "ahebhaaa" |awk -F "" '{for(i=1;i<=NF;i++)a[$il=asorti(a,b);for(i=1;i<=l;i++) printf a[b[i]]b[i];printf "\n"}'
@@ -933,13 +1048,26 @@ mmap，内存映射，动态库加载的位置
 stack，栈区
 kernel，内核区（1G）除了内核区，剩下的都是用户区，用户区在
 32位机器上都是3G的空间
-使用mmap 可以避免碎片 通常的内存碎片最可能的是小内存申请和释放，而且基本都集中在heap区而mmap是大内存区，最小是一个page_size的大小在32位系统下是4k并且和heap不是一个区，所以不存在内存碎片问题
+使用mmap 可以避免碎片 通常的内存碎片最可能的是小内存申请和释放，而且基本都集中在heap区
+而mmap是大内存区，最小是一个page_size的大小
+在32位系统下是4k
+并且和heap不是一个区，所以不存在内存碎片问题
 
 ------------------------------2012.2.1--------------------------------------------
 彩虹表就是一个庞大的、针对各种可能的字母组合预先计算好的哈希值的集合，不一定是针对MD5算法的，各种算法的都有，有了它可以快速的破解各类密码。越是复杂的密码，需要的彩虹表就越大，现在主流的彩虹表都是100G以上。
 
 ------------------------------2012.2.3---------------------------------------
-互联网上的蜘蛛　　google蜘蛛： googlebot　　百度蜘蛛：baiduspider　　yahoo蜘蛛：slurp　　alexa蜘蛛：ia_archiver　　msn蜘蛛：msnbot　　altavista蜘蛛：scooter　　lycos蜘蛛： lycos_spider_(t-rex)　　alltheweb蜘蛛： fast-webcrawler/　　inktomi蜘蛛： slurp
+互联网上的蜘蛛
+
+　　google蜘蛛： googlebot
+　　百度蜘蛛：baiduspider
+　　yahoo蜘蛛：slurp
+　　alexa蜘蛛：ia_archiver
+　　msn蜘蛛：msnbot
+　　altavista蜘蛛：scooter
+　　lycos蜘蛛： lycos_spider_(t-rex)
+　　alltheweb蜘蛛： fast-webcrawler/
+　　inktomi蜘蛛： slurp
 
 ------------------------------2012.2.6-------------------------------------------
 #vi /etc/fstab
@@ -949,7 +1077,9 @@ tmpfs       /dev/shm    tmpfs  defaults,size=512m   0    0
 [root@GoGo tmp]# mount -o remount /dev/shm
 修改 /dev/shm 大小
 
-不同文件系统适合不同应用  图片找个分布式  或者xfsmysql主要看硬盘和文件系统的Io吞吐量而且你要看数据的
+不同文件系统适合不同应用  图片找个分布式  或者xfs
+mysql主要看硬盘和文件系统的Io吞吐量
+而且你要看数据的
 
 mysql 单行命令 echo "show databases;" | mysql -uroot  -S /tmp/mysql.sock 可不加-S 
 		mysql -u root -p'oldboy' -S /data1/3307/mysql.sock -e "show databases;"
@@ -1089,8 +1219,10 @@ hdparm  补充说明：hdparm可检测，显示与设定IDE或SCSI硬盘的参�
 /usr/bin/time -v date 可以查看 linux的默认页面大小
 netperf 测试万卡的吞吐率 c/s 架构的
 ./mysqladmin -pstrongmail processlist 查询mysql 耗时最长的语句
-squid的牛人，斯文现在在盛大了
-DNS的牛人，李孟现在在百度
+squid的牛人，斯文
+现在在盛大了
+DNS的牛人，李孟
+现在在百度
 python 倒序切片  foollist[::-1]
 \bthe\b 匹配边界 只有the
 \Bthe  不宜the开头 但包含the
@@ -1120,15 +1252,21 @@ nfs 挂在需启动 service portmap start
 <Context path="" docBase="vegaga_sou-1.0.1" />  tomcat 需要
 
 --------------------------------2012.03.06---------------------------
-rfork_thread.S  是汇编
+rfork_thread.S 
+ 是汇编
 
 --------------------------------2012.03.07----------------------------
 http://www.baidu.com/search/url_submit.html谷歌Google提交入口：http://www.google.com/addurl雅虎Yahoo 提交入口：http://search.help.cn.yahoo.com/h4_4.html
-搜狐Sogou 提交入口：http://www.sogou.com/docs/help/webmasters.htm#01
-网易Yodao 提交入口：http://tellbot.yodao.com/report
-微软MSN Live Search 提交入口：http://search.msn.com/docs/submit.aspx?FORM=WSDD2
-新浪免费登录入口 http://bizsite.sina.com.cn/newbizsite/docc/index-2jifu-09.htm 
-中国搜索登陆入口 http://service.chinasearch.com.cn/NetSearch/user_register/user_register.jspTOM搜索* http://search.tom.com/tools/weblog/log.php腾迅Soso 提交入口：由于Soso搜搜网页搜索的搜索结果来自合作伙伴Google谷歌，因此关于网站收录与排序的问题，请查看谷歌相应的帮助文档。 
+
+搜狐Sogou 提交入口：http://www.sogou.com/docs/help/webmasters.htm#01
+
+网易Yodao 提交入口：http://tellbot.yodao.com/report
+
+微软MSN Live Search 提交入口：http://search.msn.com/docs/submit.aspx?FORM=WSDD2
+
+新浪免费登录入口 http://bizsite.sina.com.cn/newbizsite/docc/index-2jifu-09.htm 
+
+中国搜索登陆入口 http://service.chinasearch.com.cn/NetSearch/user_register/user_register.jspTOM搜索* http://search.tom.com/tools/weblog/log.php腾迅Soso 提交入口：由于Soso搜搜网页搜索的搜索结果来自合作伙伴Google谷歌，因此关于网站收录与排序的问题，请查看谷歌相应的帮助文档。 
 
 看你的mysql现在已提供什么存储引擎:
 mysql> show engines;
@@ -1147,7 +1285,9 @@ auto_increment mysql自增
 nmap -sP 192.168.88.1-254 查看存活的ip
 https://github.com/yahoo/l3dsr 类似lvs的负载软件
 tcp/ip illustrated tcp/ip 书
-单台机器网卡流量超过100M以上分析nginx日志攻击源的user-agent是一样的
+单台机器网卡流量超过100M以上
+分析nginx日志
+攻击源的user-agent是一样的
 ------------------------------2012.03.13--------------------------------
  aiCache 一款优秀的缓存软件类似varnish
 
@@ -1155,12 +1295,18 @@ tcp/ip illustrated tcp/ip 书
 能which的都是外部程序
 
 ------------------------------2012.03.15-----------------------------------
-sersync 数据同步软件
+sersync
+ 数据同步软件
 
 ------------------------------2012.03.20----------------------------------------
 fuser -mk /mount
 unmoun /mount  强制 卸载
-同一台设备，不同服务进程可以绑定同一端口么？孙鹤<sunheqiubai@qq.com>  17:05:30可以但是ip要不同好像还要把套接字设置成reuse属性但是一般都不这么干
+同一台设备，不同服务进程可以绑定同一端口么？
+孙鹤<sunheqiubai@qq.com>  17:05:30
+可以
+但是ip要不同
+好像还要把套接字设置成reuse属性
+但是一般都不这么干
 ------------------------------2012.03.21--------------------------
 ./ -name firsh.sh -exec mv {} /usr/local/src/ \;  把find到的东西移动到特定目录
 blkid 看分区的UUID 
@@ -2880,3 +3026,12 @@ class checkcode:
 grep -lr ‘string’ path/*
 例如：查找 home/web/www目录下的文件中包含 hello world 的字符串
 grep -lr ‘hello world’ /home/web/www
+
+-------------------------------------2012.12.03------------------------------
+[紧急求助]socket在read时提示Connection reset by peer错误
+对方发数据包，发送方的数据是全部发过来了。
+我这端接收时先read一部分处理，然后在read剩余的数据内容时就出错了。
+可能的原因：
+1、对方的导致描述字失效，例如在传递描述子的过程中失败导致丢失。
+2、对方关闭。例如close。
+3、其它的一些终止序列的动作，例如可能接受到RST。
