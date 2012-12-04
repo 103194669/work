@@ -3040,3 +3040,4 @@ grep -lr ‘hello world’ /home/web/www
 
 -------------------------------------2012.12.04------------------------------
 echo "abcd19,0,0,8,0,0,13,1,1,0.042990654" | cut -c 5- 19,0,0,8,0,0,13,1,1,0.042990654
+man高级用法  PAGER='less -iRsp "runlevel files"' man chkconfig
