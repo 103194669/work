@@ -3044,5 +3044,22 @@ man高级用法  PAGER='less -iRsp "runlevel files"' man chkconfig
 chkconfig: 2345 20 80 (这里作一下特殊说明:20 是该程序开机的启动优先级，值越小越优先；80是关机时的优先级，值越小越先关
 网页中端 ajaxterm
 
---------------------------------------2012.11.05-----------------------------
+--------------------------------------2012.12.05-----------------------------
 array="one two three" # echo ${array[0|@|*]}, 变量当做数组
+
+--------------------------------------2012.12.10-----------------------------------
+ 函数             描述
+ tolower(string)  字符串全部转换为小写字母
+ toupper(string)  字符串全部转换为大写字母 
+ strtonum(string)  字符串转换为数字 
+ lenght([string | array])  字符串或者数组长度
+ index(string, substring)  子字符串位置
+ match(string, regular_expression[, array])正则表达式匹配的位置
+ substr(string, start, [end])  取子字符串
+ split(string, array[, filed_separator])  分隔字符串
+ asort(array1, [array2])  排序数组值
+ asorti(array1, [array2])  排序数组索引
+ sub(regular_expression, substring[, target])替换查找到的字符串
+ gsub(regular_expression, substring[, target])  替换查找到的字符串 
+ sprintf(format, express_list)返回格式化字符串
+ 
