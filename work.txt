@@ -3062,4 +3062,6 @@ array="one two three" # echo ${array[0|@|*]}, 变量当做数组
  sub(regular_expression, substring[, target])替换查找到的字符串
  gsub(regular_expression, substring[, target])  替换查找到的字符串 
  sprintf(format, express_list)返回格式化字符串
- 
+------------------------------------------2012.12.11-------------------
+xlrd xlwt python读写excel
+pygdchart python换图库
