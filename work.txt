@@ -3065,3 +3065,4 @@ array="one two three" # echo ${array[0|@|*]}, 变量当做数组
 ------------------------------------------2012.12.11-------------------
 xlrd xlwt python读写excel
 pygdchart python换图库
+rrdrool 所需库 yum -y install zlib libpng freetype libart_lgpl libart_lgpl-devel libxml* pango*
