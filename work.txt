@@ -3079,3 +3079,4 @@ echo -e " This is a copyright \041 sign" 用asicii码打印字符
 expr $VALUE : '\(.*\).doc' 正则抽取 响应值
 ${#test} 输出字符串长度
 shift 参数偏移
+awk '{print $1}' <<< "123 12312 13" shell 输入
