@@ -3080,3 +3080,4 @@ expr $VALUE : '\(.*\).doc' 正则抽取 响应值
 ${#test} 输出字符串长度
 shift 参数偏移
 awk '{print $1}' <<< "123 12312 13" shell 输入
+grep -c processor /proc/cpuinfo 统计匹配行数
