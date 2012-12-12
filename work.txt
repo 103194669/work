@@ -3074,3 +3074,4 @@ Variable-name:?value如果未设置variable-name，显示未定义用户错误�
 Variable-name?value如果未设置variable-name，显示系统错误信息
 Variable-name:=value如果未设置variable-name，设置其值
 Variable-name:-value同上，但是取值并不设置到variable-name，可以被替换
+shell 特殊意义符号   & * + ^ $ ` " | ?
