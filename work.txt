@@ -3066,3 +3066,5 @@ array="one two three" # echo ${array[0|@|*]}, 变量当做数组
 xlrd xlwt python读写excel
 pygdchart python换图库
 rrdrool 所需库 yum -y install zlib libpng freetype libart_lgpl libart_lgpl-devel libxml* pango*
+------------------------------------------2012.12.12----------------------
+BASH_VERSINFO=([0]="3" [1]="2" [2]="25" [3]="1" [4]="release" [5]="x86_64-redhat-linux-gnu") bash 数组
