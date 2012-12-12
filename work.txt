@@ -3068,3 +3068,9 @@ pygdchart python换图库
 rrdrool 所需库 yum -y install zlib libpng freetype libart_lgpl libart_lgpl-devel libxml* pango*
 ------------------------------------------2012.12.12----------------------
 BASH_VERSINFO=([0]="3" [1]="2" [2]="25" [3]="1" [4]="release" [5]="x86_64-redhat-linux-gnu") bash 数组
+Variable-name=value设置实际值到variable-name
+Variable-name+value如果设置了variable-name，则重设其值
+Variable-name:?value如果未设置variable-name，显示未定义用户错误信息
+Variable-name?value如果未设置variable-name，显示系统错误信息
+Variable-name:=value如果未设置variable-name，设置其值
+Variable-name:-value同上，但是取值并不设置到variable-name，可以被替换
