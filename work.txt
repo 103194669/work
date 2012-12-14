@@ -3119,3 +3119,4 @@ python插入行用 fileinput
 xargs -I {} mv {} {}.old   -I 定义变量名 -i默认为变量{}  -t 打印操作过程 -d 修改输入的分隔符 -n1 一次打印几个字段
 cut -d: -f2-  file 从第二个 开始打印
 gnuplot  linux绘图工具
+“echo 2 > /proc/irq/90/smp_affinity” 的意思就是说把 90 中断绑定到 00000010
