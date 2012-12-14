@@ -3096,3 +3096,24 @@ ab+    以二进制读写模式打开 (参见 a+ )
 
 os.write(String)
 os.writelines(list)
+------------------------------------------2012.12.13-------------------------------------
+/proc/interrupts 
+$cat /proc/interrupts 
+           CPU0       CPU1       
+  0: 2822434225          0    IO-APIC-edge     timer
+  1:         12         45    IO-APIC-edge     i8042
+irq   cpu中断次数           可编程中断控制器 设备名称（request_irq的dev_name字段）
+IO-APIC，说明您的系统正在使用 APIC
+XT-PIC，意味着您的系统正在使用 8259A 芯片
+网卡最大传输 1518bytes DMAC目的MAC地址48bit=6Bytes + SMAC源MAC地址48bit=6Bytes + Type域
+2bytes + 帧尾CRC校验部分4Bytes == 18bytes 所以MTU最大为1500
+PPPoE 的 包头 8bytes  这时MTU为 1492
+MSS最大传输大小的缩写，是TCP协议里面的一个概念。
+MSS就是TCP数据包每次能够传输的最大数据分段。为了达到最佳的传输效能
+TCP协议在建立连接的时候通常要协商双方的MSS值，这个值TCP协议在实现的
+时候往往用MTU值代替（需要减去IP数据包包头的大小20Bytes和TCP数据段的
+包头20Bytes）所以往往MSS为1460。通讯双方会根据双方提供的MSS值得最小
+值确定为这次连接的最大MSS值。 
+python插入行用 fileinput
+
+xargs -I {} mv {} {}.old   -I 定义变量名 -i默认为变量{}  -t 打印操作过程 -d 修改输入的分隔符 -n1 一次打印几个字段
