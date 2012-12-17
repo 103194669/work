@@ -3129,3 +3129,5 @@ pushd 	 将目录压入目录堆栈
 变量 DIRSTACK
 变量 DIRSTACK 是一个 shell 数组变量，其值保存了当前目录堆栈的内容。数组依次保存了目录堆栈从栈顶开始的 entry。
 DIRSTACK[0] 保存了第 1 个 entry，DIRSTACK[1] 保存了第 2 个 entry，依次类推。
+
+exec函数族，顾名思义，就是一簇函数，他把当前进程映像替换成新的程序文件。pid不变
