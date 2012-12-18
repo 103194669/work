@@ -3137,3 +3137,18 @@ date -R 显示当前时区 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime �
 python optparse 处理命令行参数 
 python ConfigParser 读取配置文件
 Psyco 提高python性能
+算法时间负责度 O(1) -> O(lg n) -> O(n lg n) -> O(n)-> O(n^2) -> O(n^3) -> O(n^k) -> O(k^n) -> O(n!) 
+
+set 的 union， intersection，difference 操作要比 list 的迭代要快。因此如果涉及到求 list 交集，
+并集或者差的问题可以转换为 set 来操作。 
+表 1. set 常见用法
+语法 操作 说明
+set(list1) | set(list2) union 包含 list1 和 list2 所有数据的新集合
+set(list1) & set(list2) intersection 包含 list1 和 list2 中共同元素的新集合
+set(list1) - set(list2) difference 在 list1 中出现但不在 list2 中出现的元素的集合
+
+补上：
+set(list1) ^ set(list2) 异或，不同时在list1和list2中的元素的集合，等价于 (set(list1) | 
+set(list2)) - (set(list1) & set(list2)) <==> (set(list1) - set(list2)) + (set(list2) - set(list1)) 
+
+eclipse weblogic 集成环境 Oracle Enterprise Pack for Eclipse  http://www.oracle.com/technetwork/developer-tools/eclipse/downloads/index.html
