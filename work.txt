@@ -3136,6 +3136,7 @@ repr 会按照输入的相同模式显示。
 date -R 显示当前时区 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 设置东八区
 python optparse 处理命令行参数 
 python ConfigParser 读取配置文件
+python -m timeit -s 'print 123' python脚本的执行速度测试
 Psyco 提高python性能
 算法时间负责度 O(1) -> O(lg n) -> O(n lg n) -> O(n)-> O(n^2) -> O(n^3) -> O(n^k) -> O(k^n) -> O(n!) 
 
@@ -3150,5 +3151,25 @@ set(list1) - set(list2) difference 在 list1 中出现但不在 list2 中出现�
 补上：
 set(list1) ^ set(list2) 异或，不同时在list1和list2中的元素的集合，等价于 (set(list1) | 
 set(list2)) - (set(list1) & set(list2)) <==> (set(list1) - set(list2)) + (set(list2) - set(list1)) 
+在字符串连接的使用尽量使用 join() 而不是 +
+同时要避免：
+s = ""
+for x in list:
+s += func(x)
+
+而是要使用：
+slist = [func(elt) for elt in somelist]
+s = "".join(slist) 
+str.isalpha()，str.isdigit()，str.startswith(('x', 'yz'))，str.endswith(('x', 'yz'))  能用内部函数就用内部函数
+使用列表解析 a = [w for w in list if w>1]   使用生成器会更快 a = (w for w in list) 
+总结：字符串的连接操作，最好是先append到一个list，然后在用list的join操作。对字符串进行格式化比字符串相加操作要快。 
+总结：交换两个变量：a, b = b, a。同样，对于三个变量进行交换：a, b, c = b, c, a，
+初始化时使用a, b = 1, 2 要比用第三方变量快
+总结：使用x < y < z 而不是x < y and y < z
+while 1 要比 while True 更快（当然后者的可读性更好）；
+中 Profiler 是 python 自带的一组程序，能够描述程序运行时候的性能
+
+ERP是Enterprise Resource Planning（企业资源计划）的简称
+CRM（Customer Relationship Management）即客户关系管理
 
 eclipse weblogic 集成环境 Oracle Enterprise Pack for Eclipse  http://www.oracle.com/technetwork/developer-tools/eclipse/downloads/index.html
