@@ -3134,4 +3134,6 @@ exec函数族，顾名思义，就是一簇函数，他把当前进程映像替�
 --------------------------------------------2012.12.18---------------------------------------
 repr 会按照输入的相同模式显示。
 date -R 显示当前时区 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 设置东八区
-python optparse 处理命令行参数  
+python optparse 处理命令行参数 
+python ConfigParser 读取配置文件
+Psyco 提高python性能
