@@ -3171,5 +3171,5 @@ while 1 要比 while True 更快（当然后者的可读性更好）；
 
 ERP是Enterprise Resource Planning（企业资源计划）的简称
 CRM（Customer Relationship Management）即客户关系管理
-
+fabric 运维批量管理模块
 eclipse weblogic 集成环境 Oracle Enterprise Pack for Eclipse  http://www.oracle.com/technetwork/developer-tools/eclipse/downloads/index.html
