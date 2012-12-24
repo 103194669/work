@@ -3173,3 +3173,10 @@ ERP是Enterprise Resource Planning（企业资源计划）的简称
 CRM（Customer Relationship Management）即客户关系管理
 fabric 运维批量管理模块
 eclipse weblogic 集成环境 Oracle Enterprise Pack for Eclipse  http://www.oracle.com/technetwork/developer-tools/eclipse/downloads/index.html
+------------------------------------2012.12.24---------------------
+Python提供了ord和chr两个内置的函数，用于字符与ASCII码之间的转换。如：
+>>> print ord('a')
+97
+>>> print chr(97)
+a
+hex 十进制转十六进制
