@@ -3191,4 +3191,4 @@ base64模块是用来作base64编码解码的
     2、encodestring,decodestring：用来编码和解码字符串
     3、b64encode和b64decode：用来编码和解码字符串，并且有一个替换符号字符的功能
 www.google.com/ncr  no country redirect 或 https://www.google.com
-
+sed 's/\<s\>/2/g'  <> 限定界限
