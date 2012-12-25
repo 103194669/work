@@ -3179,4 +3179,10 @@ Python提供了ord和chr两个内置的函数，用于字符与ASCII码之间的
 97
 >>> print chr(97)
 a
-hex 十进制转十六进制
+------------------------------------2012.12.25------------------------
+hex 十进制转十六进制 oct 转8进制 bin 转2进制  int 转十进制 
+调用BinAscii模块其中的b2a_hex()函数，可把以ASCII编码的文字以十六进制表示：
+>>> print binascii.b2a_hex('A')
+41
+反之也可把以十六进制表示的文字，换成以ASCII编码的文字：
+>>> print binascii.a2b_hex('41')
