@@ -3190,5 +3190,5 @@ base64模块是用来作base64编码解码的
     1、encode,decode：用来编码和 解码文件的,也可以对StringIO里的数据做编解码
     2、encodestring,decodestring：用来编码和解码字符串
     3、b64encode和b64decode：用来编码和解码字符串，并且有一个替换符号字符的功能
-
+www.google.com/ncr  no country redirect 或 https://www.google.com
 
