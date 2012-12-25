@@ -3183,7 +3183,7 @@ a
 hex 十进制转十六进制 oct 转8进制 bin 转2进制  int 转十进制 
 调用BinAscii模块其中的b2a_hex()函数，可把以ASCII编码的文字以十六进制表示：
 >>> print binascii.b2a_hex('A')
-41
+41 
 反之也可把以十六进制表示的文字，换成以ASCII编码的文字：
 >>> print binascii.a2b_hex('41')
 base64模块是用来作base64编码解码的 
@@ -3192,3 +3192,4 @@ base64模块是用来作base64编码解码的
     3、b64encode和b64decode：用来编码和解码字符串，并且有一个替换符号字符的功能
 www.google.com/ncr  no country redirect 或 https://www.google.com
 sed 's/\<s\>/2/g'  <> 限定界限
+SmartSniff抓包工具
