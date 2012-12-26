@@ -3215,3 +3215,8 @@ count += 1
 count统计出现的次数，可用于list str 等
 pyuic4 test.ui > test_ui.py   ui文件生成 py
 notapad++  运行python cmd /k python "$(FULL_CURRENT_PATH)" & ECHO. & PAUSE & EXIT
+ljust（左对齐），rjust（右对齐），center（中间对齐）来输出整齐美观的字符串，使用起来非常简单，包括使用第二个参数填充（默认为空格）。
+看下面的例子就会明白了： 
+print '|','*'.ljust(10),'|' 
+print '|','*'.ljust(10,'-'),'|'
+
