@@ -3209,3 +3209,7 @@ for count, line in enumerate(open(thefilepath, 'rU')):
     pass
 count += 1
 比较快的方法
+>>> a = "aaadfaaasdf"
+>>> print a.count("a")
+6
+count统计出现的次数，可用于list str 等
