@@ -3214,3 +3214,4 @@ count += 1
 6
 count统计出现的次数，可用于list str 等
 pyuic4 test.ui > test_ui.py   ui文件生成 py
+notapad++  运行python cmd /k python "$(FULL_CURRENT_PATH)" & ECHO. & PAUSE & EXIT
