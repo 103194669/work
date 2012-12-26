@@ -3213,3 +3213,4 @@ count += 1
 >>> print a.count("a")
 6
 count统计出现的次数，可用于list str 等
+pyuic4 test.ui > test_ui.py   ui文件生成 py
