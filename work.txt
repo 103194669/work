@@ -3228,3 +3228,5 @@ python enumerate 用法 | 在for循环中得到计数
 >>> print list(e)
 [(0, 'a'), (1, 'b'), (2, 'c')]
 python -m trace --trace test.py  python的调试追踪
+weblogic mod_wl128_20.so apache2.0 128位加密  mod_wl128_22.so apache2.2 128位加密  mod_wl_20.so  mod_wl_22.so
+http://docs.oracle.com/cd/E13222_01/wls/docs81/plugins/apache.html#120648
