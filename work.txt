@@ -3227,3 +3227,4 @@ python enumerate 用法 | 在for循环中得到计数
 >>> e = enumerate(a)
 >>> print list(e)
 [(0, 'a'), (1, 'b'), (2, 'c')]
+python -m trace --trace test.py  python的调试追踪
