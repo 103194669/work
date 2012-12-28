@@ -3232,3 +3232,5 @@ weblogic mod_wl128_20.so apache2.0 128位加密  mod_wl128_22.so apache2.2 128�
 http://docs.oracle.com/cd/E13222_01/wls/docs81/plugins/apache.html#120648
 cat /proc/sys/fs/file-max  最大硬件文件描述符限制
 net.ipv4.ip_conntrack_max = 10240 最大追踪 ip数
+---------------------------------2012.12.28-------------------------------------------
+blkparse 硬盘测试工具
