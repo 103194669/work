@@ -3234,3 +3234,4 @@ cat /proc/sys/fs/file-max  最大硬件文件描述符限制
 net.ipv4.ip_conntrack_max = 10240 最大追踪 ip数
 ---------------------------------2012.12.28-------------------------------------------
 blkparse 硬盘测试工具
+提高ssh登陆速度 修改服务器端的sshd_config(/etc/ssh/ssd_config)：GSSAPIAuthentication no
