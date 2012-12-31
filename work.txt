@@ -3241,3 +3241,6 @@ tar xvf a.tar.gz -C /tmp 解压到指定目录
 　　主版本号 . 子版本号 [. 修正版本号 [. 编译版本号 ]]
 echo "3" > /proc/sys/vm/drop_caches   linux 清理cache
 ulimit -t 300  cpu执行时间硬限制， 超过300秒 自杀
+sysctl -a | grep swappiness
+vm.swappiness = 60
+它的含义是：如果系统需要内存，有百分之六十的概率执行SWAP。
