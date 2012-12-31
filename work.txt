@@ -3245,3 +3245,4 @@ sysctl -a | grep swappiness
 vm.swappiness = 60
 它的含义是：如果系统需要内存，有百分之六十的概率执行SWAP。
 numactl --hardware 查看每个cpu 分配的内存
+grep “abc” test.txt &> /dev/null  输出从定向
