@@ -3271,7 +3271,13 @@ socket.ntohl(x)         // 类似于C语言的ntohl(x) 把32位正整数从网�
 socket.ntohs(x)        // 类似于C语言的ntohs(x) 把16位正整数从网络序转换成主机字节序。
 socket.htonl(x)         // 类似于C语言的htonl(x) 把32位正整数从主机字节序转换成网络序。
 socket.htons(x)        // 类似于C语言的htons(x) 把16位正整数从主机字节序转换成网络序。
-socket.inet_aton(ip_string)  // 依赖于inet_aton的C实现转换IPV4地址字符串（192.168.10.8）成为32位打包的二进格式（长度为4个字节的二进制字符串），它不支持IPV6。inet_pton()支持IPV4/IPV6地址格式。
+socket.inet_aton(ip_string)  // 依赖于inet_aton的C实现转换IPV4地址字符串（192.168.10.8）成为32位打包的二进格式
+				（长度为4个字节的二进制字符串），它不支持IPV6。inet_pton()支持IPV4/IPV6地址格式。
 socket.inet_ntoa(packed_ip) 换32位打包的IPV4地址为IP地址的标准点号分隔字符串表示。
-socket.inet_pton(address_family,ip_string)转换IP地址字符串为打包二进制格式。地址家族为AF_INET和AF_INET6，它们分别表示IPV4和IPV6。
+socket.inet_pton(address_family,ip_string) 转换IP地址字符串为打包二进制格式。地址家族为AF_INET和AF_INET6，它们分
+					别表示IPV4和IPV6。
 socket.inet_ntop(address_family,packed_ip) 转换一个打包IP地址为标准字符串表达式，例如：“5aef:2b::8”或“127.0.0.1”。
+
+分 片偏移：这个13位的字段表示这个分片在整个数据报中的相对位置。是在原始数据报中的数据偏移量，以8字节为度量单位。
+这样做是因为分片偏移字段只有 13bit长，它不能表示超过8191的字节数。而IP数据报最大的长度为65535字节，因此按8字节为
+单位可以用13位来表示更多的字节。把数据报进 行分片的主机或路由器必须选择每个分片的长度，使得这个长度可以被8整除。
