@@ -3286,3 +3286,4 @@ python 无符号数 ctypes.c_uint32(-1).value
 -------------------------------2013.01.06----------------------------------
 pyc python -m py_compile file.py
 pyo python -O -m py_compile file.py
+python "%d%%" % a  打印百分号 %%
