@@ -3296,4 +3296,6 @@ python "%d%%" % a  打印百分号 %%
 题解决了，是没有处理信号，如果子进程退出时，主进程不需要处理资源释放问题，就可以加入一句
 import signal
 signal.signal(signal.SIGCHLD,signal.SIG_IGN)
-这样就不会产生“僵尸”进程了，
+这样就不会产生“僵尸”进程了
+
+about:plugins 火狐插件查看
