@@ -3313,3 +3313,7 @@ sorted(L),对L排序后并返回排序后的新列表。 a 不变
 recv 接收数据不带地址  recvfrom 接收数据带地址
 ifconfig eth1 promisc  设置混杂模式
 ifconfig eth1 -promisc 取消混杂模式
+
+-----------------------------2013.01.08-----------------------------------------
+文件描述符是标准 C 里用的，是 int 型的，比如调用 open 函数成功后会返回一个与当前文件相关联的 int 型数字。
+文件句柄是 Windows 里用的，是 HANDLE 型的，比如创建文件 CreateFile 返回一个 HANDLE 型的值。 
