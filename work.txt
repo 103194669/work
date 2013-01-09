@@ -3348,3 +3348,4 @@ net.ipv4.tcp_keepalive_time = 160
 最小数据报 ipv4 576字节 ipv6 1500 字节
 unix 5个io模型
 阻塞 非阻塞 io复用（select，poll） 信号驱动 异步io
+
