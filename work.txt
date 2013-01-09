@@ -3336,3 +3336,11 @@ TIME_WAIT //另一边已初始化一个释放
 LAST_ACK //等待所有分组死掉
 
 在T I M E WA I T状态中收到一个R S T引起状态过早地终止。这就叫作T I M E WA I T断开
+tcp_keepalive_intvl:探测消息发送的频率
+tcp_keepalive_probes:TCP发送keepalive探测以确定该连接已经断开的次数
+tcp_keepalive_time:当keepalive打开的情况下，TCP发送keepalive消息的频率
+
+[root@ccsafe ~]# sysctl -a|grep tcp_keepalive
+net.ipv4.tcp_keepalive_intvl = 30
+net.ipv4.tcp_keepalive_probes = 2
+net.ipv4.tcp_keepalive_time = 160
