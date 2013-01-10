@@ -3350,3 +3350,14 @@ unix 5个io模型
 阻塞 非阻塞 io复用（select，poll） 信号驱动 异步io
 -----------------------------------2013.01.10-------------------------
 drwxr-x--- 2 root root     4096 Dec 18 19:53 bea  2 表示硬链接数
+stack 先进后出，向下增长 heap(堆) 会向上增长， 两个相遇 进程会出现栈溢出(stack overflow)的错误，导致进程终止
+exec的时候，进程清空自身内存空间的text, global data, heap和stack
+fork 拷贝自身内存空间的text, global data, heap和stack
+多线程的进程在内存中会有多个stack，相互之间以一定的空白区域隔开，以备stack的增长。每个线程随时可以使用自己stack
+中最下方的stack frame中的参数和变量，并与其它线程共享内存中的Text，heap和global data区域。
+(要注意的是，对于多线程来说，由于同一个进程空间中存在多个stack，任何一个空白区域被填满都会导致stack overflow的问题。)
+WiFi的工作方式与集线器连接下的以太网类似。一个WiFi设备会向所有的WiFi设备发送帧，其它的WiFi设备检查自己是否符合DST。
+帧本身是一段有限的0/1序列。它可以分为头部、数据(Payload)和尾部三部分:
+Preamble 	SFD 	DST 	SRC 	Type 	Payload (Data) 	Pad 	FCS 	Extension
+7bytes          1bytes  6       6       4                               CRC4         
+帧按照上面的顺序从头到尾依次被发送/接收。我们下面进一步解释各个区域。
