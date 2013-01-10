@@ -3361,3 +3361,10 @@ WiFi的工作方式与集线器连接下的以太网类似。一个WiFi设备会
 Preamble 	SFD 	DST 	SRC 	Type 	Payload (Data) 	Pad 	FCS 	Extension
 7bytes          1bytes  6       6       4                               CRC4         
 帧按照上面的顺序从头到尾依次被发送/接收。我们下面进一步解释各个区域。
+router(Gateway 0.0.0.0 = “本地送信”
+
+pidof /usr/local/python27/bin/python 可以得出filename正在运行的进程
+用md5sum保存一个全局的文件
+find /sbin -type f|xargs md5sum >1st
+检查是否改变
+md5sum -c 1st|grep OK
