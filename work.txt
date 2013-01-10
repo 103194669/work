@@ -3375,3 +3375,7 @@ TCP混乱数据包攻击
 
 os.wait函数用于等待子进程结束(只适用于UNIX兼容系统)。该函数返回包含两个元素的元组，包括已完成的子进程号pid。
 以及子进程的退出状态，返回状态为0，表明子进程成功完成。返回状态为正整数表明子进程终止时出错。
+
+oracle  登陆 system/manager
+drop user zfmi cascade; 删除用户
+commit 提交
