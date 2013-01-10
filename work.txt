@@ -3383,3 +3383,14 @@ commit 提交
 127.0.0.1 localhost.localdomain localhost
 hosts文件格式是一行一条记录，分别是IP地址 hostname aliases，三者用空白字符分隔，aliases可选。
 print s1[0:5:2]          # 从下标0到下标4 (下标5不包括在内)，每隔2取一个元素 （下标为0，2，4的元素）
+利用zip(), 实现并行循环
+
+如果你多个等长的序列，然后想要每次循环时从各个序列分别取出一个元素，可以利用zip()方便地实现：
+
+ta = [1,2,3]
+tb = [9,8,7]
+tc = ['a','b','c']
+for (a,b,c) in zip(ta,tb,tc):
+    print a,b,c
+
+实际上，zip()在每次循环时，从各个序列分别从左到右取出一个元素，合并成一个tuple，然后tuple的元素赋予给a,b,c
