@@ -3368,3 +3368,10 @@ pidof /usr/local/python27/bin/python 可以得出filename正在运行的进程
 find /sbin -type f|xargs md5sum >1st
 检查是否改变
 md5sum -c 1st|grep OK
+TCP全连接攻击
+用UDP协议的攻击
+TCP混乱数据包攻击
+发送伪造源IP的 TCP数据包，TCP头的TCP Flags 部分是混乱的可能是syn,ack,syn+ack,syn+rst等等，会造成一些防火墙处理错误锁死
+
+os.wait函数用于等待子进程结束(只适用于UNIX兼容系统)。该函数返回包含两个元素的元组，包括已完成的子进程号pid。
+以及子进程的退出状态，返回状态为0，表明子进程成功完成。返回状态为正整数表明子进程终止时出错。
