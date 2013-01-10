@@ -3379,3 +3379,6 @@ os.wait函数用于等待子进程结束(只适用于UNIX兼容系统)。该函�
 oracle  登陆 system/manager
 drop user zfmi cascade; 删除用户
 commit 提交
+
+127.0.0.1 localhost.localdomain localhost
+hosts文件格式是一行一条记录，分别是IP地址 hostname aliases，三者用空白字符分隔，aliases可选。
