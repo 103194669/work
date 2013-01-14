@@ -3442,3 +3442,4 @@ keepalive之后可以有多少时间没有回应tcp_keepalive_time ：INTEGER
 ipvsadm -L --timeout查看,默认是900 120 300,分别是TCP TCPFIN UDP的时间.也就是说一条tcp的连接经过lvs后,lvs会把这台记录保
 存15分钟,而不管这条连接是不是已经失效! 可通过 ipvsadm --set 5 10 300 设置该值
 strace -o st.log -e trace=all  cat first.sh 追踪某个程序的运行过程保存到 st.log  文件中 trace= 可以自定义 
+ldconfig -p  显示加载库
