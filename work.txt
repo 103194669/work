@@ -3436,4 +3436,6 @@ tcp_retries2:在丢弃激活(已建立通讯状况)的TCP连接之前﹐需要�
 /proc/sys/net/ipv4/tcp_keepalive_probes
 在认定连接失效之前，发送多少个TCP的keepalive探测包。缺省值是9。这个值乘以tcp_keepalive_intvl之后决定了，一个连接发送了
 keepalive之后可以有多少时间没有回应tcp_keepalive_time ：INTEGER
+-------------------------------------------2013.01.14------------------------
+查看内存使用情况 pmap命令   pmap pid  
 
