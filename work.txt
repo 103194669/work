@@ -3439,3 +3439,5 @@ keepalive之后可以有多少时间没有回应tcp_keepalive_time ：INTEGER
 -------------------------------------------2013.01.14------------------------
 查看内存使用情况 pmap命令   pmap pid  
 /sys/block/sda/queue/read_ahead_kb  内核磁头优化参数
+ipvsadm -L --timeout查看,默认是900 120 300,分别是TCP TCPFIN UDP的时间.也就是说一条tcp的连接经过lvs后,lvs会把这台记录保
+存15分钟,而不管这条连接是不是已经失效!
