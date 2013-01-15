@@ -3444,3 +3444,6 @@ ipvsadm -L --timeout查看,默认是900 120 300,分别是TCP TCPFIN UDP的时间
 strace -o st.log -e trace=all  cat first.sh 追踪某个程序的运行过程保存到 st.log  文件中 trace= 可以自定义 
 ldconfig -p  显示进程加载库 ldd /bin/bash 显示文件加载库
 linux的解析顺序是在 /etc/host.conf 中配置的
+
+-------------------------------------------2013.01.15--------------------
+tcp常用的选项段包括：1.窗口扩大选项  2.时间戳选项  3.MMS选项等
