@@ -3453,3 +3453,14 @@ tcp，udp校验和还包含—个96位的伪首标，理论上它位于TCP首标
 服务类型（TO S）字段包括一个3 bit的优先权子字段（现在已被忽略），4 bit的TO S子字
 段和1 bit未用位但必须置0。4 bit的TO S分别代表：最小时延、最大吞吐量、最高可靠性和最
 小费用。4 bit中只能置其中1 bit。如果所有4 bit均为0，那么就意味着是一般服务。
+--------------------------------------------2013.01.18------------------------
+proc 系统
+mount -t proc none /proc
+也可以在/etc/fstab中加入如下一行使系统在启动时自动加载procfs(大多数系统中也是默认如此)：
+none /proc proc defaults 0 0 
+
+1. /proc/sys/net/core/rmem_max — 最大的TCP数据接收缓冲
+2. /proc/sys/net/core/wmem_max — 最大的TCP数据发送缓冲
+3. /proc/sys/net/ipv4/tcp_timestamps — 时间戳在(请参考RFC 1323)TCP的包头增加12个字节
+4. /proc/sys/net/ipv4/tcp_sack — 有选择的应答
+5. /proc/sys/net/ipv4/tcp_window_scaling — 支持更大的TCP窗口. 如果TCP窗口最大超过65535(64K), 必须
