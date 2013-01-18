@@ -3464,3 +3464,15 @@ none /proc proc defaults 0 0
 3. /proc/sys/net/ipv4/tcp_timestamps — 时间戳在(请参考RFC 1323)TCP的包头增加12个字节
 4. /proc/sys/net/ipv4/tcp_sack — 有选择的应答
 5. /proc/sys/net/ipv4/tcp_window_scaling — 支持更大的TCP窗口. 如果TCP窗口最大超过65535(64K), 必须
+
+# more /proc/sys/vm/bdflush
+40 0 0 0 500 3000 60 0 0
+第一个数：在"dirty"缓冲区达到多少的时候强制唤醒bdflush进程刷新硬盘，
+第二个数：每次让bdflush进程刷新多少个dirty块。所谓dirty块是必须写到磁盘中的缓存块。接下的数：每次允许bd flush将多少
+个内存块排入空闲的缓冲块列表。
+修改方法
+# echo "100 128 128 512 5000 3000 60 0 0">/proc/sys/vm/bdflush 并将这条命令加到/etc/rc.d/rc.local文件中去。
+以上的设置加大了缓冲区大小，降低了bdflush被启动的频度，同时也增加了万一系统崩溃丢失数据的危险性。VFS的缓冲刷新是Linux
+文件系统高效的重要原因之一。
+
+strings命令 二进制转化为字符
