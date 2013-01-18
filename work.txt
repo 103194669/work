@@ -3476,3 +3476,4 @@ none /proc proc defaults 0 0
 文件系统高效的重要原因之一。
 
 strings命令 二进制转化为字符
+tcpdump -w - dst port 80 输出抓包内容
