@@ -2359,7 +2359,7 @@ python 编码转换  print a.decode('utf-8').encode('gbk')
 python 反转字符串 print a[::-1]
 python 字符串转整形 string.atoi("123")
 python 列表操作
-list.append() 追加 list.coutn(x) 列表中x出现的次数 list.extend(l) 追加列表l  list.index(x) x的位置 list.insert(2,"a") 在2插入a list.pop() 删除成员 按索引  list.remove() 按成员 list.reverse() 倒序 list.sort（）排序
+list.append() 追加 list.count(x) 列表中x出现的次数 list.extend(l) 追加列表l  list.index(x) x的位置 list.insert(2,"a") 在2插入a list.pop() 删除成员 按索引  list.remove() 按成员 list.reverse() 倒序 list.sort（）排序
 dic.clesr() 清空字典  dic.copy() 复制字典 dic.get(k) 获取看k 的值  dic.has_key(k) 是否包含键k  dic.keys（） 获取见的列表  dic.pop(k) 删除建k  dic.update（） 更新成员 dic.values() 获取键值列表 dic.items（） 由建和值组成的列表
 
 def abc（a=1，b=2） 调用 abc（None，3） 只给后一个传参
@@ -2440,14 +2440,16 @@ find path -iregex "xxx"
 但是给出的正则表达式必须要匹配完整的文件路径
 比如：find / -regex "find" 这样子是找不到/usr/bin/find的，要像这样find / -regex ".*find"或者更精确一点find / -regex ".*/find"
 如果要使用扩展的正则表达式，对于BSD系的find可以在路径名前加一个"-E"选项
-GNU的find支持多种风格的正则表达式，用-regextype 指定所使用的正则表达式类型，可选的有emacs(默认)，posix-awk，posix-basic，posix-egrep，posix-extended，喜欢了grep -E，所以我就用posix-egrep了
+GNU的find支持多种风格的正则表达式，用-regextype 指定所使用的正则表达式类型，可选的有emacs(默认)，
+posix-awk，posix-basic，posix-egrep，posix-extended，喜欢了grep -E，所以我就用posix-egrep了
 
 find / -regextype "posix-egrep" -regex ".*/find"
 
 
 -------------------------------------------2012.08.15-------------------------------
 sar -n DEV 1 10 网卡事实流量 
-awk '{printf("%-10s\n",$1)}' 宽度10左对齐 awk '{printf("%10s\n",$1)}' 宽度10右对其   awk '{printf("%*s\n"，10,$1)}' 宽度10右对其   awk -F: '{a=15;printf( "%-*s| %*s|\n ",15,$1,20,$NF)}' 多参数对齐
+awk '{printf("%-10s\n",$1)}' 宽度10左对齐 awk '{printf("%10s\n",$1)}' 宽度10右对其   
+awk '{printf("%*s\n"，10,$1)}' 宽度10右对其   awk -F: '{a=15;printf( "%-*s| %*s|\n ",15,$1,20,$NF)}' 多参数对齐
 
 -------------------------------------------2012.08.16-------------------------------
 Referer	http://www.vegaga.com/  http请求头 页面来自哪个 请求
@@ -2480,13 +2482,17 @@ arp_announce : INTEGER
 
 0 - (默认) 在任意网络接口上的任何本地地址
 
-1 -尽量避免不在该网络接口子网段的本地地址. 当发起ARP请求的源IP地址是被设置应该经由路由达到此网络接口的时候很有用.此时会检查来访IP是否为所有接口上的子网段内ip之一.如果改来访IP不属于各个网络接口上的子网段内,那么将采用级别2的方式来进行处理.
+1 -尽量避免不在该网络接口子网段的本地地址. 当发起ARP请求的源IP地址是被设置应该经由路由达到此网络接口的时候很有用.此时
+会检查来访IP是否为所有接口上的子网段内ip之一.如果改来访IP不属于各个网络接口上的子网段内,那么将采用级别2的方式来进行处理.
 
-2 - 对查询目标使用最适当的本地地址.在此模式下将忽略这个IP数据包的源地址并尝试选择与能与该地址通信的本地地址.首要是选择所有的网络接口的子网中外出访问子网中包含该目标IP地址的本地地址. 如果没有合适的地址被发现,将选择当前的发送网络接口或其他的有可能接受到该ARP回应的网络接口来进行发送
+2 - 对查询目标使用最适当的本地地址.在此模式下将忽略这个IP数据包的源地址并尝试选择与能与该地址通信的本地地址.首要是选择
+所有的网络接口的子网中外出访问子网中包含该目标IP地址的本地地址. 如果没有合适的地址被发现,将选择当前的发送网络接口或其
+他的有可能接受到该ARP回应的网络接口来进行发送
 
 all/ 和{interface}/ 下两者同时比较，取较大一个值生效.
 
-提高约束级别有益于从指定的目标接受应答,而降低级别可以给予更多的arp查询者以反馈信息(关于arp代理这一段我普遍翻译地不好，去啃一下tcp/ip bible的卷一，然后再翻译吧)
+提高约束级别有益于从指定的目标接受应答,而降低级别可以给予更多的arp查询者以反馈信息(关于arp代理这一段我普遍翻译地不好，
+去啃一下tcp/ip bible的卷一，然后再翻译吧)
 
 arp_ignore : INTEGER
 
@@ -2494,13 +2500,18 @@ arp_ignore : INTEGER
 
 定义对目标地址为本地IP的ARP询问不同的应答模式
 
-0 - (默认值): 回应任何网络接口上对任何本地IP地址的arp查询请求（比如eth0=192.168.0.1/24,eth1=10.1.1.1/24,那么即使eth0收到来自10.1.1.2这样地址发起的对10.1.1.1 的arp查询也会回应--而原本这个请求该是出现在eth1上，也该有eth1回应的）
+0 - (默认值): 回应任何网络接口上对任何本地IP地址的arp查询请求（比如eth0=192.168.0.1/24,eth1=10.1.1.1/24,那么即使eth0
+收到来自10.1.1.2这样地址发起的对10.1.1.1 的arp查询也会回应--而原本这个请求该是出现在eth1上，也该有eth1回应的）
 
-1 - 只回答目标IP地址是来访网络接口本地地址的ARP查询请求（比如eth0=192.168.0.1/24,eth1=10.1.1.1/24,那么即使eth0收到来自10.1.1.2这样地址发起的对192.168.0.1的查询会回答，而对10.1.1.1 的arp查询不会回应）
+1 - 只回答目标IP地址是来访网络接口本地地址的ARP查询请求（比如eth0=192.168.0.1/24,eth1=10.1.1.1/24,那么即使eth0收到来
+自10.1.1.2这样地址发起的对192.168.0.1的查询会回答，而对10.1.1.1 的arp查询不会回应）
 
-2 -只回答目标IP地址是来访网络接口本地地址的ARP查询请求,且来访IP必须在该网络接口的子网段内（比如eth0=192.168.0.1/24,eth1=10.1.1.1/24,eth1收到来自10.1.1.2这样地址发起的对192.168.0.1的查询不会回答，而对192.168.0.2发起的对192.168.0.1的arp查询会回应）
+2 -只回答目标IP地址是来访网络接口本地地址的ARP查询请求,且来访IP必须在该网络接口的子网段内（比如eth0=192.168.0.1/24,
+eth1=10.1.1.1/24,eth1收到来自10.1.1.2这样地址发起的对192.168.0.1的查询不会回答，而对192.168.0.2发起的对192.168.0.1的
+arp查询会回应）
 
-3 - 不回应该网络界面的arp请求，而只对设置的唯一和连接地址做出回应(do not reply for local addresses configured with scope host,only resolutions for global and link addresses are replied 翻译地似乎不好，这个我的去问问人)
+3 - 不回应该网络界面的arp请求，而只对设置的唯一和连接地址做出回应(do not reply for local addresses configured with 
+scope host,only resolutions for global and link addresses are replied 翻译地似乎不好，这个我的去问问人)
 
 4-7 - 保留未使用
 
@@ -2514,7 +2525,9 @@ find -mmin +10  10 分钟前 修改的
 split -b 5m q q_block  把q文件分成 5m一个的小文件  q_blockaa q_blockab q_blockac q_blockad q_blockae q_blockaf q_blockag
 
 find ./ -name '*.bak' | xargs rm -rf
-一般情况，上面这个命令运行的很好，但是如果找到的文件名代空格上面的命令运行就可能会出问题了有一个参数-print0，于默认的-print相比，输出的序列不是以空格分隔，而是以null字符分隔。而xargs也有一个参数-0，可以接受以null而非空格间隔的输入流。所以说xargs简直就是为find而生的。上面的问题就很好解决了：
+一般情况，上面这个命令运行的很好，但是如果找到的文件名代空格上面的命令运行就可能会出问题了有一个参数-print0，
+于默认的-print相比，输出的序列不是以空格分隔，而是以null字符分隔。而xargs也有一个参数-0，可以接受以null而非空格间隔的
+输入流。所以说xargs简直就是为find而生的。上面的问题就很好解决了：
 find ./ -name '*.bak' -print0 | xargs -0 rm -rf
 
 dir 可以获取模块定义的函数名称列表 
@@ -2523,6 +2536,7 @@ dir 可以获取模块定义的函数名称列表
 find . -type d -empty |xargs rm -rf
 
 --------------------------------------------2012.08.23------------------------------------------------
+echo 详解
 元字符
 .:匹配任意单个字符
 []：指定范围内的任意单个字符
@@ -2590,16 +2604,20 @@ nginx alias无法在正则的location中使用。如果有这种需求，则必�
 
 ---------------------------------------2012.09.14---------------------
 Vary:Accept-Encoding的用途  
-查看网页的response header一般都有Vary头（服务器支持压缩的都有），意思是说squid要把客户端传来的某个头区别对待，譬如Vary:Accept-Encoding，
-客户端发来Accept-Encoding:gzip（MSIE）, deflate时squid会为gzip, deflate做一个存档；如果客户端没发来Accept-Encoding这个头(wget)，squid又
-会为无Accept-Encoding做另一个存档；这两个存档的内容是不一样的，gzip, deflate的是压缩后的内容，一堆乱码，无Accept-Encoding的则是网页源码。
-知道了Vary的原理，剩下的事就容易了，在网页输出时加上Vary:User-Agent，意味着squid要为每一种User-Agent存一个存档，nginx里这样配置即可：
-add_header Vary Accept-Encoding;
-这时网页的response header会有Vary：
-Vary:Accept-Encoding;
+查看网页的response header一般都有Vary头（服务器支持压缩的都有），意思是说squid要把客户端传来的某个头区别对待，
+譬如Vary:Accept-Encoding，客户端发来Accept-Encoding:gzip（MSIE）, deflate时squid会为gzip, deflate做一个存档；如
+果客户端没发来Accept-Encoding这个头(wget)，squid又会为无Accept-Encoding做另一个存档；这两个存档的内容是不一样的，
+gzip, deflate的是压缩后的内容，一堆乱码，无Accept-Encoding的则是网页源码。知道了Vary的原理，剩下的事就容易了，在
+网页输出时加上Vary:User-Agent，意味着squid要为每一种User-Agent存一个存档，nginx里这样配置即可：
+add_header Vary Accept-Encoding;这时网页的response header会有Vary：Vary:Accept-Encoding;
 
-大多数的Unix系统中的负载只是记录那些处在运行状态和可运行状态的进程，但是Linux有所不同，它会包含那些不可中断的处于睡眠状态的进程。这时当这些进程由于I/O的阻塞而不能够运行，就可能显著的增加cpu的负载。所以在Unix和Linux下的cpu的负载的计算方法是不一样的，在设定监测值的时候也需要特别考率。
- cpu的负载大概有个初步的了解，它跟cpu的利用率又有什么样的关系呢？cpu的利用率通常会把每个核上的占用率加起来，所以有时可能超过100%。cpu的负载和利用率之间没有必然的联系，有时会出现负载过高，但利用率不高的情况。例如，有大量的并发任务，但是每个任务的cpu占有率却很低，这时就会出现cpu负载过高利用率低下的问题。同样也会出现cpu的利用率很高，但cpu负载很低的现象。
+大多数的Unix系统中的负载只是记录那些处在运行状态和可运行状态的进程，但是Linux有所不同，它会包含那些不可中断的处于
+睡眠状态的进程。这时当这些进程由于I/O的阻塞而不能够运行，就可能显著的增加cpu的负载。所以在Unix和Linux下的cpu的负载
+的计算方法是不一样的，在设定监测值的时候也需要特别考率。
+cpu的负载大概有个初步的了解，它跟cpu的利用率又有什么样的关系呢？cpu的利用率通常会把每个核上的占用率加起来，所以有时
+可能超过100%。cpu的负载和利用率之间没有必然的联系，有时会出现负载过高，但利用率不高的情况。例如，有大量的并发任务，
+但是每个任务的cpu占有率却很低，这时就会出现cpu负载过高利用率低下的问题。同样也会出现cpu的利用率很高，但cpu负载很低的
+现象。
 
 ----------------------------------------2012.09.17----------------------------------
 
@@ -2619,7 +2637,8 @@ http {
 nginx 限制连接数
 
 ---------------------------------------2012.09.18----------------------------
-mysql会给出我们最近执行的SQL命令和脚本；同linux command保存在~/.bash_history一样，你用mysql连接MySQL server的所有操作也会被记录到~/.mysql_history文件中，这样就会有很大的安全风险了，如添加MySQL用户的sql也同样会被明文记录到此文件中。
+mysql会给出我们最近执行的SQL命令和脚本；同linux command保存在~/.bash_history一样，你用mysql连接MySQL server的所有操作
+也会被记录到~/.mysql_history文件中，这样就会有很大的安全风险了，如添加MySQL用户的sql也同样会被明文记录到此文件中。
 
 ---------------------------------------2012.09.26----------------------------
 Cache-Control : private
@@ -2634,7 +2653,8 @@ Cache-Control : no-store
 表示条目不能存储在持久的存储媒介中，同时应该尽可能快地从非未定存储媒介中删除。
 
 Cache-Control : no-transform
-代理可以将数据从一个存储系统中转换到另外一个。这个指令表示（大多数）响应不能被转换。（RFC允许某些字段的转换，即使存在这个头）
+代理可以将数据从一个存储系统中转换到另外一个。这个指令表示（大多数）响应不能被转换。（RFC允许某些字段的转换，即使存在
+这个头）
 
 Cache-Control : must-revalidate
 Cache-Control : proxy-revalidate
@@ -2643,7 +2663,8 @@ Cache-Control : proxy-revalidate
 警告
     * HTTP/1.0有一个很小的缓存控制机制，仅能理解Pragma: no-cache头。使用HTTP/1.0的缓存将忽略Expires和Cache-Control头。
 
-    * 任何一个Cache-Control指令都不能保证隐私性或者数据的安全性。“private”和“no-store”指令可以为隐私性和安全性方面提供一些帮助，但是他们并不能用于替代身份验证和加密。
+    * 任何一个Cache-Control指令都不能保证隐私性或者数据的安全性。“private”和“no-store”指令可以为隐私性和安全性方面提供
+一些帮助，但是他们并不能用于替代身份验证和加密。
 
 
 -------------------------------------------2012.09.27----------------------------------
@@ -2653,7 +2674,8 @@ Content[k?n?tent]  内涵
 http header 跟随一个":"和域值构成。域名是大小写不敏感
 不同域名的头域被接收的顺序是不重要的。然而，首先发送常用头域，然后紧接着是请求头域
 或者是响应头域，然后是以实体头域结束，这样做是一个好的的方法。
-所有1XX（信息的），204（无内容的）和304（没有修改的）的响应都不能包括一个消息主体（message-body）。所有其他的响应必须包括消息主体，即使它长度可能为零.
+所有1XX（信息的），204（无内容的）和304（没有修改的）的响应都不能包括一个消息主体（message-body）。所有其他的响应
+必须包括消息主体，即使它长度可能为零.
 
 为了与HTTP/1.0应用程序兼容，包含HTTP/1.1消息主体的请求必须包括一个有效的内容长
 度（Content-Length）头域，除非服务器是HTTP/1.1遵循的。如果一个请求包含一个消息主体
@@ -2665,7 +2687,7 @@ http header 跟随一个":"和域值构成。域名是大小写不敏感
 
 在uri http://www.w3.org/pub/www/TheProject.html 中 /pub/WWW/TheProject.html 为“abs_path” 绝对uri
 
-如果Request-URI是绝对地址（absoluteURI），那么主机（host）是Request-URI的一部分。任何出现在请求里Host头域的值应当被忽略。
+如果Request-URI是绝对地址（absoluteURI），那么主机（host）是Request-URI的一部分。任何出现在请求里Host头域的值应当被忽略
 
 -------------------------------------------2012.09.29--------------------------------------------
 expires 一克斯拜尔斯 
@@ -2680,9 +2702,11 @@ expires 一克斯拜尔斯
 正则 只有两个基本操作，一个是回溯，一个是向右滑动
 回溯就是通过调整量词和分支什么的，使之能有一次匹配
 滑动就是在某个位置尝试所有的可能都不匹配后，从新位置重新尝试。
-205状态响应是服务器告诉用户代理应该重置引起请求被发送的文档视图。此响应主要的目的是清空文档视图表单里的输入框以便用户能输入其它信息。此响应不能包含一个实体。
+205状态响应是服务器告诉用户代理应该重置引起请求被发送的文档视图。此响应主要的目的是清空文档视图表单里的输入框以便用户
+能输入其它信息。此响应不能包含一个实体。
 重新定向 3xx.
-这类状态码指明用户代理需要更进一步的动作去完成请求。进一步的动作可能被用户代理自动执行而不需要用户的交互，并且进一步动作请求的方法必须为GET或HEAD。一个客户端应该发现无限的重定向循环，因为此循环能产生网络拥挤。
+这类状态码指明用户代理需要更进一步的动作去完成请求。进一步的动作可能被用户代理自动执行而不需要用户的交互，并且进一步动
+作请求的方法必须为GET或HEAD。一个客户端应该发现无限的重定向循环，因为此循环能产生网络拥挤。
 P53
 -------------------------------------------2012.10.09------------------------------------------------------
 #include <stdio.h>
@@ -3477,3 +3501,20 @@ none /proc proc defaults 0 0
 
 strings命令 二进制转化为字符
 tcpdump -w - dst port 80 输出抓包内容
+
+-------------------------------------------2013.01.21-------------------------------
+awk对齐
+awk '{printf("%-10s\n",$1)}' 宽度10左对齐 awk '{printf("%10s\n",$1)}' 宽度10右对其   
+awk '{printf("%*s\n"，10,$1)}' 宽度10右对其   awk -F: '{a=15;printf( "%-*s| %*s|\n ",15,$1,20,$NF)}' 多参数对齐
+xargs -d: -n1 -i echo {} 
+curl -s -o /dev/null -w %{time_connect}:%{time_starttransfer}:%{time_total} http://www.baidu.com   
+vim ? 向上搜索
+a=b;b=c; echo ${!a} 输出c 这时a的值b作为参数名
+getconf PAGESIZE 获取系统 块大小
+shell 偶数单引号可以打印变量
+grep -lr ‘string’ path/*
+例如：查找 home/web/www目录下的文件中包含 hello world 的字符串
+grep -lr ‘hello world’ /home/web/www
+awk '{print $1}' <<< "123 12312 13" shell 输入
+xargs -I {} mv {} {}.old   -I 定义变量名 -i默认为变量{}  -t 打印操作过程 -d 修改输入的分隔符 -n1 一次打印几个字段
+highcharts  js 图表
