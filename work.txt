@@ -3537,3 +3537,4 @@ Event Designators
 !?string[?]
 引用最近的包含 string 的命令。尾部的 ? 可以被忽略，如果 string 之后紧接着一个新行符。
 ^string1^string2^
+字符设备 顺序读取不能缓存  块设备随即读取能缓存
