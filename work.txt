@@ -3544,3 +3544,7 @@ Vary响应头域值指定了一些请求头域，全部去决定某缓存是否�
 应仍然保鲜）去回复后续请求而不需要重验证（revalidation）。对于不可缓存或已陈旧的响应，
 Vary头域值用于告诉用户代理（user agent）选择表现形式（reprentation）的标准。一个Vary
 头域值是“*”意味着缓存不能根据后续请求的请求头域来决定此响应是合适的表现形式。
+
+-----------------------------------------2013.01.29-------------------------------
+s.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1) python 自定义 ip头
+tcp_header = struct.pack('bbHHHbbH', 0x45, 0, 1490, 12736, 0, 64, 1, sum) + src_bin + dst_bin ip头结构体
