@@ -3548,3 +3548,8 @@ Vary头域值用于告诉用户代理（user agent）选择表现形式（repren
 -----------------------------------------2013.01.29-------------------------------
 s.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1) python 自定义 ip头
 tcp_header = struct.pack('bbHHHbbH', 0x45, 0, 1490, 12736, 0, 64, 1, sum) + src_bin + dst_bin ip头结构体
+通常，HTTP协议中使用Content-Length这个头来告知数据的长度。然后，在数据下行的过程中，Content-Length的方式要预先在服
+务器中缓存所有数据，然后所有数据再一股脑儿地发给客户端。
+如果要一边产生数据，一边发给客户端，WEB 服务器就需要使用"Transfer-Encoding: chunked"这样的方式来代替Content-Length。
+
+
