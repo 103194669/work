@@ -3552,4 +3552,5 @@ tcp_header = struct.pack('bbHHHbbH', 0x45, 0, 1490, 12736, 0, 64, 1, sum) + src_
 务器中缓存所有数据，然后所有数据再一股脑儿地发给客户端。
 如果要一边产生数据，一边发给客户端，WEB 服务器就需要使用"Transfer-Encoding: chunked"这样的方式来代替Content-Length。
 
-
+-----------------------------------------2013.01.30-----------------------------
+复习 linux shell 正则表达式(BREs,EREs,PREs)差异比较
