@@ -3575,3 +3575,5 @@ s.reverse() 颠倒列表顺序
 ['A', 'B', 'a', 'c']
 >>> names.sort(key = lambda n: n.lower())
 >>> print names
+
+from so import (path, listdir) 同时导入多个
