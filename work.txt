@@ -3560,3 +3560,9 @@ select var in "Linux" "Gnu Hurd" "Free BSD" "Other";
 do
 break               select本身就是一个循环，break是当选择后，就跳出循环
 done
+
+-----------------------------------------2013.02.01-----------------------------------
+F.flush() #把缓冲区的内容写入硬盘 
+F.fileno() #返回一个长整型的”文件标签“ 
+F.isatty() #文件是否是一个终端设备文件（unix系统中的） 
+python format 类似c里的格式化输出
