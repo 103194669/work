@@ -3617,4 +3617,7 @@ len：   4字节 数据包的真实长度，如果文件中保存的不是完整
 
 ----------------------------------------------2013.02.16----------------------------------------
 /proc/acpi/thermal_zone/***/temperature 获取硬件温度
+调整swap使用率
+shell> echo "vm.swappiness = 0" >> /etc/sysctl.conf
+shell> sysctl -p
 
