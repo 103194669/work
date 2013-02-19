@@ -3658,3 +3658,5 @@ if __name__=='__main__':
 >>> buf = array.array('h', [0])
 >>> fcntl.ioctl(0, termios.TIOCGPGRP, buf, 1)
 0
+
+unset shell 删除变量
