@@ -3707,3 +3707,9 @@ unset shell 删除变量
 python sorted([eval(a) for a in s])  eval 自动转换类型
 grep -w，--word-regexp 如果被\<和\>引用，就把表达式做为一个单词搜索。
 Fio 测试磁盘iops方法
+
+name = "Elwood"
+r = "{0:<10}".format(name) # r = 'Elwood    ' 左对齐
+r = "{0:>10}".format(name) # r = '    Elwood' 右对齐
+r = "{0:^10}".format(name) # r = '  Elwood  ' 居中齐
+r = "{0:=^10}".format(name) # r = '==Elwood==' 居中齐
