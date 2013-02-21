@@ -3713,3 +3713,5 @@ r = "{0:<10}".format(name) # r = 'Elwood    ' 左对齐
 r = "{0:>10}".format(name) # r = '    Elwood' 右对齐
 r = "{0:^10}".format(name) # r = '  Elwood  ' 居中齐
 r = "{0:=^10}".format(name) # r = '==Elwood==' 居中齐
+
+mv 123{,.back} 同 mv  123 123.back
