@@ -3715,3 +3715,6 @@ r = "{0:^10}".format(name) # r = '  Elwood  ' 居中齐
 r = "{0:=^10}".format(name) # r = '==Elwood==' 居中齐
 
 mv 123{,.back} 同 mv  123 123.back
+
+打印一年所有日期
+for i in $(seq -f'%.0f' 20130101 20131231); do if date -d "$i" &>/dev/null; then echo $i | sed 's/\(....\)\(..\)/\1-\2-/'; fi; done
