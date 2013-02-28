@@ -3749,3 +3749,6 @@ screen为多重视窗管理程序
 -ls或--list 　显示目前所有的screen作业。 
 -wipe 　检查目前所有的screen作业，并删除已经无法使用的screen作业。 
 
+[root@pic-1 website_2011]#  seq -f %05g 2
+00001
+00002
