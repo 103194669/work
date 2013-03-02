@@ -3757,3 +3757,4 @@ diff a b > iss01.patch   生成补丁
 patch a.c < iss01.patch  打补丁
 -----------------------------------2013.03.02----------------------
 enumerate python 枚举 可获取list 索引号
+python查看递归深度  sys.getrecursionlimit()
