@@ -3759,3 +3759,4 @@ patch a.c < iss01.patch  打补丁
 enumerate python 枚举 可获取list 索引号
 python查看递归深度  sys.getrecursionlimit()
 systemtap  内核调试工具
+sed -i ':a;/{/N;/}/!ba;/AA-0003/d'  sed 循环例子
