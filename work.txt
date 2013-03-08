@@ -3776,3 +3776,8 @@ mode=6，表示load balancing (round-robin)为负载均衡方式，两块网卡�
 mode=1，表示fault-tolerance (active-backup)提供冗余功能，工作方式是主备的工作方式，也就是说默认情况下只有一块网卡工作,另一块做备份 
 
 cat /sys/class/net/eth0/address 查看eth0 mac
+
+ lspci 查看pci信息
+lspci -vvv 查看驱动
+modinfo bnx2 查看某个模块详情
+ethtool -i eth0 查看网卡 参数
