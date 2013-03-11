@@ -3781,3 +3781,7 @@ cat /sys/class/net/eth0/address 查看eth0 mac
 lspci -vvv 查看驱动
 modinfo bnx2 查看某个模块详情
 ethtool -i eth0 查看网卡 参数
+
+----------------------------------2013.03.08--------------------------
+ tar cvf - 01|ssh 10.58.50.31 tar xvf - 批量传输小文件
+
