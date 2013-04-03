@@ -3803,3 +3803,24 @@ systemtap 内核分析利器
 
 ----------------------------------2013.04.02--------------
 SIGKILL和SIGSTOP 进程能忽略的两个信号
+
+---------------------------------2013.04.03--------------
+ awk '/nologin/{print $0 >"no_log"}/bash/{print $0 >"bash"}' /etc/passwd 
+
+python 求qps
+
+#!/usr/bin/env python
+import time
+import fileinput
+
+last_sec = 0
+count = 0
+
+for line in fileinput.input():
+    t = int(time.time())
+    if last_sec != t: 
+        print 'QPS:', count
+        last_sec = t
+        count = 0
+    else:
+        count += 1
