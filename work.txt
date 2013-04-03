@@ -3841,3 +3841,5 @@ tps 表示发生逻辑磁盘的io请求数
 Blk_read/s Blk_wrtn/s 每秒读写io块数
 linux tc 流量控制命令
 dsniff 嗅探工具
+netstat -s  打印网络统计信息
+bonnie 硬盘测试工具
