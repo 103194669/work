@@ -3824,3 +3824,6 @@ for line in fileinput.input():
         count = 0
     else:
         count += 1
+
+vmstat中si反映了当页面换回物理内存时发生的错误情况
+/proc/slabinfo 查看内核内存使用情况
