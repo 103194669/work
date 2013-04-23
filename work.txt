@@ -3878,3 +3878,7 @@ ethtool -G eth0 rx 2048  设置rx  buffer
 
 -------------------------------2013.04.23------
 tcpshow 解析tcpdump数据
+使用re.DOTALL修饰符，.可匹配任意字符（包括换行）
+partition的用法：
+>>> ('http://www.python.org').partition('://')
+('http', '://', 'www.python.org')
