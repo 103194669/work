@@ -3875,3 +3875,6 @@ dorpped的包主要是因为队列满了,网卡的buffer满了.
  Pre-set maximums   预先设定的最大值
 current setting   当前设置
 ethtool -G eth0 rx 2048  设置rx  buffer
+
+-------------------------------2013.04.23------
+tcpshow 解析tcpdump数据
