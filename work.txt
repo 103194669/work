@@ -3883,10 +3883,11 @@ partition的用法：
 >>> ('http://www.python.org').partition('://')
 ('http', '://', 'www.python.org')
 
-------------------------------2013.04.23--------------
+------------------------------2013.04.24--------------
 将秒转换成时间 date -d "1970-01-01 UTC 1272085617 seconds"  date -d "19700101 UTC 1366762394 seconds"
 将时间转换为秒 date +%s -d "20130424 8:13:14"
 /usr/share/logwatch/default.conf/logwatch.conf  解决You have new mail in /var/spool/mail/root
 陈子学前笔记  http://blog.sina.com.cn/s/articlelist_69635915_0_1.html
 
 ratios 比 比率
+cp -v  /dev/dvd  /software/rhel4.6.iso9660  制作镜像
