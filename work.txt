@@ -3896,3 +3896,4 @@ cp -v  /dev/dvd  /software/rhel4.6.iso9660  制作镜像
 mkpasswd 
 -l位数 -C大小 -c小写 -d数字 -s特殊字
 mkpasswd -l 8  -C 2 -c 2 -d 4 -s 0 
+lsb_release  -a 查看系统版本
