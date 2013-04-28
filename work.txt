@@ -3916,3 +3916,5 @@ lsb_release  -a 查看系统版本
       >>> True 
 
 python -m cProfile myprogram.py  python调试详情
+--------------------------------2013.04.28-------------------------------
+sar -f /var/log/sa/sa28 -b  查看采集的硬盘io数据
