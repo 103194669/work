@@ -3918,3 +3918,4 @@ lsb_release  -a 查看系统版本
 python -m cProfile myprogram.py  python调试详情
 --------------------------------2013.04.28-------------------------------
 sar -f /var/log/sa/sa28 -b  查看采集的硬盘io数据
+scp -P 10001 -r @118.26.202.19:/usr/local/nagios/libexec.tar.gz /usr/local/nagios/  从远端拉取
