@@ -3919,3 +3919,6 @@ python -m cProfile myprogram.py  python调试详情
 --------------------------------2013.04.28-------------------------------
 sar -f /var/log/sa/sa28 -b  查看采集的硬盘io数据
 scp -P 10001 -r @118.26.202.19:/usr/local/nagios/libexec.tar.gz /usr/local/nagios/  从远端拉取
+
+---------------------------------------------2013.05.03----------------------------------
+print sprintf ("%9.0f",i) " Lines Processed" "\x01b[1A\x01b[80D"  awk打印结尾不换行
