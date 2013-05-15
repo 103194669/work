@@ -4073,3 +4073,14 @@ X：可以直接访问压缩文件的内容。
 cp filename{,.bak} 
 
 查看系统版本 /proc/version 
+
+cpu运行的位数 
+getconf LONG_BIT 
+查看Dell硬raid信息(IBM、
+cat /proc/scsi/scsi 
+
+通过 SSH 挂载远程主机上的文件夹 
+sshfs name@server:/path/to/folder /path/to/mount/point 
+ 
+卸载的话使用 fusermount 命令 
+fusermount -u /path/to/mount/point 
