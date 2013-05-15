@@ -4071,3 +4071,5 @@ t:文件系统支持尾部合并（tail-merging）。
 X：可以直接访问压缩文件的内容。
 
 cp filename{,.bak} 
+
+查看系统版本 /proc/version 
