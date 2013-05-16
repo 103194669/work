@@ -4090,3 +4090,4 @@ int 32 位 64 位 都是4字节 Linux平台下
 long不一样 long在32下是4，64位是8 连指针都是8字节的
 
 $uri指的是请求的文件和路径，不包括“?”或者“#”之后的东西，$request_uri则是请求的整个字符串，包含了后面的query_string的。 
+素数 awk 'BEGIN{printf 1,2" ";for(i=3;i<=100;i+=2){for(j=3;j<=i/2;j+=2){if(i%j==0){break}if(j+2>i/2)printf i" "}}}'
