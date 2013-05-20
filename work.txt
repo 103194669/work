@@ -4097,3 +4097,18 @@ script 和 scriptreplay 这两个命令，一个是录屏，一个是回放 exit
 [root@taio-yc local]# ls /bin/?sh
 /bin/csh  /bin/ksh 
 在通配符中 ？ 表示一个任意字符
+
+------------------------------------2013.05.20----------------
+http://www.jpush.cn/ 激光推送
+例子：
+    #!/bin/sh
+    #下面两个是你新建应用后就分配的
+    APP_KEY=$1
+    API_MasterSecret=$2
+    #自赠序列号，这个最好是通过mysql的auto_increment管理
+    sendno=2
+    #这里有1,2,3,4,分别对应对指定IMEI/tag/alias/all的用户推送
+    receiver_type=4
+    verification_code=`echo -ne "$sendno$receiver_type$API_MasterSecret" | md5sum | awk '{print $1}'`
+    #platform包括android,ios等等，可以用逗号分开写多个
+    curl http://api.jpush.cn:8800/sendmsg/v2/notification -d "sendno=${sendno}&app_key=${APP_KEY}&receiver_type=${receiver_type}&platform=android&txt=123&verification_code=${verification_code}"
