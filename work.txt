@@ -4112,3 +4112,5 @@ http://www.jpush.cn/ 激光推送
     verification_code=`echo -ne "$sendno$receiver_type$API_MasterSecret" | md5sum | awk '{print $1}'`
     #platform包括android,ios等等，可以用逗号分开写多个
     curl http://api.jpush.cn:8800/sendmsg/v2/notification -d "sendno=${sendno}&app_key=${APP_KEY}&receiver_type=${receiver_type}&platform=android&txt=123&verification_code=${verification_code}"
+    
+Saltstack 可以看做是func的增强版+Puppet的弱化版。使用Python编写。非常好用,快速可以基于EPEL部署。
