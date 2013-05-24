@@ -4128,3 +4128,5 @@ echo 'asdf"123"qwe' |sed 's/'\"/\''/g'
  
 *                               soft    nofile  65536
 *                               hard    nofile  65536
+
+小流量大攻击  ping 广播地址 
