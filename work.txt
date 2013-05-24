@@ -4130,3 +4130,5 @@ echo 'asdf"123"qwe' |sed 's/'\"/\''/g'
 *                               hard    nofile  65536
 
 小流量大攻击  ping 广播地址 
+
+http://www.ibm.com/developerworks/cn/aix/library/au-aix-graphviz/  不错的画流程图的 编程语言
