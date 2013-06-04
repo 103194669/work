@@ -4158,3 +4158,10 @@ ss -s 显示网络统计信息
 /proc/sys/vm/swappiness的内容改成0（临时），/etc/sysctl.conf上添加vm.swappiness=0（永久）
 这个参数决定了Linux是倾向于使用swap，还是倾向于释放文件系统cache。在内存紧张的情况下，数值越低越倾向于释放文件系统cache。
 当然，这个参数只能减少使用swap的概率，并不能避免Linux使用swap。
+
+/proc/sys/fs/file-nr
+该文件与file-max 相关，它有三个值：
+已分配文件句柄的数目
+已使用文件句柄的数目
+文件句柄的最大数目
+该文件是只读的，仅
