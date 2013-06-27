@@ -4180,4 +4180,4 @@ ls -lh --time-style=long-iso
 聪明是主观臆断，智慧是客观存在；聪明的人精算计，智慧的人似若愚
 
 -------------------------------------2013.06.27------------------------
-nginx的error_page 404 @err;location @err {proxy_pass}
+nginx的error_page 404 @err;location @err {proxy_pass} apache的ErrorDocument有类似功能
