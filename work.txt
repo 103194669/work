@@ -4185,3 +4185,10 @@ nginx的error_page 404 @err;location @err {proxy_pass} apache的ErrorDocument有
 -------------------------------------2013.06.29--------------------
 简单理解：Swap usage只表示了Linux管理内存的有效性。对识别内存瓶颈来说，Swap In/Out才是一个比较又意义的依据，
 如果Swap In/Out的值长期保持在每秒200到300个页面通常就表示系统可能存在内存的瓶颈
+%user      在internal时间段里，用户态的CPU时间(%)，不包含nice值为负进程  (usr/total)*100
+%nice      在internal时间段里，nice值为负进程的CPU时间(%)   (nice/total)*100
+%sys       在internal时间段里，内核时间(%)       (system/total)*100
+%iowait    在internal时间段里，硬盘IO等待时间(%) (iowait/total)*100
+%irq       在internal时间段里，硬中断时间(%)     (irq/total)*100
+%soft      在internal时间段里，软中断时间(%)     (softirq/total)*100
+%idle      在internal时间段里，CPU除去等待磁盘IO操作外的因为任何原因而空闲的时间闲置时间(%) (idle/total)*100
