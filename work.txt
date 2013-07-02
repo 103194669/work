@@ -4192,3 +4192,6 @@ nginx的error_page 404 @err;location @err {proxy_pass} apache的ErrorDocument有
 %irq       在internal时间段里，硬中断时间(%)     (irq/total)*100
 %soft      在internal时间段里，软中断时间(%)     (softirq/total)*100
 %idle      在internal时间段里，CPU除去等待磁盘IO操作外的因为任何原因而空闲的时间闲置时间(%) (idle/total)*100
+
+--------------------------------------2013.07.02----------------------------
+https://github.com/Qihoo360/Atlas  mysql-proxy
