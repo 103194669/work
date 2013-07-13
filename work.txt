@@ -4195,3 +4195,13 @@ nginx的error_page 404 @err;location @err {proxy_pass} apache的ErrorDocument有
 
 --------------------------------------2013.07.02----------------------------
 https://github.com/Qihoo360/Atlas  mysql-proxy
+
+--------------------------------------2013.07.13----------------------
+${!var}，就是左花括号后面紧跟一个感叹号。bash会把变量的值作为新的变量再求值。
+Shello代码  
+[jjz@localhost project]$ a=b  
+[jjz@localhost project]$ b=1  
+[jjz@localhost project]$ echo ${!a}  
+1  
+
+
