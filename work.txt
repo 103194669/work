@@ -4275,3 +4275,5 @@ asia.pool.ntp.org
 -----------------------------------------2013.08.15----------------------------------
 vim
 set backspace=indent,eol,start
+
+find -delete 直接删除内容
