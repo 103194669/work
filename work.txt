@@ -4289,3 +4289,7 @@ du -h /home --max-depth=1
 
 
 /bin/sh ../libtool --tag=CC --mode=link cc -I. -I./gen -I./lib -I./stat -I/usr/include  -g -O2 -DHAVE_SSL   -o httperf  httperf.o object.o call.o conn.o sess.o core.o event.o http.o timer.o gen/libgen.a lib/libutil.a stat/libstat.a -lresolv -lnsl -lssl -lcrypto -lm --static -ldl -lz
+
+-----------------------------------------2013.12.02-----------------------
+wmi
+http://sourceforge.net/projects/pywin32/files/pywin32/Build%20218/
