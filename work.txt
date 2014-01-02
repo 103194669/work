@@ -4301,4 +4301,7 @@ http://sourceforge.net/projects/pywin32/files/pywin32/Build%20218/
 dns 本地高速缓存 /etc/nscd.conf  
 
 ----------------------------------------2014.01.02---------------------------
- list(itertools.permutations("1234567890",3)) 排列组合
+list(itertools.permutations("1234567890",3)) 排列组合
+查看进程所占内存 pmap pid  或 任务虚拟地址空间的大小 VmSize  
+应用程序正在使用的物理内存的大小 VmRSS  
+ 
