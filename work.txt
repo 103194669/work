@@ -4309,3 +4309,6 @@ list(itertools.permutations("1234567890",3)) 排列组合
 taskset [mask] [command]
 mask是CPU掩码，用16进制数表示，从低位起，为1的位表示该CPU上可以运行该进程。command是要运行的命令。
 如taskset 0x00000033 /usr/bin/aaa表示运行/usr/bin/aaa这个进程，并且绑定在0，1，4，5号CPU上。
+
+---------------------------------------2014.01.28---------------------------------------
+ip_conntrack记录约会占用292Bytes
