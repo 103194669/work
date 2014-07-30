@@ -4321,4 +4321,4 @@ ip_conntrack记录约会占用292Bytes
 
 ------------------------------------2014.07.29---------------
 nginx 匹配顺序  =>^~> ~ > 空格 
-nginx rewrite  last 会重新遍历location  break  不遍历location,不在执行后面的重写，继续执行location中得动作-
+nginx rewrite  last 会重新遍历location  break  不遍历location,不在执行后面的重写，继续执行location中得动作
