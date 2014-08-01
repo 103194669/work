@@ -4325,4 +4325,7 @@ nginx rewrite  last 会重新遍历location  break  不遍历location,不在执�
 
 -----------------------------------2014.07.31--------------
 /usr/share/doc/haproxy-1.4.24/configuration.txt  haproxy doc
-操作系统的革命 Revolution OS 
+操作系统的革命 Revolution OS
+
+-----------------------------------2014.08.01--------------
+CoreOS  一个未来的操作系统
