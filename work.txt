@@ -4338,3 +4338,5 @@ http://linrc.com/bat运维系统client设计探秘/  不错的分享
 
 ----------------------------------2014.08.18-------------------
 set cursorcolumn 简写版set cuc  vim竖线
+set cursorline  横线 
+
