@@ -4340,3 +4340,6 @@ http://linrc.com/bat运维系统client设计探秘/  不错的分享
 set cursorcolumn 简写版set cuc  vim竖线
 set cursorline  横线 
 
+----------------------------------2014.08.25---------------------
+Pragma 仅仅是一个 Request 头域指令，如果你在 Response 头域里放了 Pragma:no-cache，没有意义。参考
+HTTP/1.1缓存应该把"Pragma：no_cache"当作好像客户端发送了"cache_control:no-cache"。在http中不会有新的pragma指令会被定义。
