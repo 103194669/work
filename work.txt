@@ -4343,3 +4343,6 @@ set cursorline  横线
 ----------------------------------2014.08.25---------------------
 Pragma 仅仅是一个 Request 头域指令，如果你在 Response 头域里放了 Pragma:no-cache，没有意义。参考
 HTTP/1.1缓存应该把"Pragma：no_cache"当作好像客户端发送了"cache_control:no-cache"。在http中不会有新的pragma指令会被定义。
+
+----------------------------------2014.08.27----------------
+内核参数 net.core.somaxconn 默认调整到 8192，listen 参数中 backlog 的大小由 min(backlog, somaxconn) 决定，前面调整的 nginx 其实无效果。ss 和 netstat 可以看到目前的 backlog 大小。
