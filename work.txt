@@ -4346,3 +4346,6 @@ HTTP/1.1缓存应该把"Pragma：no_cache"当作好像客户端发送了"cache_c
 
 ----------------------------------2014.08.27----------------
 内核参数 net.core.somaxconn 默认调整到 8192，listen 参数中 backlog 的大小由 min(backlog, somaxconn) 决定，前面调整的 nginx 其实无效果。ss 和 netstat 可以看到目前的 backlog 大小。
+
+----------------------------------2014.08.27-----------------
+crontab * 2 * * *  run in every minute
