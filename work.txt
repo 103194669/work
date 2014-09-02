@@ -4349,3 +4349,9 @@ HTTP/1.1缓存应该把"Pragma：no_cache"当作好像客户端发送了"cache_c
 
 ----------------------------------2014.08.27-----------------
 crontab * 2 * * *  run in every minute
+
+----------------------------------2014.09.02------------
+在nginx中有几个关于uri的变量,包括$uri $request_uri $document_uri，下面看一下他们的区别 ：
+$request_uri: /stat.php?id=1585378&web_id=1585378
+$uri /stat.php
+$document_uri: /stat.php
