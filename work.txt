@@ -4355,3 +4355,7 @@ crontab * 2 * * *  run in every minute
 $request_uri: /stat.php?id=1585378&web_id=1585378
 $uri /stat.php
 $document_uri: /stat.php
+
+----------------------------------2014.09.93-----------
+fastcgi_buffering off; 造成fastcgi_cache 失效
+
