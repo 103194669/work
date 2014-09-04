@@ -4356,7 +4356,7 @@ $request_uri: /stat.php?id=1585378&web_id=1585378
 $uri /stat.php
 $document_uri: /stat.php
 
-----------------------------------2014.09.93-----------
+----------------------------------2014.09.03-----------
 fastcgi_buffering off; 造成fastcgi_cache 失效
 
 curl 127.0.0.1:8080/123/test/asdfasf?af=a
@@ -4365,3 +4365,9 @@ request_uri:GET /123/test/asdfasf?af=a HTTP/1.1
 uri:/123.html
 document_uri:/123.html
 cache_key:httpGET127.0.0.1/123/test/asdfasf
+
+----------------------------------2014.09.04--------------
+#详细追踪
+python -m trace --trace script.py
+#显示调用了哪些函数
+python -m trace --trackcalls script.py
