@@ -4371,3 +4371,7 @@ cache_key:httpGET127.0.0.1/123/test/asdfasf
 python -m trace --trace script.py
 #显示调用了哪些函数
 python -m trace --trackcalls script.py
+
+----------------------------------2014.09.05-------------
+-sorted(dict1.items(), key=lambda d: d[1])
+sorted(iterable, cmp=None, key=None, reverse=False) --> new sorted list
