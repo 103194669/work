@@ -4375,3 +4375,12 @@ python -m trace --trackcalls script.py
 ----------------------------------2014.09.05-------------
 -sorted(dict1.items(), key=lambda d: d[1])
 sorted(iterable, cmp=None, key=None, reverse=False) --> new sorted list
+
+----------------------------------2014.09.09--------------
+tc qdisc del dev eth0 root > /dev/null 2>&1
+tc qdisc add dev eth0 root handle 1: htb default 10
+tc class add dev eth0 parent 1: classid 1:1 htb rate 1000mbit ceil 1000mbit
+tc class add dev eth0 parent 1:1 classid 1:10 htb rate 500mbit ceil 500mbit
+tc class add dev eth0 parent 1:1 classid 1:11 htb rate 500mbit ceil 500mbit
+tc filter add dev eth0 protocol ip parent 1:0 prio 1 u32 match ip dport 1099 0xFFFF flowid 1:11
+u32 tc过滤器， 0xffff的数值，表示精确配置端口。tcp 的端口16位，与此数值做与操作。
