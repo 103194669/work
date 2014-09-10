@@ -4384,3 +4384,8 @@ tc class add dev eth0 parent 1:1 classid 1:10 htb rate 500mbit ceil 500mbit
 tc class add dev eth0 parent 1:1 classid 1:11 htb rate 500mbit ceil 500mbit
 tc filter add dev eth0 protocol ip parent 1:0 prio 1 u32 match ip dport 1099 0xFFFF flowid 1:11
 u32 tc过滤器， 0xffff的数值，表示精确配置端口。tcp 的端口16位，与此数值做与操作。
+
+----------------------------------2014.09.10--------------
+yum install yum-plugin-replace
+yum replace php-common --replace-with=php55w-common
+
