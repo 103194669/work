@@ -4389,3 +4389,7 @@ u32 tc过滤器， 0xffff的数值，表示精确配置端口。tcp 的端口16�
 yum install yum-plugin-replace
 yum replace php-common --replace-with=php55w-common
 
+----------------------------------2014.09.10--------------
+生成一个内存盘 并挂载
+dd if=/dev/zero of=/dev/ram0 bs=1024 count=2000 
+mount /dev/ram0 /mnt/ramdisk    
