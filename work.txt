@@ -4424,6 +4424,12 @@ pgrep  获取pid
 -----------------------------------2014.10.08------------------------
 linux manpage 手册 http://cpp.ezbty.org/manpage
 
------------------------------------2014.10.08----------------------
+-----------------------------------2014.10.09----------------------
 nginx 指令 http://nginx.org/cn/docs/dirindex.html
 不同类型变量 http://www.binaryconvert.com/convert_double.html
+
+---------------------------------- 2014.10.28-------------------
+查看RPM包种的内容  rpm -qpl *.rpm 
+解压rpm rpm2cpio *.rpm| cpio -div 
+centos rpm_src ttp://vault.centos.org/6.6/os/Source/SPackages/
+
