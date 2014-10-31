@@ -4432,4 +4432,8 @@ nginx 指令 http://nginx.org/cn/docs/dirindex.html
 查看RPM包种的内容  rpm -qpl *.rpm 
 解压rpm rpm2cpio *.rpm| cpio -div 
 centos rpm_src ttp://vault.centos.org/6.6/os/Source/SPackages/
+不错的 web 测试站点：https://developers.google.com/speed/pagespeed/
 
+-----------------------------------2014.10.30----------------
+mknod uraundom c 1 9
+设备号列表：http://www.lanana.org/docs/device-list/devices-2.6+.txt
