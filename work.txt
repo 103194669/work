@@ -4441,3 +4441,5 @@ mknod uraundom c 1 9
 -----------------------------------2014.11.03---------------
 vpsmate http://www.vpsmate.org/ 
 
+-----------------------------------2014.11.05----------------
+respawn http://baike.baidu.com/view/5823230.htm?fr=aladdin
