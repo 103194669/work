@@ -4453,3 +4453,8 @@ snmp mib http://www.alvestrand.no/objectid/1.3.6.1.2.1.6.html
 -----------------------------------2014.12.15-------------
 ddos 攻击类型 http://www.isi.edu/~mirkovic/bench/attacks.html
 spdy检测 http://spdycheck.org/
+
+-----------------------------------2014.12.26------------
+淘宝nginx 大牛  深入理解nginx http://nginx.taohui.org.cn/tcpperf1.html
+iptables  u32 http://www.stearns.org/doc/iptables-u32.current.html
+
