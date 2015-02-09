@@ -4473,3 +4473,8 @@ http://tobegit3hub1.gitbooks.io  进程相关基础知识概括
 \r 回车(CR) ，将当前位置移到本行开头 
 
 
+-----------------------------------2015.02.02--------------
+gnu mirror http://mirror.bjtu.edu.cn/gnu/sed/
+
+-----------------------------------2015.02.09--------------
+xiaomi 高大上监控 http://www.jianshu.com/p/b2f77285266c?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=weixin&from=singlemessage&isappinstalled=0
