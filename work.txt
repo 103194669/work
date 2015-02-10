@@ -4478,3 +4478,6 @@ gnu mirror http://mirror.bjtu.edu.cn/gnu/sed/
 
 -----------------------------------2015.02.09--------------
 xiaomi 高大上监控 http://www.jianshu.com/p/b2f77285266c?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=weixin&from=singlemessage&isappinstalled=0
+
+-----------------------------------2015.02.10---------------
+人脸检测 http://www.oschina.net/translate/javascript-based-face-detection-method
