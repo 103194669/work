@@ -4482,3 +4482,9 @@ xiaomi 高大上监控 http://www.jianshu.com/p/b2f77285266c?utm_campaign=haruki
 -----------------------------------2015.02.10---------------
 人脸检测 http://www.oschina.net/translate/javascript-based-face-detection-method
 go写的代理 https://github.com/cyfdecyf/cow
+
+-----------------------------------2015.03.12-----------------
+Burpsuite  黑客喜欢用的机器
+
+-----------------------------------2015.03.14-------------------
+yum install kernel-doc 安装kernel文档 /usr/share/doc/kernel-doc-2.6.32/Documentation/
