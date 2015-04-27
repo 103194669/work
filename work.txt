@@ -4492,3 +4492,6 @@ yum install kernel-doc 安装kernel文档 /usr/share/doc/kernel-doc-2.6.32/Docum
 
 -----------------------------------2015.04.25-------------------
  TIME_WAIT 占用多少内存：「slabtop -o | grep tw」
+
+-----------------------------------2015.04.27------------------
+$http_x_requested_with 获取 heaser
