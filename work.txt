@@ -4495,3 +4495,7 @@ yum install kernel-doc 安装kernel文档 /usr/share/doc/kernel-doc-2.6.32/Docum
 
 -----------------------------------2015.04.27------------------
 $http_x_requested_with 获取 heaser
+-----------------------------------2015.05.31------------------
+免费下载地址在 http://linux.linuxidc.com/
+
+用户名与密码都是www.linuxidc.com
