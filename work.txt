@@ -4499,3 +4499,6 @@ $http_x_requested_with 获取 heaser
 免费下载地址在 http://linux.linuxidc.com/
 
 用户名与密码都是www.linuxidc.com
+
+-----------------------------------2015.06.04--------------------
+http://vault.centos.org/6.6/os/Source/SPackages/
