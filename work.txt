@@ -4508,3 +4508,6 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers   httpheaders
 
 -----------------------------------2015.06.08--------------
 https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt 内核帮助文档
+
+-----------------------------------2015.07.23--------------
+time_wait 详解 http://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux.html
