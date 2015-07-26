@@ -4511,3 +4511,6 @@ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt 内核帮助�
 
 -----------------------------------2015.07.23--------------
 time_wait 详解 http://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux.html
+
+-----------------------------------2015.07.26-------------
+http://www.webpagetest.org/  海外页面测试工具
