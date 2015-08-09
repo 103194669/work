@@ -4514,3 +4514,6 @@ time_wait 详解 http://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux
 
 -----------------------------------2015.07.26-------------
 http://www.webpagetest.org/  海外页面测试工具
+
+-----------------------------------2015.08.09----------------
+c标准库速查 http://ganquan.info/standard-c/
